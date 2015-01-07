@@ -35,6 +35,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+group :production do
+  gem 'rails_12factor'
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
