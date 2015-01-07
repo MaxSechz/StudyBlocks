@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
-  def signed_in?
+  def logged_in?
     !!current_user
   end
 
@@ -24,14 +24,15 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    redirect_to new_session_url unless signed_in?
+    redirect_to new_session_url unless logged_in?
   end
 
   def require_logged_out
-    redirect_to root_url if signed_in?
+    redirect_to root_url if logged_in?
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :school)
+    new_params = params.require(:user).permit(:username, :password, :email, :school_id)
+    new_params[:password].empty? ? new_params.except(:password) : new_params
   end
 end

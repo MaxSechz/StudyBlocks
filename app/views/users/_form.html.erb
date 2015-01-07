@@ -1,0 +1,23 @@
+<% url, button_text, patch = users_url, "Sign Up", false %>
+<% url, button_text, patch = user_url(user), "Update",  true if logged_in? %>
+
+<%= user.errors.messages if user.errors %>
+<form action="<%= url %>" method="post">
+  <%= token_tag form_authenticity_token %>
+
+  <%= hidden_field_tag("_method", "PUT") if patch %>
+
+  <label for="username">Username</label>
+  <input id="username" type="text" name="user[username]" value="<%= user.username %>">
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="user[password]">
+
+  <label for="email">Email</label>
+  <input type="text" name="user[email]" value="<%= user.email %>">
+
+  <label for="school">School</label>
+  <input id="school" type="text" name="user[school_id]" value="<%= user.school_id %>">
+
+  <button name="button">Submit</button>
+</form>

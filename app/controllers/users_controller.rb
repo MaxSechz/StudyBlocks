@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render :index
+    render :show
   end
 
   def new
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      login!(@user)
       redirect_to root_url
     else
       render :new
@@ -28,8 +29,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      redirect_to root_url
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to user_url(@user)
     else
       render :edit
     end

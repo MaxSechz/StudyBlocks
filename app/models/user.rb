@@ -22,10 +22,10 @@ class User < ActiveRecord::Base
   end
 
   def validate_password_and_name(password)
-    if user.id.nil? || !user.is_password?(password)
-      user.errors.add(:base, "Invalid username/email and password combination")
+    if self.id.nil? || !self.is_password?(password)
+      self.errors.add(:base, "Invalid username/email and password combination")
     end
-    user
+    self
   end
 
   def is_password?(password)

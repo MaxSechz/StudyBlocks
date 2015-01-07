@@ -1,0 +1,24 @@
+<ul>
+  <% if logged_in? %>
+    <li>
+      <a href="<%= root_url %>">Home</a>
+    </li>
+    <li>
+      <a href="<%= user_url(current_user) %>">My Account</a>
+    </li>
+    <li>
+        <form action="<%= session_url %>" method="post">
+          <%= hidden_field_tag "_method", "DELETE" %>
+          <%= token_tag form_authenticity_token %>
+          <button name="button">Log Out</button>
+        </form>
+    </li>
+  <% else %>
+    <li>
+      <a href="<%= new_user_url %>">Register</a>
+    </li>
+    <li>
+      <a href="<%= new_session_url %>">Log In</a>
+    </li>
+  <% end %>
+</ul>

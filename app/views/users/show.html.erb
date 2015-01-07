@@ -1,0 +1,20 @@
+<h1><%= @user.username %>'s Account</h1>
+
+<ul>
+  <li>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
+  <li>
+  <strong>School:</strong>
+  <%= @user.school_id %>
+  </li>
+</ul>
+
+<a href="<%= edit_user_url(@user) %>">Edit Account</a>
