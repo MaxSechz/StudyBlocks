@@ -1,0 +1,9 @@
+<li>
+  <%= card.front %>
+  <a href="<%= edit_deck_card_url(deck, card) %>">Edit Card</a>
+  <form action="<%= deck_card_url(deck, card) %>" method="post">
+    <%= token_tag form_authenticity_token %>
+    <%= hidden_field_tag("_method", "DELETE") %>
+    <button name="button">Delete</button>
+  </form>
+</li>

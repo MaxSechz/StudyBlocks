@@ -1,8 +1,11 @@
-<h1><%= deck.title %></h1>
-<h2><%= deck.description %></h2>
+<h1><%= @deck.title %></h1>
+<h2><%= @deck.description %></h2>
+
+<a href="<%= new_deck_card_url(@deck) %>">Add Card</a>
+<a href="<%= edit_deck_url(@deck) %>">Edit Deck</a>
 
 <ul>
   <% @deck.cards.each do |card| %>
-    <%= render "cards/show" %>
+    <%= render "cards/card", card: card, deck: @deck %>
   <% end %>
 </ul>

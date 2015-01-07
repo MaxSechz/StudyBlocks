@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :get_deck
   before_action :ensure_card_belongs_to_user
 
   def new
@@ -7,7 +8,6 @@ class CardsController < ApplicationController
   end
 
   def create
-    @deck = Deck.find(params[:deck_id])
     @card = @deck.cards.new(card_params)
 
     if @card.save
@@ -39,7 +39,15 @@ class CardsController < ApplicationController
 
   private
 
+  def card_params
+    params.require(:card).permit(:front, :back, :format)
+  end
+
+  def get_deck
+    @deck = Deck.find(params[:deck_id])
+  end
+
   def ensure_card_belongs_to_user
-    redirect_to decks_url unless Deck.find(params[:deck_id]).user_id == current_user.id
+    redirect_to decks_url unless @deck.user_id == current_user.id
   end
 end

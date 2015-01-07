@@ -1,0 +1,24 @@
+<% url, button_text, patch = deck_cards_url(deck), "Add", false %>
+<% url, button_text, patch = deck_card_url(deck, card), "Update", true if card.persisted? %>
+
+<form action="<%= url %>" method="post">
+  <%= token_tag form_authenticity_token %>
+
+  <%= hidden_field_tag("_method", "PUT") if patch %>
+
+  <label for="front">Front</label>
+  <input id="front" type="text" name="card[front]" value="<%= card.front %>">
+
+  <label for="back">Back</label>
+  <input id="back" type="text" name="card[back]" value="<%= card.back %>">
+
+  <label for="format">Test Format</label>
+  <select id="format" name="card[format]">
+    <option value="boolean">True or False</option>
+    <option value="field">Enter Response by Field</option>
+    <option value="choice">Multiple Choice</option>
+    <option value="response">Enter Full Response</option>
+  </select>
+
+  <button name="button"><%= button_text %> Deck</button>
+</form>

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(user_params)
 
-    if @user
+    if @user.valid?
       login!(@user)
       redirect_to root_url
     else

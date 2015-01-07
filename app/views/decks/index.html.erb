@@ -4,6 +4,11 @@
   <% @decks.each do |deck| %>
     <li>
       <a href="<%= deck_url(deck) %>"><%= deck.title %></a>
+      <form action="<%= deck_url(deck) %>" method="post">
+        <%= token_tag form_authenticity_token %>
+        <%= hidden_field_tag("_method", "DELETE") %>
+        <button name="button">Delete</button>
+      </form>
     </li>
   <% end %>
 </ul>

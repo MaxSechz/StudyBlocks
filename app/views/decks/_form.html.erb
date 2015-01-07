@@ -1,5 +1,5 @@
 <% url, button_text, patch = decks_url, "Add", false %>
-<% url, button_text, patch = decks_url, "Update", true if deck.persisted? %>
+<% url, button_text, patch = deck_url(deck), "Update", true if deck.persisted? %>
 
 <form action="<%= url %>" method="post">
   <%= token_tag form_authenticity_token %>

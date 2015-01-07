@@ -7,7 +7,7 @@ class DecksController < ApplicationController
   end
 
   def show
-    @deck = Deck.find(params[:id]).includes(:cards)
+    @deck = Deck.where(id: params[:id]).includes(:cards).first
   end
 
   def new
@@ -26,12 +26,12 @@ class DecksController < ApplicationController
   end
 
   def edit
-    @deck = deck.find(params[:id])
+    @deck = Deck.find(params[:id])
     render :edit
   end
 
   def update
-    @deck = deck.find(params[:id])
+    @deck = Deck.find(params[:id])
 
     if @deck.update(deck_params)
       redirect_to deck_url(@deck)
