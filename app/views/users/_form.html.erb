@@ -1,7 +1,6 @@
 <% url, button_text, patch = users_url, "Sign Up", false %>
 <% url, button_text, patch = user_url(user), "Update",  true if logged_in? %>
 
-<%= user.errors.messages if user.errors %>
 <form action="<%= url %>" method="post">
   <%= token_tag form_authenticity_token %>
 
