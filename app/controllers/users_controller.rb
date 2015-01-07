@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_logged_in, only: [:destroy, :update, :show]
+  before_action :require_logged_in, only: [:destroy, :update, :show, :edit, :update]
   before_action :require_logged_out, only: [:new, :create]
 
   def show
@@ -19,6 +19,19 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       render :new
+    end
+  end
+
+  def edit
+    @user = current_user
+    render :edit
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to root_url
+    else
+      render :edit
     end
   end
 

@@ -14,10 +14,14 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(creds)
-    user = User.where(["username = :u OR email = :e", { u: creds[:username] e: creds[:email] }]).first
-    return user.errors[:identity] = "Invalid username or email" if user.nil?
-    return user if user.is_password?(creds[:password])
-    nil
+    sql_params = "username = :u OR email = :e"
+    sql_vars = { u: creds[:username], e: creds[:email] }
+    search_params = [sql_params, sql_vars]
+    user = User.where(search_params).first_or_initialize
+    if user.id.nil? || !user.is_password?(creds[:password])
+      return user.errors[:identity] = "Invalid username/email and password combination"
+    end
+    user
   end
 
   def is_password?(password)
