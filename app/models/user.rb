@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  validates: :username, :password_digest, :email, :session_token, presence: true
-  validates: :password, length: { minimum: 6, allow_nil: true }
-  validates: :username, :email, uniqueness: true
-  validates: :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
+  validates :username, :password_digest, :email, presence: true
+  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :username, :email, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
 
   def self.generate_token
