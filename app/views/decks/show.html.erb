@@ -1,0 +1,8 @@
+<h1><%= deck.title %></h1>
+<h2><%= deck.description %></h2>
+
+<ul>
+  <% @deck.cards.each do |card| %>
+    <%= render "cards/show" %>
+  <% end %>
+</ul>

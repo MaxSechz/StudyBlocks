@@ -1,0 +1,11 @@
+<h1>My Decks</h1>
+
+<ul>
+  <% @decks.each do |deck| %>
+    <li>
+      <a href="<%= deck_url(deck) %>"><%= deck.title %></a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="<%= new_deck_url %>">Add Deck</a>

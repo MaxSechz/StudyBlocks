@@ -1,0 +1,18 @@
+<% url, button_text, patch = decks_url, "Add", false %>
+<% url, button_text, patch = decks_url, "Update", true if deck.persisted? %>
+
+<form action="<%= url %>" method="post">
+  <%= token_tag form_authenticity_token %>
+
+  <%= hidden_field_tag("_method", "PUT") if patch %>
+
+  <label for="title">Title</label>
+  <input id="title" type="text" name="deck[title]" value="<%= deck.title %>">
+
+  <label for="description">Description</label>
+  <input id="description" type="text" name="deck[description]" value="<%= deck.description %>">
+
+  <label for="course">Course</label>
+  <input type="text" name="deck[course]" value="<%= deck.course_id %>">
+  <button name="button"><%= button_text %> Deck</button>
+</form>
