@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_logged_in, only: [:destroy, :update, :show]
+  before_action :require_logged_out, only: [:new, :create]
 
   def show
     @user = User.find(params[:id])
@@ -24,5 +26,5 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     redirect_to root_url
   end
-  
+
 end
