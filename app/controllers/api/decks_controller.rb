@@ -19,11 +19,10 @@ module Api
 
     def create
       @deck = current_user.decks.new(deck_params)
-
       if @deck.save
         render json: @deck
       else
-        render :new
+        render json: @deck.errors.messages, status: 422
       end
     end
 

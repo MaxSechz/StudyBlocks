@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require study_blocks
+//= require jquery.serializejson.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

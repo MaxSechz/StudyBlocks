@@ -1,0 +1,17 @@
+<label for="title">Title</label>
+<input
+id="title"
+type="text"
+name="title"
+value="<%= deck.escape('title') + deck.errors('title') && deck.errors('title') %>">
+<label for="description">Description</label>
+<input id="description" type="text" name="description" value="<%= deck.escape('description') %>">
+<select name="course_id">
+  <option>None</option>
+  <% courses.each(function (course) { %>
+    <option value="<%= course.id %>" <%= (deck.course_id === course.id) && "selected" %>>
+      <%= course.escape('course_code') %>: <%= course.escape('title') %>
+    </option>
+  <% }); %>
+</select>
+<button>Submit</button>

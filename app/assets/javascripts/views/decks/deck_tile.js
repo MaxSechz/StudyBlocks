@@ -13,7 +13,6 @@ StudyBlocks.Views.DeckTile = Backbone.View.extend({
   },
 
   destroyDeck: function (event) {
-    console.log(event)
     event.preventDefault();
     this.remove()
     this.model.destroy();
