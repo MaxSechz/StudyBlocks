@@ -57,5 +57,5 @@ module Api
       params.require(:deck).permit(:title, :description, :course_id)
     end
   end
-  
+
 end
