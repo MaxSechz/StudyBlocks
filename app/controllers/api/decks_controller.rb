@@ -21,7 +21,7 @@ module Api
       @deck = current_user.decks.new(deck_params)
 
       if @deck.save
-        redirect_to deck_url(@deck)
+        render json: @deck
       else
         render :new
       end
@@ -36,15 +36,15 @@ module Api
       @deck = Deck.find(params[:id])
 
       if @deck.update(deck_params)
-        redirect_to deck_url(@deck)
+        render json: @deck
       else
         render :edit
       end
     end
 
     def destroy
-      Deck.find(params[:id]).destroy
-      redirect_to decks_url
+      @deck = Deck.find(params[:id]).destroy
+      render json: @deck
     end
 
     private

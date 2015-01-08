@@ -3,12 +3,13 @@ StudyBlocks.Collections.Decks = Backbone.Collection.extend({
   model: StudyBlocks.Models.Deck,
 
   getOrFetch: function (id) {
+    var currentCollection = this;
     var targetModel = this.get(id);
     if (!targetModel) {
-      targetModel = new StudyBlocks.Collections.Deck({ id: id });
+      targetModel = new StudyBlocks.Models.Deck({ id: id });
       targetModel.fetch({
         success: function () {
-          this.add(targetModel);
+          currentCollection.add(targetModel);
         }
       });
     } else {

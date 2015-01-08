@@ -7,6 +7,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.decks = options.decks;
+    this.decks.fetch();
   },
 
   deckIndex: function () {
@@ -15,8 +16,8 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckShow: function (id) {
-    var targetDeck = this.decks.getOrFetch(id);
-    showView = new StudyBlocks.Views.DeckShow({ model: targetDeck });
+    var targetDeck = this.decks.getOrFetch(id)
+    var showView = new StudyBlocks.Views.DeckShow({ model: targetDeck });
     this._swapView(showView);
   },
 

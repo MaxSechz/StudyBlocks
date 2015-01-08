@@ -1,5 +1,5 @@
 StudyBlocks.Models.Deck = Backbone.Model.extend({
-  rootUrl: "api/decks",
+  urlRoot: "api/decks",
 
   cards: function () {
     if (!this._cards) {
