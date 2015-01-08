@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   has_many :decks
+  belongs_to :school, inverse_of: :users
+  has_many :registrations
+  has_many :courses, through: :registrations, source: :course
 
   def self.generate_token
     SecureRandom::urlsafe_base64

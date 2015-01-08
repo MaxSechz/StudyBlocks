@@ -14,6 +14,7 @@ class SchoolsController < ApplicationController
 
     if @school.save
       login!(@user)
+      redirect_to root_url
     else
       render "users/new"
     end
@@ -22,6 +23,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:country, :state, :city)
+    params.require(:school).permit(:name, :country, :state, :city)
   end
 end
