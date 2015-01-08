@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  validates: :title, :course_code, :instructor, :school_id, presence: true
+  validates :title, :course_code, :instructor, :school_id, presence: true
 
   belongs_to :school
   has_many :registrations, inverse_of: :course
