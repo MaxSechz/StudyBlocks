@@ -40,7 +40,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:front, :back, :format)
+    params.require(:card).permit(:front, :back, :format, :deck_id)
   end
 
   def get_deck

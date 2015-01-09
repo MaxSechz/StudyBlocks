@@ -53,7 +53,7 @@ module Api
     end
 
     def deck_params
-      params.require(:deck).permit(:title, :description, :course_id,  cards: [ :id, :front, :back, :format ])
+      params.require(:deck).permit(:title, :description, :course_id,  cards: [ :id, :front, :back, :format, :deck_id ])
     end
   end
 
