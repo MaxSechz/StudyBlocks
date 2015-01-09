@@ -1,0 +1,14 @@
+<label for="front">Front</label>
+<textarea id="front" name="front" rows="8" cols="40"><%= card.escape('front') %></textarea>
+
+<label for="back">Back</label>
+<textarea id="back" name="back" rows="8" cols="40"><%= card.escape('back') %></textarea>
+
+<select id="format" name="format">
+  <option value="boolean">True or False</option>
+  <option value="field">Enter Response by Field</option>
+  <option value="choice">Multiple Choice</option>
+  <option value="response">Enter Full Response</option>
+</select>
+
+<button>Add Card</button>
