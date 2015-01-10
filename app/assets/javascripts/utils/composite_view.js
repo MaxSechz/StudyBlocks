@@ -1,14 +1,16 @@
 Backbone.CompositeView = Backbone.View.extend({
   addSubview: function (selector, subview) {
-    console.log(selector)
-    console.log(subview)
-    var ans = this.subviews(selector).some(function (view) {
-      return view.model.id === subview.model.id;
+    var targetSubview;
+    var notSwapped = true;
+    this.subviews(selector).forEach(function (view, idx, subviews) {
+      if (view.model === subview.model) {
+        subviews[idx] = subview;
+        view.remove();
+        notSwapped = false;
+        return;
+      }
     });
-    if (ans) {
-      return;
-    }
-    this.subviews(selector).push(subview);
+    notSwapped && this.subviews(selector).push(subview);
     this.attachSubview(selector, subview.render());
   },
 

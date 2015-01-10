@@ -7,7 +7,7 @@ class DecksController < ApplicationController
   end
 
   def show
-    @deck = Deck.where(id: params[:id]).includes(:cards).first
+    @deck = Deck.where(id: params[:id]).includes(:cards).includes(:course).first
   end
 
   def new

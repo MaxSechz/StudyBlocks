@@ -1,3 +1,3 @@
 StudyBlocks.Models.Course = Backbone.Model.extend({
-  urlRoot: "api/courses"
-})
+  urlRoot: "api/courses",
+});

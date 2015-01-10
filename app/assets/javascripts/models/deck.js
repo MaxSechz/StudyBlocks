@@ -11,6 +11,16 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
     return this._cards;
   },
 
+  course: function () {
+    if (!this._course) {
+      this._course = new StudyBlocks.Models.Course({ id: this.course_id});
+    } else if (!this.isNew() && this._course.isNew()) {
+      this._course.fetch();
+    }
+
+    return this._course;
+  },
+
   errors: function (errorField) {
     this._errors = this._errors || {};
 
@@ -25,6 +35,11 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
     if (response.cards) {
       this.cards().set(response.cards);
       delete response.cards;
+    }
+
+    if (response.course) {
+      this.course().set(response.course);
+      delete response.course;
     }
     return response;
   }

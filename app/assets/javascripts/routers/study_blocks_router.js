@@ -16,7 +16,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckShow: function (id) {
-    var targetDeck = this.decks.getOrFetch(id)
+    var targetDeck = this.decks.getOrFetch(id);
     var showView = new StudyBlocks.Views.DeckShow({ model: targetDeck });
     this._swapView(showView);
   },

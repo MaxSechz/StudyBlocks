@@ -10,10 +10,8 @@ StudyBlocks.Views.DeckForm = Backbone.CompositeView.extend({
   initialize: function () {
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
-    this.listenTo(this.courses, "sync", this.switchCards);
-    this.listenTo(this.model.cards(), "sync", this.renderCards);
-    // this.listenTo(this.model.cards(), "add", this.renderCards)
-    // this.renderCards()
+    this.listenTo(this.courses, "sync", this.render);
+    this.listenTo(this.model.cards(), "add", this.renderCards);
   },
 
   render: function () {
@@ -24,9 +22,6 @@ StudyBlocks.Views.DeckForm = Backbone.CompositeView.extend({
   },
 
   addCard: function (card) {
-    // if (card.isNew()) {
-    //   return;
-    // }
     var cardView = new StudyBlocks.Views.CardShow({ model: card });
     this.addSubview('.cards-preview', cardView);
   },
@@ -52,17 +47,6 @@ StudyBlocks.Views.DeckForm = Backbone.CompositeView.extend({
       }
     });
   },
-
-  // switchCards: function () {
-  //   for (var attr in this.subviews()) {
-  //     subs = this.subviews()[attr];
-  //     for (var i = subs.length; i > 0; i = subs.length) {
-  //       this.removeSubview('.cards', subs[0]);
-  //     }
-  //   }
-  //   this.renderCards();
-  // },
-
 
   newCard: function (event) {
     event.preventDefault();
