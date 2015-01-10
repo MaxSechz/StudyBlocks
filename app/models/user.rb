@@ -22,18 +22,24 @@ class User < ActiveRecord::Base
     sql_vars = { u: creds[:username], e: creds[:email] }
     search_params = [sql_params, sql_vars]
     user = User.where(search_params).first_or_initialize
-    user.validate_password_and_name(creds[:password])
+    user.test_password_set(creds[:password])
+    user
   end
 
-  def validate_password_and_name(password)
-    if self.id.nil? || !self.is_password?(password)
+  def valid_password_and_name?
+    if self.id.nil? || !self.is_password?(@password)
       self.errors.add(:base, "Invalid username/email and password combination")
+      return false
     end
-    self
+    true
   end
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def test_password_set(test_password)
+    @password = test_password
   end
 
   def password=(new_pass)
