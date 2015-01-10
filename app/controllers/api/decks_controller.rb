@@ -1,5 +1,6 @@
 module Api
   class DecksController < ApplicationController
+    before_action :require_logged_in
     before_action :ensure_deck_belongs_to_user, only: [:edit, :update, :destroy]
 
     def index
@@ -37,7 +38,7 @@ module Api
       if @deck.update(deck_params)
         render json: @deck
       else
-        render :edit
+        render json: @deck.errors.messages, status: 422
       end
     end
 
@@ -53,7 +54,7 @@ module Api
     end
 
     def deck_params
-      params.require(:deck).permit(:title, :description, :course_id,  cards: [ :id, :front, :back, :format, :deck_id ])
+      params.require(:deck).permit(:title, :description, :course_id,  cards_attributes: [ :id, :front, :back, :format, :deck_id ])
     end
   end
 

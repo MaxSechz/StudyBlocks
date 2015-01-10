@@ -13,7 +13,7 @@ StudyBlocks.Collections.Decks = Backbone.Collection.extend({
         }
       });
     } else {
-      targetModel.fetch()
+      targetModel.fetch();
     }
 
     return targetModel;

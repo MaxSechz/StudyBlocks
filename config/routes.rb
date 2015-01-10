@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :decks do
-      resources :cards, except: :index
+      resources :cards
     end
 
     resources :schools, only: [:index, :show, :create]

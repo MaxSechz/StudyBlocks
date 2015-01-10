@@ -1,53 +1,61 @@
-class CardsController < ApplicationController
-  before_action :get_deck
-  before_action :ensure_card_belongs_to_user
+module Api
+  class CardsController < ApplicationController
+    before_action :get_deck
+    before_action :ensure_card_belongs_to_user
 
-  def new
-    @card = Card.new
-    render :new
-  end
+    def index
+      @cards = @deck.cards
+      render json: @cards
+    end
 
-  def create
-    @card = @deck.cards.new(card_params)
-
-    if @card.save
-      redirect_to deck_url(@deck)
-    else
+    def new
+      @card = Card.new
       render :new
     end
-  end
 
-  def edit
-    @card = Card.find(params[:id])
-    render :edit
-  end
+    def create
+      @card = @deck.cards.new(card_params)
 
-  def update
-    @card = Card.find(params[:id])
+      if @card.save
+        render json: @card
+      else
+        render json: @card.errors.messsages
+      end
+    end
 
-    if @card.update(card_params)
-      redirect_to deck_url(@card.deck_id)
-    else
+    def edit
+      @card = Card.find(params[:id])
       render :edit
+    end
+
+    def update
+      @card = Card.find(params[:id])
+
+      if @card.update(card_params)
+        render json: @card
+      else
+        render json: @card.errors.messages
+      end
+    end
+
+    def destroy
+      @card = Card.find(params[:id]).destroy
+      render json: @card
+    end
+
+    private
+
+    def card_params
+      params.require(:card).permit(:front, :back, :format, :deck_id)
+    end
+
+    def get_deck
+      @deck = Deck.find(params[:deck_id])
+    end
+
+    def ensure_card_belongs_to_user
+      redirect_to decks_url unless @deck.user_id == current_user.id
     end
   end
 
-  def destroy
-    @card = Card.find(params[:id]).destroy
-    redirect_to deck_url(@card.deck_id)
-  end
-
-  private
-
-  def card_params
-    params.require(:card).permit(:front, :back, :format, :deck_id)
-  end
-
-  def get_deck
-    @deck = Deck.find(params[:deck_id])
-  end
-
-  def ensure_card_belongs_to_user
-    redirect_to decks_url unless @deck.user_id == current_user.id
-  end
 end

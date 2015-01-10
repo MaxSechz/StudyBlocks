@@ -1,2 +1,11 @@
-<a href="<%= "#/decks/" + deck.id %>"><%= deck.escape('title') %></a>
-<button class="delete">Delete</button>
+<ul class="deck-attrs">
+  <li>
+    <a href="<%= "#/decks/" + deck.id %>"><%= deck.escape('title') %></a>
+  </li>
+  <li>
+    <button class="delete">Delete</button>
+  </li>
+  <li>
+    <button class="edit">Edit</button>
+  </li>
+</ul>

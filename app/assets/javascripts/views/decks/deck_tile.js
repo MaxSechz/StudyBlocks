@@ -1,9 +1,10 @@
-StudyBlocks.Views.DeckTile = Backbone.View.extend({
+StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   tagName: "li",
   tagClass: "deck",
   template: JST["decks/tile"],
   events: {
-    "click .delete": "destroyDeck"
+    "click .delete": "destroyDeck",
+    "click .edit": "editDeck"
   },
 
   render: function () {
@@ -14,7 +15,13 @@ StudyBlocks.Views.DeckTile = Backbone.View.extend({
 
   destroyDeck: function (event) {
     event.preventDefault();
-    this.remove()
+    this.remove();
     this.model.destroy();
+  },
+
+  editDeck: function (event) {
+    event.preventDefault();
+    var formView = new StudyBlocks.Views.DeckForm({ model: this.model });
+    this.addSubview(".deck-attrs", formView);
   }
-})
+});

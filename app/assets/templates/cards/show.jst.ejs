@@ -1,2 +1,14 @@
-<strong><%= card.escape('front') %></strong>
-<strong><%= card.escape('back') %></strong>
+<ul class="card-attrs">
+  <li>
+    <strong><%= card.escape('front') %></strong>
+  </li>
+  <li>
+    <strong><%= card.escape('back') %></strong>
+  </li>
+  <li>
+    <button class="delete">Delete</button>
+  </li>
+  <li>
+    <button class="edit">Edit</button>
+  </li>
+</ul>

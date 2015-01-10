@@ -3,7 +3,9 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
 
   cards: function () {
     if (!this._cards) {
-      this._cards = new StudyBlocks.Collections.Cards();
+      this._cards = new StudyBlocks.Collections.Cards([], { deck: this });
+    } else if (!this.isNew() && this._cards.isEmpty()) {
+      this._cards.fetch();
     }
 
     return this._cards;
@@ -22,7 +24,7 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
   parse: function (response) {
     if (response.cards) {
       this.cards().set(response.cards);
-      delete response.cards
+      delete response.cards;
     }
     return response;
   }

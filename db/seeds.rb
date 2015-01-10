@@ -10,7 +10,8 @@ fandm = School.create(name: "Franklin & Marshall", country: "USA", state: "Penns
 me = fandm.users.create(username: "Maxwell", password: "maxwell", email: "msechzer@example.com")
 test_course = fandm.courses.create(title: "Intro to Testing Decks", course_code: "app110", instructor: "Test Guy")
 test_deck = me.decks.create(title: "Test", description: "This is the Test Deck", course_id: test_course.id)
+me.registrations.create(course_id: test_course.id)
 test_deck.cards.create([
   {front: "Front side test", back: "Back side test", format: "response"},
-  {front: "Front side test", back: "Back side test", format: "response"}
+  {front: "Front side test2", back: "Back side test2", format: "response"}
 ])
