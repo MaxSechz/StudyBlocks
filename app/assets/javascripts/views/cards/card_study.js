@@ -4,7 +4,6 @@ StudyBlocks.Views.CardStudy = Backbone.View.extend({
   template: JST["cards/study"],
 
   render: function () {
-    console.log(this.model)
     var content = this.template({ card: this.model });
     this.$el.html(content);
     return this;

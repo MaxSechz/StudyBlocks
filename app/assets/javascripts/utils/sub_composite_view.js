@@ -13,6 +13,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
     }
     return renderObject;
   },
+  
   subModelView: function (obj) {
     return new StudyBlocks.Views[this.subModelViewName](obj);
   },

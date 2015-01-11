@@ -29,7 +29,6 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   deckStudy: function (id) {
     var targetDeck = this.decks.getOrFetch(id);
-    console.log(targetDeck);
     var studyView = new StudyBlocks.Views.DeckStudy({
       model: targetDeck,
       collection: targetDeck.cards()
@@ -38,7 +37,12 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckReview: function (id) {
-
+    var targetDeck = this.decks.getOrFetch(id);
+    var studyView = new StudyBlocks.Views.DeckReview({
+      model: targetDeck,
+      collection: targetDeck.cards()
+    });
+    this._swapView(studyView);
   },
 
   deckTest: function (id) {
