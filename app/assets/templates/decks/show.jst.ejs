@@ -1,5 +1,8 @@
 <button class="new">Add Card</button>
 <button class="delete">Delete</button>
+<a href="<%= deck.linkUrl('study') %>" class="study">Study</a>
+<a href="<%= deck.linkUrl('review') %>" class="review">Review</a>
+<a href="<%= deck.linkUrl('test') %>" class="test">Test</a>
 <h1><%= deck.escape('title') %></h1>
 <h2><%= deck.escape('description') %></h2>
 <h3><%= deck.course().escape('title') %></h3>

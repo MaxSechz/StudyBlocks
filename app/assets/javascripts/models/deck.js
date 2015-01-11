@@ -1,6 +1,12 @@
 StudyBlocks.Models.Deck = Backbone.Model.extend({
   urlRoot: "api/decks",
 
+  linkUrl: function (endPoint) {
+    endPoint = endPoint || '';
+    endPoint = endPoint && "/" + endPoint;
+    return "#/decks/" + this.id + endPoint;
+  },
+
   cards: function () {
     if (!this._cards) {
       this._cards = new StudyBlocks.Collections.Cards([], { deck: this });

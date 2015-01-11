@@ -2,6 +2,9 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   routes: {
     '': "deckIndex",
     'decks/:id': "deckShow",
+    'decks/:id/study': "deckStudy",
+    'decks/:id/review': "deckReview",
+    'decks/:id/test': "deckTest"
   },
 
   initialize: function (options) {
@@ -17,8 +20,29 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   deckShow: function (id) {
     var targetDeck = this.decks.getOrFetch(id);
-    var showView = new StudyBlocks.Views.DeckShow({ model: targetDeck });
+    var showView = new StudyBlocks.Views.DeckShow({
+      model: targetDeck,
+      collection: targetDeck.cards()
+    });
     this._swapView(showView);
+  },
+
+  deckStudy: function (id) {
+    var targetDeck = this.decks.getOrFetch(id);
+    console.log(targetDeck);
+    var studyView = new StudyBlocks.Views.DeckStudy({
+      model: targetDeck,
+      collection: targetDeck.cards()
+    });
+    this._swapView(studyView);
+  },
+
+  deckReview: function (id) {
+
+  },
+
+  deckTest: function (id) {
+
   },
 
   _swapView: function (view) {

@@ -21,7 +21,10 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
 
   editDeck: function (event) {
     event.preventDefault();
-    var formView = new StudyBlocks.Views.DeckForm({ model: this.model });
+    var formView = new StudyBlocks.Views.DeckForm({
+      model: this.model,
+      collection: this.model.cards()
+    });
     this.addSubview(".deck-attrs", formView);
   }
 });

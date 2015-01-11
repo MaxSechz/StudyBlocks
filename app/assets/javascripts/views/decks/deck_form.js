@@ -1,4 +1,4 @@
-StudyBlocks.Views.DeckForm = Backbone.CompositeView.extend({
+StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   tagName: "form",
   className: "deck-form",
   template: JST["decks/form"],
@@ -6,28 +6,18 @@ StudyBlocks.Views.DeckForm = Backbone.CompositeView.extend({
     "submit": "submit",
     "click .new-card": "newCard"
   },
+  subModelViewName: "CardShow",
+  renderThis: {
+    deck: 'model',
+    courses: 'courses'
+  },
+  selector: '.cards-preview',
 
   initialize: function () {
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
     this.listenTo(this.courses, "sync", this.render);
-    this.listenTo(this.model.cards(), "add", this.renderCards);
-  },
-
-  render: function () {
-    var content = this.template({ deck: this.model, courses: this.courses });
-    this.$el.html(content);
-    this.renderCards();
-    return this;
-  },
-
-  addCard: function (card) {
-    var cardView = new StudyBlocks.Views.CardShow({ model: card });
-    this.addSubview('.cards-preview', cardView);
-  },
-
-  renderCards: function () {
-    this.model.cards().each(this.addCard.bind(this));
+    this.listenTo(this.model.cards(), "sync add", this.renderCollection);
   },
 
   submit: function (event) {
