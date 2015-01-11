@@ -3,4 +3,5 @@ class Card < ActiveRecord::Base
   validates :front, :back, :format, :deck, presence: true
   validates :format, inclusion: { in: FORMATS }
   belongs_to :deck, inverse_of: :cards
+  has_many :tests
 end

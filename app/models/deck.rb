@@ -5,8 +5,13 @@ class Deck < ActiveRecord::Base
   belongs_to :user
   belongs_to :course
   has_many :cards, inverse_of: :deck
+  has_many :tests
 
   accepts_nested_attributes_for :cards
+
+  def scores
+    tests.map { |test| test.score }
+  end
 
   private
 
