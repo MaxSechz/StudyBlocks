@@ -33,6 +33,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url if logged_in?
   end
 
+  def get_deck
+    @deck = Deck.find(params[:deck_id])
+  end
+  
   def user_params
     new_params = params.require(:user).permit(:username, :password, :email, :school_id)
     new_params[:password].empty? ? new_params.except(:password) : new_params

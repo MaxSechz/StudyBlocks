@@ -43,10 +43,6 @@ class CardsController < ApplicationController
     params.require(:card).permit(:front, :back, :format, :deck_id)
   end
 
-  def get_deck
-    @deck = Deck.find(params[:deck_id])
-  end
-
   def ensure_card_belongs_to_user
     redirect_to decks_url unless @deck.user_id == current_user.id
   end
