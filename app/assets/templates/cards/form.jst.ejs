@@ -2,13 +2,17 @@
 <textarea id="front" name="front" rows="8" cols="40"><%= card.escape('front') %></textarea>
 
 <label for="back">Back</label>
-<textarea id="back" name="back" rows="8" cols="40"><%= card.escape('back') %></textarea>
+<%= template({card: card}) %>
 
-<select id="format" name="format">
-  <option value="response">Enter Full Response</option>
-  <option value="boolean">True or False</option>
-  <option value="field">Enter Response by Field</option>
-  <option value="choice">Multiple Choice</option>
-</select>
+<label>Enter Full Response
+  <input type="radio" name="format" value="response">
+</label>True or False
+  <input type="radio" name="format" value="boolean">
+<label>Enter Response by Field
+  <input type="radio" name="format" value="field">
+</label>
+<label>Multiple Choice
+<input type="radio" name="format" value="choice">
+</label>
 
 <button>Add Card</button>
