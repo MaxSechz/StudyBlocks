@@ -10,10 +10,7 @@ StudyBlocks.Models.Test = Backbone.Model.extend({
   responses: function () {
     if (!this._responses) {
       this._responses = new StudyBlocks.Collections.Responses([], { test: this });
-    } else if (!this.isNew() && this._responses.isEmpty()) {
-      this._responses.fetch();
     }
-
     return this._responses;
   },
 
@@ -22,6 +19,22 @@ StudyBlocks.Models.Test = Backbone.Model.extend({
       this.deck = response.deck;
       delete response.deck;
     }
+    if (response.responses) {
+      this.responses().set(response.responses);
+      delete response.responses;
+    }
+    if (response.score) {
+      this.score = response.score;
+      delete response.score;
+    }
     return response;
-  }
+  },
+
+  // score: function () {
+  //   var results = this.responses().countBy(function (response) {
+  //     console.log(response.result)
+  //     return response.result;
+  //   });
+  //   return results.true / this.responses.length;
+  // }
 });

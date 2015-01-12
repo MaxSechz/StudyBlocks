@@ -7,11 +7,9 @@ StudyBlocks.Models.Response = Backbone.Model.extend({
     this.test = options.test;
   },
 
-  parse: function (response, options) {
-    thisTest = this.test;
-    response.forEach(function (obj) {
-      obj.test = thisTest;
-    });
-    return response;
-  },
+  parse: function (response) {
+    if (response.result) {
+      console.log(response.result)
+    }
+  }
 });

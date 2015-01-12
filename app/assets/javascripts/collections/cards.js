@@ -10,6 +10,7 @@ StudyBlocks.Collections.Cards = Backbone.Collection.extend({
 
   parse: function (response, options) {
     thisDeck = this.deck;
+    console.log(response)
     response.forEach(function (obj) {
       obj.deck = thisDeck;
     });

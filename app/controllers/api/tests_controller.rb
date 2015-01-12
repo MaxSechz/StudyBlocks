@@ -4,7 +4,7 @@ module Api
 
     def index
       @tests = @deck.tests
-      render json: @tests
+      render :index
     end
 
     def show
@@ -13,16 +13,16 @@ module Api
     end
 
     def create
-      @responses = @deck.test.new.responses.new(response_params)
-      if @responses.save
+      @test = @deck.tests.new(test_params)
+      if @test.save
         render :show
       else
-        render json: responses.errors.messages, status: 422
+        render json: @test.errors.messages, status: 422
       end
     end
 
-    def response_params
-      params.require(:responses).permit([:response_text, :card_id])
+    def test_params
+      params.require(:test).permit(responses_attributes: [:id, :response_text, :card_id])
     end
   end
 end

@@ -6,6 +6,6 @@
 <h1><%= deck.escape('title') %></h1>
 <h2><%= deck.escape('description') %></h2>
 <h3><%= deck.course().escape('title') %></h3>
-
+<h3><a href="<%= deck.linkUrl('tests')%>">Progress: <%= deck.progress() %>%</a></h3>
 <ul class="cards">
 </ul>

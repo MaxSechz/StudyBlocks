@@ -13,6 +13,10 @@ StudyBlocks.Collections.Tests = Backbone.Collection.extend({
       this.deck = response.deck;
       delete response.deck;
     }
+    thisDeck = this.deck;
+    response.forEach(function (obj) {
+      obj.deck = thisDeck;
+    });
     return response;
   }
 });

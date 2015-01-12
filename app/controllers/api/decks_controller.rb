@@ -9,7 +9,7 @@ module Api
     end
 
     def show
-      @deck = Deck.includes(:cards).find(params[:id])
+      @deck = Deck.includes(:cards, :tests).find(params[:id])
       render :show
     end
 

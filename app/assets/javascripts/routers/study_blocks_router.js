@@ -4,7 +4,8 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     'decks/:id': "deckShow",
     'decks/:id/study': "deckStudy",
     'decks/:id/review': "deckReview",
-    'decks/:id/test': "deckTest"
+    'decks/:id/test': "deckTest",
+    'decks/:id/tests': 'testIndex'
   },
 
   initialize: function (options) {
@@ -46,7 +47,21 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckTest: function (id) {
+    var targetDeck = this.decks.getOrFetch(id);
+    var emptyTest = new StudyBlocks.Models.Test({}, { deck: targetDeck });
+    var studyView = new StudyBlocks.Views.DeckTest({
+      model: emptyTest,
+      collection: targetDeck.cards()
+    });
+    this._swapView(studyView);
+  },
 
+  testIndex: function (id) {
+    var targetDeck = this.decks.getOrFetch(id);
+    var deckTests = new StudyBlocks.Collections.Tests({}, { deck: targetDeck });
+    deckTests.fetch();
+    var indexView = new StudyBlocks.Views.TestIndex({ collection: deckTests});
+    this._swapView(indexView);
   },
 
   _swapView: function (view) {

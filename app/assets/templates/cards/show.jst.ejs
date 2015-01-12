@@ -6,6 +6,10 @@
     <strong><%= card.escape('back') %></strong>
   </li>
   <li>
+    <% console.log(card.averageScore) %>
+    <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
+  </li>
+  <li>
     <button class="delete">Delete</button>
   </li>
   <li>

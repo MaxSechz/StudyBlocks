@@ -37,6 +37,16 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
     }
   },
 
+  tests: function () {
+    if (!this._tests) {
+      this._tests = new StudyBlocks.Collections.Tests([], { deck: this });
+    } else if (!this.isNew() && this._tests.isEmpty()) {
+      this._tests.fetch();
+    }
+
+    return this._tests;
+  },
+
   parse: function (response) {
     if (response.cards) {
       this.cards().set(response.cards);
@@ -47,6 +57,15 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
       this.course().set(response.course);
       delete response.course;
     }
+
+    if (response.scores) {
+      this.scores = response.scores;
+      delete response.scores;
+    }
     return response;
+  },
+
+  progress: function () {
+    return _.last(this.scores);
   }
 });
