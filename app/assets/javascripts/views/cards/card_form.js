@@ -14,11 +14,13 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   },
 
   initialize: function (options) {
+    console.log(this.model)
     this.submit = options.submit;
     this.selected = this.model.escape('format');
   },
 
   render: function () {
+    console.log(this.model)
     // this.setSelected();
     var content = this.template({
       card: this.model,

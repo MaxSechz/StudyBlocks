@@ -3,8 +3,8 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
   className: "card",
   template: JST["cards/show"],
   events: {
-    "click .delete": "destroyCard",
-    "click .edit": "editCard"
+    "click .delete-card": "destroyCard",
+    "click .edit-card": "editCard"
   },
 
   initialize: function () {
@@ -24,11 +24,13 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
   },
 
   editCard: function (event) {
+    // console.log(event)
     event.preventDefault();
     var formView = new StudyBlocks.Views.CardForm({
       model: this.model,
       submit: true
     });
+    console.log(event)
     this.addSubview('.card-attrs', formView);
   }
 });

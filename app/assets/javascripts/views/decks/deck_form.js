@@ -17,7 +17,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
     this.listenTo(this.courses, "sync", this.render);
-    this.listenTo(this.model.cards(), "sync add", this.renderCollection);
+    this.listenToOnce(this.model.cards(), "sync add", this.renderCollection);
   },
 
   submit: function (event) {

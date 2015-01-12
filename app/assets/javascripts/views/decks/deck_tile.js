@@ -3,8 +3,8 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   tagClass: "deck",
   template: JST["decks/tile"],
   events: {
-    "click .delete": "destroyDeck",
-    "click .edit": "editDeck"
+    "click .delete-deck": "destroyDeck",
+    "click .edit-deck": "editDeck"
   },
 
   render: function () {
