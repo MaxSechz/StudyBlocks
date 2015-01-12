@@ -31,6 +31,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   },
 
   renderCollection: function () {
+    console.log(this.options)
     this.collection.each(this.addModelView.bind(this));
   },
 

@@ -82,6 +82,9 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
 
   changeCardType: function (event) {
     this.selected = $(event.currentTarget).val();
-    this.render();
+    var content = this.subTemplates[this.selected]({
+      card: this.model
+    });
+    this.$el.find("div.back").html(content);
   }
 });

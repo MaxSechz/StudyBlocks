@@ -2,7 +2,9 @@
 <textarea id="front" name="front" rows="8" cols="40"><%= card.escape('front') %></textarea>
 
 <label for="back">Back</label>
-<%= template({card: card}) %>
+<div class="back">
+  <%= template({card: card}) %>
+</div>
 
 <label>Enter Full Response
   <input class="format" type="radio" name="format" value="response">

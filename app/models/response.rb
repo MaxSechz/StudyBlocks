@@ -5,6 +5,11 @@ class Response < ActiveRecord::Base
   belongs_to :test, inverse_of: :responses
 
   def result
-    self.response_text == self.card.back
+    if self.card.format == "field"
+      back_hash = JSON.parse(self.card.back)
+      return back_hash.values.any? { |value| value == self.response_text}
+    else
+      self.response_text == self.card.back
+    end
   end
 end

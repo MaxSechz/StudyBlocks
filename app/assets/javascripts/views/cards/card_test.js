@@ -3,8 +3,14 @@ StudyBlocks.Views.CardTest = Backbone.View.extend({
   className: 'card',
   template: JST['cards/test'],
 
+  initialize: function (options) {
+    this.choices = options.choices[this.model.id];
+  },
   render: function () {
-    var content = this.template({ card: this.model });
+    var content = this.template({
+      card: this.model,
+      choices: this.choices
+    });
     this.$el.html(content);
     return this;
   }

@@ -13,7 +13,25 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
 
   initialize: function () {
     this.deck = this.model.deck;
-    this.listenTo(this.deck, "sync", this.render);
+    this.listenTo(this.deck.cards(), "sync", this.setupChoices);
+  },
+
+  setupChoices: function () {
+    var choices = {};
+    var cards = this.deck.cards().models;
+    var choiceCards = [];
+    for (var i = 0; i < cards.length; i++) {
+      if (cards[i].escape('format') === "choice") {
+        choiceCards.push(cards[i]);
+        choices[cards[i].id] = [cards[i]];
+      }
+    }
+    for (var card in choices) {
+      choices[card] = _.sample(choiceCards, 4);
+      choices[card] = _.uniq(choices[card]);
+    }
+    this.options = { choices: choices };
+    this.render();
   },
 
   submitTest: function (event) {
@@ -34,8 +52,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
         Backbone.history.navigate(thisDeck.linkUrl('tests'), { trigger: true });
       },
       error: function (model, response) {
-        console.log(model)
-        console.log(response)
       }
     });
   }

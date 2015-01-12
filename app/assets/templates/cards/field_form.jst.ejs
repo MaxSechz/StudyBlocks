@@ -1,12 +1,10 @@
-<div class="back">
-  <% try { %>
-    <% var back = JSON.parse(card.get('back')) %>
-    <% for (var field in back) { %>
-      <div class="field">
-        <input type="text" name="field" value="<%= field %>">
-        <input type="text" name="value" value="<%= back[field] %>">
-      </div>
-    <% } %>
-  <% } catch(error) {console.log(error)} %>
-  <button class="new-field">Add Field</button>
-</div>
+<% try { %>
+  <% var back = card.get('back') %>
+  <% for (var field in back) { %>
+    <div class="field">
+      <input type="text" name="field" value="<%= field %>">
+      <input type="text" name="value" value="<%= back[field] %>">
+    </div>
+  <% } %>
+<% } catch(error) {console.log(error)} %>
+<button class="new-field">Add Field</button>
