@@ -57,6 +57,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
       $definition.attr('name', "back[" + $field.val() + "]");
     });
     var attrs = this.$el.serializeJSON();
+    console.log(attrs)
     if (typeof attrs.back === "object") {
       attrs.back = JSON.stringify(attrs.back);
     }

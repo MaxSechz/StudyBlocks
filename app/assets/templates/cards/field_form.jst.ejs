@@ -2,8 +2,8 @@
   <% var back = card.get('back') %>
   <% for (var field in back) { %>
     <div class="field">
-      <input type="text" name="field" value="<%= field %>">
-      <input type="text" name="value" value="<%= back[field] %>">
+      <input type="text" name="back[<%= field %>]" value="<%= field %>">
+      <input type="text" name="back[<%= field %>]" value="<%= back[field] %>">
     </div>
   <% } %>
 <% } catch(error) {console.log(error)} %>
