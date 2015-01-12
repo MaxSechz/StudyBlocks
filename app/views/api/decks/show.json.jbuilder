@@ -5,6 +5,10 @@ json.cards @deck.cards do |card|
   json.averageScore card.average_score
 end
 
-json.scores @deck.scores
+if @deck.scores
+  json.scores @deck.scores
+end
 
-json.course @deck.course, :id, :title, :course_code, :instructor, :school_id if @deck.course
+if @deck.course
+  json.course @deck.course, :id, :title, :course_code, :instructor, :school_id if @deck.course
+end

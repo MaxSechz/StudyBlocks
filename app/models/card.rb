@@ -6,6 +6,8 @@ class Card < ActiveRecord::Base
   has_many :responses
 
   def average_score
+    responses = self.responses.count
+    return responses if responses == 0
     results = self.responses.map {|response| response.result}
     results.count(true) * 100 / self.responses.count
   end
