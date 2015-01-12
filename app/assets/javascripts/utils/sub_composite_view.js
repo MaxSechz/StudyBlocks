@@ -4,6 +4,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   renderThis: {
     model: ''
   },
+  options: {},
 
   renderObject: function () {
     var renderObject = {};
@@ -15,11 +16,14 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   },
 
   subModelView: function (obj) {
+    var realOptions = {};
+    for (var attr in this.options) {
+      obj[attr] = this.options[attr];
+    }
     return new StudyBlocks.Views[this.subModelViewName](obj);
   },
 
   render: function () {
-    console.log(this.model)
     var content = this.template(this.renderObject());
     this.$el.html(content);
     this.renderCollection();

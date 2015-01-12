@@ -8,6 +8,7 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    console.log(this.model.cards())
     var content = this.template({ deck : this.model });
     this.$el.html(content);
     return this;

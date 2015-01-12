@@ -7,6 +7,10 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
     this.deck = options.deck;
   },
 
+  // toJSON: function () {
+  //   console.log(this);
+  // },
+
   parse: function (response, options) {
     if (response.deck) {
       this.deck = response.deck;
