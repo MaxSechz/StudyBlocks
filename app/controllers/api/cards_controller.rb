@@ -19,7 +19,7 @@ module Api
       if @card.save
         render json: @card
       else
-        render json: @card.errors.messsages
+        render json: @card.errors
       end
     end
 

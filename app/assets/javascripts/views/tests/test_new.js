@@ -21,7 +21,7 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
     var responses = this.subviews(this.selector).map(function (subview) {
       var response = {
         card_id: subview.model.id,
-        response_text: subview.$("input").val()
+        response_text: subview.$("input, textarea").val()
       };
       return response;
     });
@@ -31,9 +31,11 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
     this.model.set(data);
     this.model.save({}, {
       success: function (model, response) {
-        Backbone.history.navigate(thisDeck.linkUrl(), { trigger: true });
+        Backbone.history.navigate(thisDeck.linkUrl('tests'), { trigger: true });
       },
       error: function (model, response) {
+        console.log(model)
+        console.log(response)
       }
     });
   }

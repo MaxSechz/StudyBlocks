@@ -3,11 +3,19 @@
     <strong><%= card.escape('front') %></strong>
   </li>
   <li>
-    <strong><%= card.escape('back') %></strong>
+      <% if (typeof card.get('back') === "object") { %>
+        <% for (var attr in card.get('back')) { %>
+          <strong><%= attr %>: <%= card.get('back')[attr] %></strong>
+          <% } %>
+      <% } else { %>
+        <strong><%= card.escape('back') %></strong>
+      <% } %>
   </li>
-  <li>
-    <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
-  </li>
+  <% if (card.get('averageScore')) { %>
+    <li>
+      <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
+    </li>
+  <% } %>
   <li>
     <button class="delete-card">Delete</button>
   </li>

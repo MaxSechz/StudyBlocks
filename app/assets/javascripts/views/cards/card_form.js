@@ -5,7 +5,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   events: {
     "submit": "addCard",
     "click .new-field": "addField",
-    "click input[type='radio']": "changeCardType"
+    "click .format": "changeCardType"
   },
   subTemplates: {
     response: JST["cards/text_form"],
@@ -16,7 +16,11 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.submit = options.submit;
-    this.selected = this.model.escape('format');
+    if (this.model.escape('format')) {
+      this.selected = this.model.escape('format');
+    } else {
+      this.selected = 'response';
+    }
   },
 
   render: function () {
@@ -49,10 +53,13 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     this.$el.find(".field").each(function () {
       var $field = $(this).find("input[name='field']");
       var $definition = $(this).find("input[name='definition']");
-      $field.attr('name', "back[" + $field.val() + "][field]");
-      $definition.attr('name', "back[" + $field.val() + "][definition]");
+      $field.attr('name', "back[" + $field.val() + "]");
+      $definition.attr('name', "back[" + $field.val() + "]");
     });
     var attrs = this.$el.serializeJSON();
+    if (typeof attrs.back === "object") {
+      attrs.back = JSON.stringify(attrs.back);
+    }
     var thisForm = this;
     var thisDeck = this.model.deck;
     this.model.set(attrs);
@@ -61,6 +68,10 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
         success: function (model, response) {
           model.deck = thisDeck;
           thisDeck.cards().add(model, {merge: true});
+        },
+        error: function (model, response) {
+          console.log(model);
+          console.log(response);
         }
       });
     } else {

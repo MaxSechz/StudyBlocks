@@ -2,5 +2,17 @@
   <li>
     <%= card.escape('front') %>
   </li>
-  <input type="text" name="response_text" value="">
+  <% if (card.get('format') === 'boolean') { %>
+    <label for="true">True</label>
+    <input class="true" type="radio" name="response_text" value="true">
+    <label for="false">False</label>
+    <input class="false" type="radio" name="response_text" value="false">
+  <% } else if (card.get('format') === 'field') { %>
+    <% for (var attr in JSON.parse(card.get('back'))) { %>
+      <label for="<%= attr %>"><%= attr %></label>
+      <input class="<%= attr %>" type="text" name="response_text" value="">
+    <% } %>
+  <% } else { %>
+    <textarea name="response_text"></textarea>
+  <% } %>
 </ul>
