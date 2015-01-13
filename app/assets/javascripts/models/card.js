@@ -12,6 +12,9 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
       this.deck = response.deck;
       delete response.deck;
     }
+    if (response.image === "/images/original/missing.png") {
+      delete response.image
+    }
     try {
       response.back = JSON.parse(response.back);
     } catch(error) {}
