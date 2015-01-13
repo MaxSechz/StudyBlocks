@@ -5,7 +5,8 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   events: {
     "submit": "addCard",
     "click .new-field": "addField",
-    "click .format": "changeCardType"
+    "click .format": "changeCardType",
+    "change #input-image": "fileInputChange"
   },
   subTemplates: {
     response: JST["cards/text_form"],
@@ -57,7 +58,6 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
       $definition.attr('name', "back[" + $field.val() + "]");
     });
     var attrs = this.$el.serializeJSON();
-    console.log(attrs)
     if (typeof attrs.back === "object") {
       attrs.back = JSON.stringify(attrs.back);
     }
@@ -87,5 +87,32 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
       card: this.model
     });
     this.$el.find("div.back").html(content);
+  },
+
+  fileInputChange: function(event){
+
+    var that = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function(){
+      that._updatePreview(reader.result);
+      that.model.set('image', reader.result);
+
+      console.log(that.model);
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this._updatePreview("");
+      delete this.model.unset('image');
+
+      console.log(this.model);
+    }
+  },
+
+  _updatePreview: function(src){
+    this.$el.find("#preview-image").attr("src", src);
   }
 });

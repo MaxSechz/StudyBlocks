@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :logged_in?, :current_user
-  # wrap_parameters false
+  # wrap_parameters
   private
 
   def current_user
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   def get_deck
     @deck = Deck.find(params[:deck_id])
   end
-  
+
   def user_params
     new_params = params.require(:user).permit(:username, :password, :email, :school_id)
     new_params[:password].empty? ? new_params.except(:password) : new_params

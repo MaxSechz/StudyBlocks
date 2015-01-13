@@ -2,6 +2,10 @@ class Card < ActiveRecord::Base
   FORMATS = %w(boolean field choice response)
   validates :front, :back, :format, :deck, presence: true
   validates :format, inclusion: { in: FORMATS }
+
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   belongs_to :deck, inverse_of: :cards
   has_many :responses
 

@@ -1,6 +1,11 @@
 <label for="front">Front</label>
 <textarea id="front" name="front" rows="8" cols="40"><%= card.escape('front') %></textarea>
 
+<label for="image">Image</label>
+<input type="file" name="image" id="input-image">
+
+<img src="" width="50" id="preview-image">
+
 <label for="back">Back</label>
 <div class="back">
   <%= template({card: card}) %>

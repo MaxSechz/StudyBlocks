@@ -3,6 +3,8 @@ module Api
     before_action :get_deck
     before_action :ensure_card_belongs_to_user
 
+    wrap_parameters :card, include: [:front, :back, :format, :deck_id, :image]
+
     def index
       @cards = @deck.cards
       render json: @cards
@@ -46,7 +48,7 @@ module Api
     private
 
     def card_params
-      params.require(:card).permit(:front, :back, :format, :deck_id)
+      params.require(:card).permit(:front, :back, :format, :deck_id, :image)
     end
 
     def get_deck
