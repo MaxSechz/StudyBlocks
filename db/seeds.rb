@@ -18,5 +18,6 @@ test_deck.cards.create([
   {front: "What is generally considered the smartest bird?", back: "The common crow", format: "response"},
   {front: "Gary Numan is how many weeks older than Gary Oldman?", back: "Two weeks", format: "response"},
   {front: "Who invented the word 'eyeball'?", back: "William Shakespeare", format: "response"},
-  {front: "What is Albus Dumbledore's not so secret vice?", back: "Candy", format: "response"}
+  {front: "What is Albus Dumbledore's not so secret vice?", back: "Candy", format: "response"},
+  {front: "Puppy", back: "true", format: "boolean", image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 49057, image_updated_at: "2015-01-13 15:37:02"}
 ])

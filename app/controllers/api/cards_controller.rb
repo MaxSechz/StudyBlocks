@@ -7,7 +7,7 @@ module Api
 
     def index
       @cards = @deck.cards
-      render json: @cards
+      render :index
     end
 
     def new
