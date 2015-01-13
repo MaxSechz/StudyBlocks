@@ -6,8 +6,9 @@ class Response < ActiveRecord::Base
 
   def result
     if self.card.format == "field"
-      back_hash = JSON.parse(self.card.back)
-      return back_hash.values.any? { |value| value == self.response_text}
+      back_hash_values = JSON.parse(self.card.back).values
+      response_values = JSON.parse(self.response_text)
+      return back_hash_values == response_values
     else
       self.response_text == self.card.back
     end

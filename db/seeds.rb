@@ -19,5 +19,20 @@ test_deck.cards.create([
   {front: "Gary Numan is how many weeks older than Gary Oldman?", back: "Two weeks", format: "response"},
   {front: "Who invented the word 'eyeball'?", back: "William Shakespeare", format: "response"},
   {front: "What is Albus Dumbledore's not so secret vice?", back: "Candy", format: "response"},
-  {front: "Puppy", back: "true", format: "boolean", image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 49057, image_updated_at: "2015-01-13 15:37:02"}
+  {front: "Puppy", back: "true", format: "boolean", image: File.open('db/seeds/Puppy_2.jpg')}
 ])
+
+guest = fandm.users.create(username: "Guest", password: "password", email: "guest@example.com")
+test_deck = guest.decks.create(title: "Assorted Notes", description: "This is from my first day of school", course_id: test_course.id)
+guest.registrations.create(course_id: test_course.id)
+test_deck.cards.create([
+  {front: "What is 10 divided by 5", back: "2", format: "response"},
+  {front: "What is the most dangerous sport", back: "Eventing", format: "response"},
+  {front: "Ben Franklin was the 3rd president of the USA", back: "false", format: "boolean"},
+  {front: "Who painted the 'Joy of Life'", back: "Matisse", format: "choice"},
+  {front: "Who painted the 'Bar at the Folies-Bergere'", back: "Manet", format: "choice"},
+  {front: "Which impressionist had a fascination with dancers", back: "Degas", format: "choice"},
+  {front: "Which impressionist lived in a brothel", back: "Tolouse-Loutrec", format: "choice"},
+  {front: "What is the full name of the artist who painted 'Nocturne in Black and Gold'", back: "{\"first\":\"James\",\"second\":\"Abbot\",\"third\":\"McNeill\",\"last\":\"Whistler\"}", format: "field"},
+  {front: "Puppy", back: "true", format: "boolean", image: File.open('db/seeds/Puppy_2.jpg')}
+  ])

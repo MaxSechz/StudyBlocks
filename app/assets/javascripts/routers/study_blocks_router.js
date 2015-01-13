@@ -48,6 +48,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   deckTest: function (id) {
     var targetDeck = this.decks.getOrFetch(id);
+    console.log(targetDeck.cards())
     var emptyTest = new StudyBlocks.Models.Test({}, { deck: targetDeck });
     var studyView = new StudyBlocks.Views.DeckTest({
       model: emptyTest,

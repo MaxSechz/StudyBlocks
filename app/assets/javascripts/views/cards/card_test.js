@@ -4,7 +4,7 @@ StudyBlocks.Views.CardTest = Backbone.View.extend({
   template: JST['cards/test'],
 
   initialize: function (options) {
-    this.choices = options.choices[this.model.id];
+    this.choices = options.choices;
   },
   render: function () {
     var content = this.template({

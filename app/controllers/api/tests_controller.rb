@@ -23,6 +23,11 @@ module Api
     end
 
     def test_params
+      params[:test][:responses_attributes].each do |attr|
+        if attr["response_text"].is_a? Array
+          attr["response_text"] = attr["response_text"].to_json
+        end
+      end
       params.require(:test).permit(responses_attributes: [:id, :response_text, :card_id])
     end
   end
