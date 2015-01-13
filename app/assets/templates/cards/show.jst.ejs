@@ -2,7 +2,8 @@
   <li>
     <strong><%= card.escape('front') %></strong>
   </li>
-  <% if (card.get('image') !== "/images/original/missing.png") { %>
+  <% if ( card.get('image') && card.get('image') !== "/images/original/missing.png") { %>
+    <% console.log(card.get('image')) %>
     <li>
       <img src="<%= card.get('image') %>" alt="" />
     </li>
@@ -13,7 +14,6 @@
           <strong><%= attr %>: <%= card.get('back')[attr] %></strong>
           <% } %>
       <% } else { %>
-        <% console.log(card.get('back')) %>
         <strong><%= card.escape('back') %></strong>
       <% } %>
   </li>
