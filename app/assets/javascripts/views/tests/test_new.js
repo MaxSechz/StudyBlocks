@@ -13,6 +13,7 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
 
   initialize: function () {
     this.deck = this.model.deck;
+    this.deck.cards();
     this.listenTo(this.deck.cards(), "sync", this.setupChoices);
   },
 

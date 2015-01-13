@@ -14,6 +14,7 @@ module Api
 
     def create
       @test = @deck.tests.new(test_params)
+      @test.user = current_user
       if @test.save
         render :show
       else

@@ -1,6 +1,7 @@
 class Test < ActiveRecord::Base
-  validates :deck_id, presence: true
+  validates :deck_id, :user_id, presence: true
 
+  belongs_to :user
   belongs_to :deck
   has_many :responses, inverse_of: :test
 

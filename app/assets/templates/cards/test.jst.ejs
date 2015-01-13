@@ -1,7 +1,11 @@
 <ul class="card-attrs">
   <% console.log(choices) %>
   <li>
+    <% if (card.escape('image')) { %>
+      <img src="<%= card.escape('image') %>" alt="" />
+    <% } else {%>
     <%= card.escape('front') %>
+    <% } %>
   </li>
   <% if (card.get('format') === 'boolean') { %>
     <label for="true">True</label>
