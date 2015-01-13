@@ -3,7 +3,7 @@ module Api
     before_action :get_deck
 
     def index
-      @tests = @deck.tests
+      @tests = @deck.tests.where(user_id: current_user.id)
       render :index
     end
 

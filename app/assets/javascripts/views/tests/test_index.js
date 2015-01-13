@@ -11,7 +11,9 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
   prep: function () {
     var thisMatrix = this.matrix;
     this.collection.each(function (test) {
-      thisMatrix.push([test.id, test.score]);
+      console.log(test)
+      var date = new Date(test.get('created_at'))
+      thisMatrix.push([date, test.score]);
     });
     this.render();
   },
