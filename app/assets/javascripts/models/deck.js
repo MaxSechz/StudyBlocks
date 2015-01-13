@@ -49,7 +49,7 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.cards) {
-      this.cards().set(response.cards);
+      this.cards().set(response.cards, {parse: true});
       delete response.cards;
     }
 

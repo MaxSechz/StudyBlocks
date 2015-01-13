@@ -2,7 +2,6 @@
   <li>
     <strong><%= card.escape('front') %></strong>
   </li>
-    <% console.log(card) %>
   <% if ( card.get('image') && card.get('image') !== "/images/original/missing.png") { %>
     <li>
       <img src="<%= card.get('image') %>" alt="" />

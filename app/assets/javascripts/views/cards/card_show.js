@@ -9,7 +9,7 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.submit = options.submit;
-    this.listenTo(this.model, "sync change", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
   render: function () {

@@ -12,6 +12,7 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
   },
   initialize: function () {
     this.deck = this.model.deck;
+    this.collection.fetch();
     this.listenTo(this.collection, "sync", this.setupChoices);
   },
 
@@ -19,7 +20,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
     var choices = []
     this.options = { choices: choices };
     var cards = this.collection.models;
-    // console.log(this.options)
     for (var i = 0; i < cards.length; i++) {
       if (cards[i].escape('format') === "choice") {
         choices.push(cards[i]);
@@ -42,7 +42,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
       }
       return response;
     });
-    debugger
     var data = { test: { responses_attributes: responses }};
     var thisDeck = this.deck;
     this.model.set(data);
