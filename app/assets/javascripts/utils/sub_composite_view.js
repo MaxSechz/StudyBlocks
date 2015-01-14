@@ -5,6 +5,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
     model: ''
   },
   options: {},
+  renderCallback: '',
 
   renderObject: function () {
     var renderObject = {};
@@ -24,6 +25,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    this.renderCallback && this[this.renderCallback]();
     var content = this.template(this.renderObject());
     this.$el.html(content);
     this.renderCollection();

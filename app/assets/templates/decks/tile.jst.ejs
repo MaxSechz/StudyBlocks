@@ -1,7 +1,7 @@
 <ul class="deck-attrs">
   <li>
     <a href="<%= "#/decks/" + deck.id %>"><%= deck.escape('title') %></a>
-    <strong><%= deck.user.get('username') %></strong>
+    <strong><%= deck.user && deck.user.get('username') %></strong>
   </li>
   <% if (writeable) { %>
   <li>

@@ -10,14 +10,15 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
   renderThis: {
     deck: 'deck'
   },
+  renderCallback: 'setupChoices',
+
   initialize: function () {
     this.deck = this.model.deck;
-    this.collection.fetch();
-    this.listenTo(this.collection, "sync", this.setupChoices);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   setupChoices: function () {
-    var choices = []
+    var choices = [];
     this.options = { choices: choices };
     var cards = this.collection.models;
     for (var i = 0; i < cards.length; i++) {
@@ -25,7 +26,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
         choices.push(cards[i]);
       }
     }
-    this.render()
   },
 
   submitTest: function (event) {
@@ -33,12 +33,12 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
     var responses = this.subviews(this.selector).map(function (subview) {
       var response = { card_id : subview.model.id };
       if (subview.model.escape('format') === "field") {
-        response.response_text = []
+        response.response_text = [];
         subview.$("input").each(function (input) {
           response.response_text.push($(this).val());
         });
       } else {
-        response.response_text = subview.$("input[type='text'], textarea, input:checked").val()
+        response.response_text = subview.$("input[type='text'], textarea, input:checked").val();
       }
       return response;
     });
@@ -50,8 +50,8 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
         Backbone.history.navigate(thisDeck.linkUrl('tests'), { trigger: true });
       },
       error: function (model, response) {
-        console.log(model)
-        console.log(response)
+        console.log(model);
+        console.log(response);
       }
     });
   }
