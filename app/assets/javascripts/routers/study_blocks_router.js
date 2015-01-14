@@ -14,10 +14,10 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.decks = options.decks;
-    this.decks.fetch();
   },
 
   deckIndex: function () {
+    this.decks.fetch();
     var indexView = new StudyBlocks.Views.DecksIndex({ collection: this.decks });
     this._swapView(indexView);
   },
@@ -73,7 +73,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     var courseIndex = new StudyBlocks.Views.CourseIndex({
       collection: courses
     });
-    this._swapView(courseIndex)
+    this._swapView(courseIndex);
   },
 
   courseShow: function (id) {
