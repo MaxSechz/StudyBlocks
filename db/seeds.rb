@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+puppy = File.open('db/seeds/Puppy_2.jpg')
 fandm = School.create(name: "Franklin & Marshall", country: "USA", state: "Pennsylvania", city: "Lancaster")
 me = fandm.users.create(username: "Maxwell", password: "maxwell", email: "msechzer@example.com")
 test_course = fandm.courses.create(title: "Intro to Testing Decks", course_code: "app110", instructor: "Test Guy")
@@ -19,7 +19,7 @@ test_deck.cards.create([
   {front: "Gary Numan is how many weeks older than Gary Oldman?", back: "Two weeks", format: "response"},
   {front: "Who invented the word 'eyeball'?", back: "William Shakespeare", format: "response"},
   {front: "What is Albus Dumbledore's not so secret vice?", back: "Candy", format: "response"},
-  {front: "Puppy", back: "true", format: "boolean", image: File.open('db/seeds/Puppy_2.jpg')}
+  {front: "Puppy", back: "true", format: "boolean", image: puppy}
 ])
 
 guest = fandm.users.create(username: "Guest", password: "password", email: "guest@example.com")
@@ -33,6 +33,6 @@ test_deck.cards.create([
   {front: "Who painted the 'Bar at the Folies-Bergere'", back: "Manet", format: "choice"},
   {front: "Which impressionist had a fascination with dancers", back: "Degas", format: "choice"},
   {front: "Which impressionist lived in a brothel", back: "Tolouse-Loutrec", format: "choice"},
-  {front: "What is the full name of the artist who painted 'Nocturne in Black and Gold'", back: "{\"first\":\"James\",\"second\":\"Abbot\",\"third\":\"McNeill\",\"last\":\"Whistler\"}", format: "field"},
-  {front: "Puppy", back: "true", format: "boolean", image: File.open('db/seeds/Puppy_2.jpg')}
+  {front: "What is the full name of the artist who painted 'Nocturne in Black and Gold'", back: "{\"first\":\"James\",\"second\":\"Abbott\",\"third\":\"McNeill\",\"last\":\"Whistler\"}", format: "field"},
+  {front: "Puppy", back: "true", format: "boolean", image: puppy}
   ])

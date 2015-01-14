@@ -30,6 +30,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
+  gem 'seed_dump'
   gem 'spring'
   gem "binding_of_caller"
   gem "quiet_assets"

@@ -1,5 +1,6 @@
 module Api
   class CardsController < ApplicationController
+    before_action :require_logged_in
     before_action :get_deck
     before_action :ensure_card_belongs_to_user
 
