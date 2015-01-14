@@ -63,7 +63,10 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     var targetDeck = this.decks.getOrFetch(id);
     var deckTests = new StudyBlocks.Collections.Tests({}, { deck: targetDeck });
     deckTests.fetch();
-    var indexView = new StudyBlocks.Views.TestIndex({ collection: deckTests});
+    var indexView = new StudyBlocks.Views.TestIndex({
+      collection: deckTests,
+      model: targetDeck
+    });
     this._swapView(indexView);
   },
 
