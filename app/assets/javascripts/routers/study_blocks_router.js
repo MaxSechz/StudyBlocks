@@ -1,11 +1,14 @@
 StudyBlocks.Routers.Router = Backbone.Router.extend({
   routes: {
     '': "deckIndex",
+    'decks': "deckIndex",
     'decks/:id': "deckShow",
     'decks/:id/study': "deckStudy",
     'decks/:id/review': "deckReview",
     'decks/:id/test': "deckTest",
-    'decks/:id/tests': 'testIndex'
+    'decks/:id/tests': 'testIndex',
+    'courses': "courseIndex",
+    'courses/:id': "courseShow"
   },
 
   initialize: function (options) {
@@ -63,6 +66,23 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     var indexView = new StudyBlocks.Views.TestIndex({ collection: deckTests});
     this._swapView(indexView);
   },
+
+  courseIndex: function () {
+    var courses = new StudyBlocks.Collections.Courses();
+    courses.fetch();
+    var courseIndex = new StudyBlocks.Views.CourseIndex({
+      collection: courses
+    });
+    this._swapView(courseIndex)
+  },
+
+  // courseShow: function (id) {
+  //   var course = new StudyBlocks.Models.Course({ id: id });
+  //   course.fetch();
+  //   var courseShow = new StudyBlocks.Views.CourseShow({
+  //
+  //   });
+  // },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

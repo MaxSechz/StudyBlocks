@@ -10,6 +10,9 @@
       <a href="<%= user_url(current_user) %>">My Account</a>
     </li>
     <li>
+      <a href="#/courses">My Courses</a>
+    </li>
+    <li>
         <form action="<%= session_url %>" method="post">
           <%= hidden_field_tag "_method", "DELETE" %>
           <%= token_tag form_authenticity_token %>

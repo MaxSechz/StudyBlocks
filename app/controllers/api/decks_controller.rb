@@ -1,7 +1,7 @@
 module Api
   class DecksController < ApplicationController
     before_action :require_logged_in
-    before_action :ensure_deck_belongs_to_user, only: [:edit, :update, :destroy]
+    before_action :ensure_user_has_access, only: [:show, :edit, :update, :destroy]
 
     def index
       @decks = current_user.decks
@@ -49,8 +49,8 @@ module Api
 
     private
 
-    def ensure_deck_belongs_to_user
-      redirect_to decks_url unless Deck.find(params[:id]).user_id == current_user.id
+    def ensure_user_has_access
+      redirect_to root_url unless current_user.courses.any? {|course| course == Deck.find(params[:id]).course}
     end
 
     def deck_params

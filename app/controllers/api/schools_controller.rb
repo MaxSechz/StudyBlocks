@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @school = current_user.school
+    @school = current_user.school.includes(:courses);
   end
 
   def create
