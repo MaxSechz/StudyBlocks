@@ -1,0 +1,1723 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'linter' ]
+2 info using npm@2.1.6
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/bin/node
+5 silly cache add args [ 'linter', null ]
+6 verbose cache add spec linter
+7 silly cache add parsed spec { raw: 'linter',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'linter',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed linter@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'linter', range: '*', hasData: false }
+12 verbose mapToRegistry name linter
+13 verbose mapToRegistry uri https://registry.npmjs.org/linter
+14 verbose addNameRange registry:https://registry.npmjs.org/linter not in flight; fetching
+15 verbose request on initialization, where is /linter
+16 verbose request after pass 1, where is /linter
+17 verbose request url raw /linter
+18 verbose request resolving registry [ 'https://registry.npmjs.org/', './linter' ]
+19 verbose request after pass 2, where is https://registry.npmjs.org/linter
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 10:36:21
+22 verbose request id 5e7d69433d0095ba
+23 http request GET https://registry.npmjs.org/linter
+24 http 200 https://registry.npmjs.org/linter
+25 silly registry.get cb [ 200,
+25 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:21 GMT',
+25 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+25 silly registry.get     etag: '"EPW6IEIOUVW0TUIZR3X148UQ5"',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'cache-control': 'max-age=60',
+25 silly registry.get     'content-length': '7011',
+25 silly registry.get     'accept-ranges': 'bytes',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     age: '0',
+25 silly registry.get     'x-served-by': 'cache-atl6228-ATL',
+25 silly registry.get     'x-cache': 'MISS',
+25 silly registry.get     'x-cache-hits': '0',
+25 silly registry.get     'x-timer': 'S1421249781.723234,VS0,VE27',
+25 silly registry.get     vary: 'Accept',
+25 silly registry.get     'keep-alive': 'timeout=10, max=50',
+25 silly registry.get     connection: 'Keep-Alive' } ]
+26 silly addNameRange number 2 { name: 'linter', range: '*', hasData: true }
+27 silly addNameRange versions [ 'linter',
+27 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.0.7' ] ]
+28 verbose addNamed linter@0.0.7
+29 silly addNamed semver.valid 0.0.7
+30 silly addNamed semver.validRange 0.0.7
+31 verbose addRemoteTarball https://registry.npmjs.org/linter/-/linter-0.0.7.tgz not in flight; adding
+32 verbose addRemoteTarball [ 'https://registry.npmjs.org/linter/-/linter-0.0.7.tgz',
+32 verbose addRemoteTarball   'ac8f9205ace709dbc5006ac1e782207d7958a36e' ]
+33 info retry fetch attempt 1 at 10:36:21
+34 info attempt registry request try #1 at 10:36:21
+35 http fetch GET https://registry.npmjs.org/linter/-/linter-0.0.7.tgz
+36 http fetch 200 https://registry.npmjs.org/linter/-/linter-0.0.7.tgz
+37 silly fetchAndShaCheck shasum ac8f9205ace709dbc5006ac1e782207d7958a36e
+38 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/linter/-/linter-0.0.7.tgz not in flight; adding
+39 verbose addTmpTarball already have metadata; skipping unpack for linter@0.0.7
+40 silly cache afterAdd linter@0.0.7
+41 verbose afterAdd /Users/appacademy/.npm/linter/0.0.7/package/package.json not in flight; writing
+42 verbose afterAdd /Users/appacademy/.npm/linter/0.0.7/package/package.json written
+43 silly install resolved [ { name: 'linter',
+43 silly install resolved     description: 'Code quality tools collection in one module',
+43 silly install resolved     version: '0.0.7',
+43 silly install resolved     author: { name: 'Oleg Slobodskoi', email: 'oleg008@gmail.com' },
+43 silly install resolved     repository: { type: 'git', url: 'git://github.com/kof/node-linter.git' },
+43 silly install resolved     keywords:
+43 silly install resolved      [ 'code quality',
+43 silly install resolved        'code style',
+43 silly install resolved        'stylechecker',
+43 silly install resolved        'lint',
+43 silly install resolved        'jslint',
+43 silly install resolved        'closure-linter',
+43 silly install resolved        'closure-compiler' ],
+43 silly install resolved     directories: { lib: './lib', bin: './bin' },
+43 silly install resolved     bin: { linter: './bin/cli.js' },
+43 silly install resolved     main: './lib/linter.js',
+43 silly install resolved     engines: { node: '>= 0.3.6' },
+43 silly install resolved     dependencies: { argsparser: '>= 0.0.3', sharedjs: '>= 0.0.1' },
+43 silly install resolved     scripts: { install: 'make install' },
+43 silly install resolved     licenses: [ [Object], [Object] ],
+43 silly install resolved     _id: 'linter@0.0.7',
+43 silly install resolved     _engineSupported: true,
+43 silly install resolved     _npmVersion: '0.3.17',
+43 silly install resolved     _nodeVersion: 'v0.4.0',
+43 silly install resolved     files: [ '' ],
+43 silly install resolved     _defaultsLoaded: true,
+43 silly install resolved     dist:
+43 silly install resolved      { shasum: 'ac8f9205ace709dbc5006ac1e782207d7958a36e',
+43 silly install resolved        tarball: 'http://registry.npmjs.org/linter/-/linter-0.0.7.tgz' },
+43 silly install resolved     _shasum: 'ac8f9205ace709dbc5006ac1e782207d7958a36e',
+43 silly install resolved     _resolved: 'https://registry.npmjs.org/linter/-/linter-0.0.7.tgz',
+43 silly install resolved     _from: 'linter@*' } ]
+44 info install linter@0.0.7 into /Users/appacademy/Desktop/StudyBlocks
+45 info installOne linter@0.0.7
+46 verbose installOne of linter to /Users/appacademy/Desktop/StudyBlocks not in flight; installing
+47 verbose lock using /Users/appacademy/.npm/_locks/linter-af0568b4e2750505.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+48 silly install write writing linter 0.0.7 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+49 silly cache addNamed cb linter@0.0.7
+50 verbose unbuild node_modules/linter
+51 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+52 verbose tar unpack /Users/appacademy/.npm/linter/0.0.7/package.tgz
+53 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+54 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 silly gunzTarPerm extractEntry
+57 silly gunzTarPerm extractEntry .gitignore
+58 silly gunzTarPerm extractEntry .gitmodules
+59 silly gunzTarPerm extractEntry bin/
+60 silly gunzTarPerm extractEntry conf/
+61 silly gunzTarPerm extractEntry deps/
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm extractEntry lib/
+64 silly gunzTarPerm extractEntry Makefile
+65 silly gunzTarPerm extractEntry package.json
+66 silly gunzTarPerm extractEntry readme.md
+67 silly gunzTarPerm extractEntry test/
+68 silly gunzTarPerm extractEntry test/fixtures/
+69 silly gunzTarPerm extractEntry test/test.js
+70 silly gunzTarPerm extractEntry test/fixtures/closure-compiler.js
+71 silly gunzTarPerm extractEntry test/fixtures/closure-compiler.json
+72 silly gunzTarPerm extractEntry test/fixtures/closure-linter.js
+73 silly gunzTarPerm extractEntry test/fixtures/closure-linter.json
+74 silly gunzTarPerm extractEntry test/fixtures/javascriptlint.js
+75 silly gunzTarPerm extractEntry test/fixtures/javascriptlint.json
+76 silly gunzTarPerm extractEntry test/fixtures/jslint.js
+77 silly gunzTarPerm extractEntry test/fixtures/jslint.json
+78 silly gunzTarPerm extractEntry test/fixtures/subfolder/
+79 silly gunzTarPerm extractEntry test/fixtures/subfolder/jslint.js
+80 silly gunzTarPerm extractEntry lib/linter/
+81 silly gunzTarPerm extractEntry lib/linter.js
+82 silly gunzTarPerm extractEntry lib/linter/closure-compiler.js
+83 silly gunzTarPerm extractEntry lib/linter/closure-linter.js
+84 silly gunzTarPerm extractEntry lib/linter/javascriptlint.js
+85 silly gunzTarPerm extractEntry lib/linter/jslint.js
+86 silly gunzTarPerm extractEntry deps/closure-compiler/
+87 silly gunzTarPerm extractEntry deps/closure-linter/
+88 silly gunzTarPerm extractEntry deps/javascriptlint/
+89 silly gunzTarPerm extractEntry deps/JSLint/
+90 silly gunzTarPerm extractEntry deps/JSLint/fullinit_ui.js
+91 silly gunzTarPerm extractEntry deps/JSLint/fulljslint.html
+92 silly gunzTarPerm extractEntry deps/JSLint/fulljslint.js
+93 silly gunzTarPerm extractEntry deps/JSLint/intercept.js
+94 silly gunzTarPerm extractEntry deps/JSLint/lint.html
+95 silly gunzTarPerm extractEntry deps/JSLint/README
+96 silly gunzTarPerm extractEntry deps/javascriptlint/jsl
+97 silly gunzTarPerm extractEntry deps/javascriptlint/jsl-test.js
+98 silly gunzTarPerm extractEntry deps/javascriptlint/jsl.default.conf
+99 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/
+100 silly gunzTarPerm extractEntry deps/closure-linter/PKG-INFO
+101 silly gunzTarPerm extractEntry deps/closure-linter/README
+102 silly gunzTarPerm extractEntry deps/closure-linter/setup.py
+103 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/__init__.py
+104 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/checker.py
+105 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/checkerbase.py
+106 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/
+107 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/ecmalintrules.py
+108 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/ecmametadatapass.py
+109 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/error_fixer.py
+110 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/errorrules.py
+111 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/errors.py
+112 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/fixjsstyle.py
+113 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/fixjsstyle_test.py
+114 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/full_test.py
+115 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/gjslint.py
+116 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/indentation.py
+117 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/javascriptlintrules.py
+118 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/javascriptstatetracker.py
+119 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/javascriptstatetracker_test.py
+120 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/javascripttokenizer.py
+121 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/javascripttokens.py
+122 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/statetracker.py
+123 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/tokenutil.py
+124 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/__init__.py
+125 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/error.py
+126 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/erroraccumulator.py
+127 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/errorhandler.py
+128 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/errorprinter.py
+129 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/filetestcase.py
+130 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/htmlutil.py
+131 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/lintrunner.py
+132 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/matcher.py
+133 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/position.py
+134 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/simplefileflags.py
+135 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/tokenizer.py
+136 silly gunzTarPerm extractEntry deps/closure-linter/closure_linter/common/tokens.py
+137 silly gunzTarPerm extractEntry deps/closure-compiler/compiler.jar
+138 silly gunzTarPerm extractEntry deps/closure-compiler/COPYING
+139 silly gunzTarPerm extractEntry deps/closure-compiler/README
+140 silly gunzTarPerm extractEntry conf/client.json
+141 silly gunzTarPerm extractEntry conf/server.json
+142 silly gunzTarPerm extractEntry bin/cli.js
+143 info preinstall linter@0.0.7
+144 silly prepareForInstallMany adding argsparser@>= 0.0.3 from linter dependencies
+145 silly prepareForInstallMany adding sharedjs@>= 0.0.1 from linter dependencies
+146 silly cache add args [ 'argsparser@>= 0.0.3', null ]
+147 verbose cache add spec argsparser@>= 0.0.3
+148 silly cache add args [ 'sharedjs@>= 0.0.1', null ]
+149 verbose cache add spec sharedjs@>= 0.0.1
+150 silly cache add parsed spec { raw: 'argsparser@>= 0.0.3',
+150 silly cache add   scope: null,
+150 silly cache add   name: 'argsparser',
+150 silly cache add   rawSpec: '>= 0.0.3',
+150 silly cache add   spec: '>=0.0.3',
+150 silly cache add   type: 'range' }
+151 verbose addNamed argsparser@>=0.0.3
+152 silly addNamed semver.valid null
+153 silly addNamed semver.validRange >=0.0.3
+154 silly addNameRange { name: 'argsparser', range: '>=0.0.3', hasData: false }
+155 verbose mapToRegistry name argsparser
+156 verbose mapToRegistry uri https://registry.npmjs.org/argsparser
+157 verbose addNameRange registry:https://registry.npmjs.org/argsparser not in flight; fetching
+158 silly cache add parsed spec { raw: 'sharedjs@>= 0.0.1',
+158 silly cache add   scope: null,
+158 silly cache add   name: 'sharedjs',
+158 silly cache add   rawSpec: '>= 0.0.1',
+158 silly cache add   spec: '>=0.0.1',
+158 silly cache add   type: 'range' }
+159 verbose addNamed sharedjs@>=0.0.1
+160 silly addNamed semver.valid null
+161 silly addNamed semver.validRange >=0.0.1
+162 silly addNameRange { name: 'sharedjs', range: '>=0.0.1', hasData: false }
+163 verbose mapToRegistry name sharedjs
+164 verbose mapToRegistry uri https://registry.npmjs.org/sharedjs
+165 verbose addNameRange registry:https://registry.npmjs.org/sharedjs not in flight; fetching
+166 verbose request on initialization, where is /argsparser
+167 verbose request after pass 1, where is /argsparser
+168 verbose request url raw /argsparser
+169 verbose request resolving registry [ 'https://registry.npmjs.org/', './argsparser' ]
+170 verbose request after pass 2, where is https://registry.npmjs.org/argsparser
+171 verbose request no auth needed
+172 info attempt registry request try #1 at 10:36:25
+173 http request GET https://registry.npmjs.org/argsparser
+174 verbose request on initialization, where is /sharedjs
+175 verbose request after pass 1, where is /sharedjs
+176 verbose request url raw /sharedjs
+177 verbose request resolving registry [ 'https://registry.npmjs.org/', './sharedjs' ]
+178 verbose request after pass 2, where is https://registry.npmjs.org/sharedjs
+179 verbose request no auth needed
+180 info attempt registry request try #1 at 10:36:25
+181 http request GET https://registry.npmjs.org/sharedjs
+182 http 200 https://registry.npmjs.org/sharedjs
+183 silly registry.get cb [ 200,
+183 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:25 GMT',
+183 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+183 silly registry.get     etag: '"CWXLHT2IRL2YW17DHU1OR4HXH"',
+183 silly registry.get     'content-type': 'application/json',
+183 silly registry.get     'cache-control': 'max-age=60',
+183 silly registry.get     'content-length': '2554',
+183 silly registry.get     'accept-ranges': 'bytes',
+183 silly registry.get     via: '1.1 varnish',
+183 silly registry.get     age: '0',
+183 silly registry.get     'x-served-by': 'cache-atl6232-ATL',
+183 silly registry.get     'x-cache': 'MISS',
+183 silly registry.get     'x-cache-hits': '0',
+183 silly registry.get     'x-timer': 'S1421249785.829849,VS0,VE114',
+183 silly registry.get     vary: 'Accept',
+183 silly registry.get     'keep-alive': 'timeout=10, max=50',
+183 silly registry.get     connection: 'Keep-Alive' } ]
+184 silly addNameRange number 2 { name: 'sharedjs', range: '>=0.0.1', hasData: true }
+185 silly addNameRange versions [ 'sharedjs', [ '0.0.1', '0.0.2' ] ]
+186 verbose addNamed sharedjs@0.0.2
+187 silly addNamed semver.valid 0.0.2
+188 silly addNamed semver.validRange 0.0.2
+189 verbose addRemoteTarball https://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz not in flight; adding
+190 verbose addRemoteTarball [ 'https://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz',
+190 verbose addRemoteTarball   'c5fdb24a3555a050fa3c8540a6bb7ad3931027c6' ]
+191 info retry fetch attempt 1 at 10:36:25
+192 info attempt registry request try #1 at 10:36:25
+193 http fetch GET https://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz
+194 http 200 https://registry.npmjs.org/argsparser
+195 silly registry.get cb [ 200,
+195 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:26 GMT',
+195 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+195 silly registry.get     etag: '"BSX69SKFUYN5CTG722BGO56LS"',
+195 silly registry.get     'content-type': 'application/json',
+195 silly registry.get     'cache-control': 'max-age=60',
+195 silly registry.get     'content-length': '4057',
+195 silly registry.get     'accept-ranges': 'bytes',
+195 silly registry.get     via: '1.1 varnish',
+195 silly registry.get     age: '0',
+195 silly registry.get     'x-served-by': 'cache-atl6233-ATL',
+195 silly registry.get     'x-cache': 'HIT',
+195 silly registry.get     'x-cache-hits': '1',
+195 silly registry.get     'x-timer': 'S1421249785.795797,VS0,VE308',
+195 silly registry.get     vary: 'Accept',
+195 silly registry.get     'keep-alive': 'timeout=10, max=50',
+195 silly registry.get     connection: 'Keep-Alive' } ]
+196 silly addNameRange number 2 { name: 'argsparser', range: '>=0.0.3', hasData: true }
+197 silly addNameRange versions [ 'argsparser', [ '0.0.3', '0.0.4', '0.0.5', '0.0.6' ] ]
+198 verbose addNamed argsparser@0.0.6
+199 silly addNamed semver.valid 0.0.6
+200 silly addNamed semver.validRange 0.0.6
+201 verbose addRemoteTarball https://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz not in flight; adding
+202 verbose addRemoteTarball [ 'https://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz',
+202 verbose addRemoteTarball   'ff45eb5b92c004225cf146a51d339dccb265be63' ]
+203 info retry fetch attempt 1 at 10:36:26
+204 info attempt registry request try #1 at 10:36:26
+205 http fetch GET https://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz
+206 http fetch 200 https://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz
+207 silly fetchAndShaCheck shasum ff45eb5b92c004225cf146a51d339dccb265be63
+208 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz not in flight; adding
+209 verbose addTmpTarball already have metadata; skipping unpack for argsparser@0.0.6
+210 silly cache afterAdd argsparser@0.0.6
+211 verbose afterAdd /Users/appacademy/.npm/argsparser/0.0.6/package/package.json not in flight; writing
+212 verbose afterAdd /Users/appacademy/.npm/argsparser/0.0.6/package/package.json written
+213 http fetch 200 https://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz
+214 silly fetchAndShaCheck shasum c5fdb24a3555a050fa3c8540a6bb7ad3931027c6
+215 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz not in flight; adding
+216 verbose addTmpTarball already have metadata; skipping unpack for sharedjs@0.0.2
+217 silly cache afterAdd sharedjs@0.0.2
+218 verbose afterAdd /Users/appacademy/.npm/sharedjs/0.0.2/package/package.json not in flight; writing
+219 verbose afterAdd /Users/appacademy/.npm/sharedjs/0.0.2/package/package.json written
+220 silly install resolved [ { name: 'argsparser',
+220 silly install resolved     description: 'A tiny command line arguments parser',
+220 silly install resolved     version: '0.0.6',
+220 silly install resolved     author: { name: 'Oleg Slobodskoi', email: 'oleg008@gmail.com' },
+220 silly install resolved     repository: { type: 'git', url: 'git://github.com/kof/node-argsparser.git' },
+220 silly install resolved     keywords: [ 'arguments', 'options', 'command line', 'parser' ],
+220 silly install resolved     engines: { node: '>= 0.2.0' },
+220 silly install resolved     scripts: { test: 'node ./test/test.js' },
+220 silly install resolved     licenses: [ [Object] ],
+220 silly install resolved     _npmJsonOpts:
+220 silly install resolved      { file: '/Users/kof/.npm/argsparser/0.0.6/package/package.json',
+220 silly install resolved        wscript: false,
+220 silly install resolved        contributors: false,
+220 silly install resolved        serverjs: false },
+220 silly install resolved     _id: 'argsparser@0.0.6',
+220 silly install resolved     dependencies: {},
+220 silly install resolved     devDependencies: {},
+220 silly install resolved     _engineSupported: true,
+220 silly install resolved     _npmVersion: '1.0.17',
+220 silly install resolved     _nodeVersion: 'v0.5.0',
+220 silly install resolved     _defaultsLoaded: true,
+220 silly install resolved     dist:
+220 silly install resolved      { shasum: 'ff45eb5b92c004225cf146a51d339dccb265be63',
+220 silly install resolved        tarball: 'http://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz' },
+220 silly install resolved     maintainers: [ [Object] ],
+220 silly install resolved     directories: {},
+220 silly install resolved     _shasum: 'ff45eb5b92c004225cf146a51d339dccb265be63',
+220 silly install resolved     _resolved: 'https://registry.npmjs.org/argsparser/-/argsparser-0.0.6.tgz',
+220 silly install resolved     _from: 'argsparser@>=0.0.3' },
+220 silly install resolved   { name: 'sharedjs',
+220 silly install resolved     description: 'The most needed utility functions for writing shared code between browser and client.',
+220 silly install resolved     version: '0.0.2',
+220 silly install resolved     repository: { type: 'git', url: 'git://github.com/kof/sharedjs.git' },
+220 silly install resolved     keywords:
+220 silly install resolved      [ 'validate',
+220 silly install resolved        'validation',
+220 silly install resolved        'utils',
+220 silly install resolved        'shared',
+220 silly install resolved        'crossplatform',
+220 silly install resolved        'extend',
+220 silly install resolved        'inherits',
+220 silly install resolved        'noop',
+220 silly install resolved        'toArray',
+220 silly install resolved        'typeof',
+220 silly install resolved        'each',
+220 silly install resolved        'bind' ],
+220 silly install resolved     author: { name: 'Oleg Slobodskoi', email: 'oleg008@gmail.com' },
+220 silly install resolved     engines: { node: '>= 0.3.0' },
+220 silly install resolved     dependencies: { argsparser: '>= 0.0.3', 'uglify-js': '>= 0.0.1' },
+220 silly install resolved     bin: {},
+220 silly install resolved     devDependencies: { qunit: '>= 0.1.5' },
+220 silly install resolved     licenses: [ [Object] ],
+220 silly install resolved     _id: 'sharedjs@0.0.2',
+220 silly install resolved     _engineSupported: true,
+220 silly install resolved     _npmVersion: '0.3.17',
+220 silly install resolved     _nodeVersion: 'v0.4.0',
+220 silly install resolved     directories: { lib: './lib', bin: './bin' },
+220 silly install resolved     files: [ '' ],
+220 silly install resolved     _defaultsLoaded: true,
+220 silly install resolved     dist:
+220 silly install resolved      { shasum: 'c5fdb24a3555a050fa3c8540a6bb7ad3931027c6',
+220 silly install resolved        tarball: 'http://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz' },
+220 silly install resolved     _shasum: 'c5fdb24a3555a050fa3c8540a6bb7ad3931027c6',
+220 silly install resolved     _resolved: 'https://registry.npmjs.org/sharedjs/-/sharedjs-0.0.2.tgz',
+220 silly install resolved     _from: 'sharedjs@>=0.0.1' } ]
+221 info install argsparser@0.0.6 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+222 info install sharedjs@0.0.2 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+223 info installOne argsparser@0.0.6
+224 verbose installOne of argsparser to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter not in flight; installing
+225 info installOne sharedjs@0.0.2
+226 verbose installOne of sharedjs to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter not in flight; installing
+227 verbose lock using /Users/appacademy/.npm/_locks/argsparser-9cd8344ca47fea7b.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+228 verbose lock using /Users/appacademy/.npm/_locks/sharedjs-84521ead26979405.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+229 silly install write writing argsparser 0.0.6 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+230 silly install write writing sharedjs 0.0.2 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+231 silly cache addNamed cb argsparser@0.0.6
+232 verbose unbuild node_modules/linter/node_modules/argsparser
+233 silly cache addNamed cb sharedjs@0.0.2
+234 verbose unbuild node_modules/linter/node_modules/sharedjs
+235 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+236 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+237 verbose tar unpack /Users/appacademy/.npm/argsparser/0.0.6/package.tgz
+238 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+239 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+240 verbose tar unpack /Users/appacademy/.npm/sharedjs/0.0.2/package.tgz
+241 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+242 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+243 silly gunzTarPerm modes [ '755', '644' ]
+244 silly gunzTarPerm modes [ '755', '644' ]
+245 silly gunzTarPerm extractEntry .gitignore
+246 silly gunzTarPerm extractEntry
+247 silly gunzTarPerm extractEntry index.js
+248 silly gunzTarPerm extractEntry Makefile
+249 silly gunzTarPerm extractEntry .gitmodules
+250 silly gunzTarPerm extractEntry bin/
+251 silly gunzTarPerm extractEntry deps/
+252 silly gunzTarPerm extractEntry index.js
+253 silly gunzTarPerm extractEntry lib/
+254 silly gunzTarPerm extractEntry package.json
+255 silly gunzTarPerm extractEntry readme.md
+256 silly gunzTarPerm extractEntry Makefile
+257 silly gunzTarPerm extractEntry package.json
+258 silly gunzTarPerm extractEntry readme.md
+259 silly gunzTarPerm extractEntry lib/argsparser.js
+260 silly gunzTarPerm extractEntry test/test.js
+261 silly gunzTarPerm extractEntry src/
+262 silly gunzTarPerm extractEntry test/
+263 silly gunzTarPerm extractEntry test/bind.js
+264 silly gunzTarPerm extractEntry test/each.js
+265 silly gunzTarPerm extractEntry test/extend.js
+266 silly gunzTarPerm extractEntry test/index.html
+267 silly gunzTarPerm extractEntry test/inherits.js
+268 silly gunzTarPerm extractEntry test/toArray.js
+269 silly gunzTarPerm extractEntry test/trim.js
+270 silly gunzTarPerm extractEntry test/type.js
+271 silly gunzTarPerm extractEntry test/validate.js
+272 silly gunzTarPerm extractEntry test/validate.methods.js
+273 silly gunzTarPerm extractEntry src/bind.js
+274 silly gunzTarPerm extractEntry src/each.js
+275 silly gunzTarPerm extractEntry src/env.js
+276 silly gunzTarPerm extractEntry src/error.js
+277 info preinstall argsparser@0.0.6
+278 silly gunzTarPerm extractEntry src/extend.js
+279 silly gunzTarPerm extractEntry src/filter.js
+280 silly gunzTarPerm extractEntry src/indexOf.js
+281 silly install resolved []
+282 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+283 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+284 verbose linkStuff [ false,
+284 verbose linkStuff   false,
+284 verbose linkStuff   false,
+284 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules' ]
+285 info linkStuff argsparser@0.0.6
+286 verbose linkBins argsparser@0.0.6
+287 verbose linkMans argsparser@0.0.6
+288 verbose rebuildBundles argsparser@0.0.6
+289 info install argsparser@0.0.6
+290 info postinstall argsparser@0.0.6
+291 silly gunzTarPerm extractEntry src/inherits.js
+292 silly gunzTarPerm extractEntry src/intro.js
+293 verbose unlock done using /Users/appacademy/.npm/_locks/argsparser-9cd8344ca47fea7b.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/argsparser
+294 silly gunzTarPerm extractEntry src/lastIndexOf.js
+295 silly gunzTarPerm extractEntry src/map.js
+296 silly gunzTarPerm extractEntry src/noop.js
+297 silly gunzTarPerm extractEntry src/now.js
+298 silly gunzTarPerm extractEntry src/outro.js
+299 silly gunzTarPerm extractEntry src/querystring.js
+300 silly gunzTarPerm extractEntry src/toArray.js
+301 silly gunzTarPerm extractEntry src/trim.js
+302 silly gunzTarPerm extractEntry src/type.js
+303 silly gunzTarPerm extractEntry src/validate.js
+304 silly gunzTarPerm extractEntry src/validate.methods.js
+305 silly gunzTarPerm extractEntry lib/sharedjs.js
+306 silly gunzTarPerm extractEntry lib/sharedjs.min.js
+307 silly gunzTarPerm extractEntry deps/qunit/
+308 silly gunzTarPerm extractEntry deps/qunit/.gitignore
+309 silly gunzTarPerm extractEntry deps/qunit/package.json
+310 silly gunzTarPerm extractEntry deps/qunit/qunit/
+311 silly gunzTarPerm extractEntry deps/qunit/README.md
+312 silly gunzTarPerm extractEntry deps/qunit/test/
+313 silly gunzTarPerm extractEntry deps/qunit/test/headless.html
+314 silly gunzTarPerm extractEntry deps/qunit/test/index.html
+315 silly gunzTarPerm extractEntry deps/qunit/test/same.js
+316 silly gunzTarPerm extractEntry deps/qunit/test/test.js
+317 silly gunzTarPerm extractEntry deps/qunit/qunit/qunit.css
+318 silly gunzTarPerm extractEntry deps/qunit/qunit/qunit.js
+319 silly gunzTarPerm extractEntry bin/build.js
+320 silly gunzTarPerm extractEntry bin/deps.json
+321 silly gunzTarPerm extractEntry bin/test.js
+322 info preinstall sharedjs@0.0.2
+323 silly prepareForInstallMany adding uglify-js@>= 0.0.1 from sharedjs dependencies
+324 silly cache add args [ 'uglify-js@>= 0.0.1', null ]
+325 verbose cache add spec uglify-js@>= 0.0.1
+326 silly cache add parsed spec { raw: 'uglify-js@>= 0.0.1',
+326 silly cache add   scope: null,
+326 silly cache add   name: 'uglify-js',
+326 silly cache add   rawSpec: '>= 0.0.1',
+326 silly cache add   spec: '>=0.0.1',
+326 silly cache add   type: 'range' }
+327 verbose addNamed uglify-js@>=0.0.1
+328 silly addNamed semver.valid null
+329 silly addNamed semver.validRange >=0.0.1
+330 silly addNameRange { name: 'uglify-js', range: '>=0.0.1', hasData: false }
+331 verbose mapToRegistry name uglify-js
+332 verbose mapToRegistry uri https://registry.npmjs.org/uglify-js
+333 verbose addNameRange registry:https://registry.npmjs.org/uglify-js not in flight; fetching
+334 verbose request on initialization, where is /uglify-js
+335 verbose request after pass 1, where is /uglify-js
+336 verbose request url raw /uglify-js
+337 verbose request resolving registry [ 'https://registry.npmjs.org/', './uglify-js' ]
+338 verbose request after pass 2, where is https://registry.npmjs.org/uglify-js
+339 verbose request no auth needed
+340 info attempt registry request try #1 at 10:36:26
+341 http request GET https://registry.npmjs.org/uglify-js
+342 http 200 https://registry.npmjs.org/uglify-js
+343 silly registry.get cb [ 200,
+343 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:26 GMT',
+343 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+343 silly registry.get     etag: '"BRK7VIOASE8OXHUKGP2DA5MIO"',
+343 silly registry.get     'content-type': 'application/json',
+343 silly registry.get     'cache-control': 'max-age=60',
+343 silly registry.get     'content-length': '84571',
+343 silly registry.get     'accept-ranges': 'bytes',
+343 silly registry.get     via: '1.1 varnish',
+343 silly registry.get     age: '12',
+343 silly registry.get     'x-served-by': 'cache-atl6232-ATL',
+343 silly registry.get     'x-cache': 'HIT',
+343 silly registry.get     'x-cache-hits': '1',
+343 silly registry.get     'x-timer': 'S1421249786.894509,VS0,VE1',
+343 silly registry.get     vary: 'Accept',
+343 silly registry.get     'keep-alive': 'timeout=10, max=50',
+343 silly registry.get     connection: 'Keep-Alive' } ]
+344 silly addNameRange number 2 { name: 'uglify-js', range: '>=0.0.1', hasData: true }
+345 silly addNameRange versions [ 'uglify-js',
+345 silly addNameRange   [ '0.0.1',
+345 silly addNameRange     '0.0.2',
+345 silly addNameRange     '0.0.3',
+345 silly addNameRange     '0.0.4',
+345 silly addNameRange     '0.0.5',
+345 silly addNameRange     '1.0.1',
+345 silly addNameRange     '1.0.2',
+345 silly addNameRange     '1.0.3',
+345 silly addNameRange     '1.0.4',
+345 silly addNameRange     '1.0.5',
+345 silly addNameRange     '1.0.6',
+345 silly addNameRange     '1.0.7',
+345 silly addNameRange     '1.1.0',
+345 silly addNameRange     '1.1.1',
+345 silly addNameRange     '1.2.0',
+345 silly addNameRange     '1.2.1',
+345 silly addNameRange     '1.2.2',
+345 silly addNameRange     '1.2.3',
+345 silly addNameRange     '1.2.4',
+345 silly addNameRange     '1.2.5',
+345 silly addNameRange     '1.2.6',
+345 silly addNameRange     '1.3.0',
+345 silly addNameRange     '1.3.1',
+345 silly addNameRange     '1.3.2',
+345 silly addNameRange     '1.3.3',
+345 silly addNameRange     '1.3.4',
+345 silly addNameRange     '2.2.0',
+345 silly addNameRange     '2.2.1',
+345 silly addNameRange     '2.2.2',
+345 silly addNameRange     '2.2.3',
+345 silly addNameRange     '2.2.4',
+345 silly addNameRange     '2.2.5',
+345 silly addNameRange     '2.3.0',
+345 silly addNameRange     '2.3.1',
+345 silly addNameRange     '2.3.2',
+345 silly addNameRange     '2.3.3',
+345 silly addNameRange     '2.3.4',
+345 silly addNameRange     '2.3.5',
+345 silly addNameRange     '2.3.6',
+345 silly addNameRange     '1.3.5',
+345 silly addNameRange     '2.4.0',
+345 silly addNameRange     '2.4.1',
+345 silly addNameRange     '2.4.2',
+345 silly addNameRange     '2.4.3',
+345 silly addNameRange     '2.4.4',
+345 silly addNameRange     '2.4.5',
+345 silly addNameRange     '2.4.6',
+345 silly addNameRange     '2.4.7',
+345 silly addNameRange     '2.4.8',
+345 silly addNameRange     '2.4.9',
+345 silly addNameRange     '2.4.10',
+345 silly addNameRange     '2.4.11',
+345 silly addNameRange     '2.4.12',
+345 silly addNameRange     '2.4.13',
+345 silly addNameRange     '2.4.14',
+345 silly addNameRange     '2.4.15',
+345 silly addNameRange     '2.4.16' ] ]
+346 verbose addNamed uglify-js@2.4.16
+347 silly addNamed semver.valid 2.4.16
+348 silly addNamed semver.validRange 2.4.16
+349 verbose addRemoteTarball https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz not in flight; adding
+350 verbose addRemoteTarball [ 'https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz',
+350 verbose addRemoteTarball   '84143487eb480efd7d0789c7ecfbd48a695839f9' ]
+351 info retry fetch attempt 1 at 10:36:27
+352 info attempt registry request try #1 at 10:36:27
+353 http fetch GET https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz
+354 http fetch 200 https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz
+355 silly fetchAndShaCheck shasum 84143487eb480efd7d0789c7ecfbd48a695839f9
+356 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz not in flight; adding
+357 verbose addTmpTarball already have metadata; skipping unpack for uglify-js@2.4.16
+358 silly cache afterAdd uglify-js@2.4.16
+359 verbose afterAdd /Users/appacademy/.npm/uglify-js/2.4.16/package/package.json not in flight; writing
+360 verbose afterAdd /Users/appacademy/.npm/uglify-js/2.4.16/package/package.json written
+361 silly install resolved [ { name: 'uglify-js',
+361 silly install resolved     description: 'JavaScript parser, mangler/compressor and beautifier toolkit',
+361 silly install resolved     homepage: 'http://lisperator.net/uglifyjs',
+361 silly install resolved     main: 'tools/node.js',
+361 silly install resolved     version: '2.4.16',
+361 silly install resolved     engines: { node: '>=0.4.0' },
+361 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+361 silly install resolved     repository: { type: 'git', url: 'https://github.com/mishoo/UglifyJS2.git' },
+361 silly install resolved     dependencies:
+361 silly install resolved      { async: '~0.2.6',
+361 silly install resolved        'source-map': '0.1.34',
+361 silly install resolved        optimist: '~0.3.5',
+361 silly install resolved        'uglify-to-browserify': '~1.0.0' },
+361 silly install resolved     devDependencies:
+361 silly install resolved      { acorn: '~0.6.0',
+361 silly install resolved        escodegen: '~1.3.3',
+361 silly install resolved        esfuzz: '~0.3.1',
+361 silly install resolved        estraverse: '~1.5.1' },
+361 silly install resolved     browserify: { transform: [Object] },
+361 silly install resolved     bin: { uglifyjs: 'bin/uglifyjs' },
+361 silly install resolved     license: 'BSD',
+361 silly install resolved     scripts: { test: 'node test/run-tests.js' },
+361 silly install resolved     gitHead: '5538ec7bd8a64c7fcc45895308a8463e4ca4d00a',
+361 silly install resolved     bugs: { url: 'https://github.com/mishoo/UglifyJS2/issues' },
+361 silly install resolved     _id: 'uglify-js@2.4.16',
+361 silly install resolved     _shasum: '84143487eb480efd7d0789c7ecfbd48a695839f9',
+361 silly install resolved     _from: 'uglify-js@>=0.0.1',
+361 silly install resolved     _npmVersion: '1.4.14',
+361 silly install resolved     _npmUser: { name: 'mishoo', email: 'mihai.bazon@gmail.com' },
+361 silly install resolved     dist:
+361 silly install resolved      { shasum: '84143487eb480efd7d0789c7ecfbd48a695839f9',
+361 silly install resolved        tarball: 'http://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz' },
+361 silly install resolved     directories: {},
+361 silly install resolved     _resolved: 'https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz' } ]
+362 info install uglify-js@2.4.16 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+363 info installOne uglify-js@2.4.16
+364 verbose installOne of uglify-js to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs not in flight; installing
+365 verbose lock using /Users/appacademy/.npm/_locks/uglify-js-33caebd9972999ef.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+366 silly install write writing uglify-js 2.4.16 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+367 silly cache addNamed cb uglify-js@2.4.16
+368 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+369 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+370 verbose tar unpack /Users/appacademy/.npm/uglify-js/2.4.16/package.tgz
+371 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+372 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+373 silly gunzTarPerm modes [ '755', '644' ]
+374 silly gunzTarPerm extractEntry package.json
+375 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+376 silly gunzTarPerm extractEntry .npmignore
+377 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+378 silly gunzTarPerm extractEntry README.md
+379 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+380 silly gunzTarPerm extractEntry LICENSE
+381 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+382 silly gunzTarPerm extractEntry bin/uglifyjs
+383 silly gunzTarPerm modified mode [ 'bin/uglifyjs', 509, 493 ]
+384 silly gunzTarPerm extractEntry .travis.yml
+385 silly gunzTarPerm modified mode [ '.travis.yml', 436, 420 ]
+386 silly gunzTarPerm extractEntry tools/node.js
+387 silly gunzTarPerm modified mode [ 'tools/node.js', 436, 420 ]
+388 silly gunzTarPerm extractEntry test/mozilla-ast.js
+389 silly gunzTarPerm modified mode [ 'test/mozilla-ast.js', 436, 420 ]
+390 silly gunzTarPerm extractEntry test/run-tests.js
+391 silly gunzTarPerm modified mode [ 'test/run-tests.js', 509, 493 ]
+392 silly gunzTarPerm extractEntry test/compress/arrays.js
+393 silly gunzTarPerm modified mode [ 'test/compress/arrays.js', 436, 420 ]
+394 silly gunzTarPerm extractEntry test/compress/issue-12.js
+395 silly gunzTarPerm modified mode [ 'test/compress/issue-12.js', 436, 420 ]
+396 silly gunzTarPerm extractEntry test/compress/issue-126.js
+397 silly gunzTarPerm modified mode [ 'test/compress/issue-126.js', 436, 420 ]
+398 silly gunzTarPerm extractEntry test/compress/issue-143.js
+399 silly gunzTarPerm modified mode [ 'test/compress/issue-143.js', 436, 420 ]
+400 silly gunzTarPerm extractEntry test/compress/issue-105.js
+401 silly gunzTarPerm modified mode [ 'test/compress/issue-105.js', 436, 420 ]
+402 silly gunzTarPerm extractEntry test/compress/issue-267.js
+403 silly gunzTarPerm modified mode [ 'test/compress/issue-267.js', 436, 420 ]
+404 silly gunzTarPerm extractEntry test/compress/issue-269.js
+405 silly gunzTarPerm modified mode [ 'test/compress/issue-269.js', 436, 420 ]
+406 silly gunzTarPerm extractEntry test/compress/issue-44.js
+407 silly gunzTarPerm modified mode [ 'test/compress/issue-44.js', 436, 420 ]
+408 silly gunzTarPerm extractEntry test/compress/issue-59.js
+409 silly gunzTarPerm modified mode [ 'test/compress/issue-59.js', 436, 420 ]
+410 silly gunzTarPerm extractEntry test/compress/labels.js
+411 silly gunzTarPerm modified mode [ 'test/compress/labels.js', 436, 420 ]
+412 silly gunzTarPerm extractEntry test/compress/drop-unused.js
+413 silly gunzTarPerm modified mode [ 'test/compress/drop-unused.js', 436, 420 ]
+414 silly gunzTarPerm extractEntry test/compress/loops.js
+415 silly gunzTarPerm modified mode [ 'test/compress/loops.js', 436, 420 ]
+416 silly gunzTarPerm extractEntry test/compress/debugger.js
+417 silly gunzTarPerm modified mode [ 'test/compress/debugger.js', 436, 420 ]
+418 silly gunzTarPerm extractEntry test/compress/negate-iife.js
+419 silly gunzTarPerm modified mode [ 'test/compress/negate-iife.js', 436, 420 ]
+420 silly gunzTarPerm extractEntry test/compress/dead-code.js
+421 silly gunzTarPerm modified mode [ 'test/compress/dead-code.js', 436, 420 ]
+422 silly gunzTarPerm extractEntry test/compress/properties.js
+423 silly gunzTarPerm modified mode [ 'test/compress/properties.js', 436, 420 ]
+424 silly gunzTarPerm extractEntry test/compress/conditionals.js
+425 silly gunzTarPerm modified mode [ 'test/compress/conditionals.js', 436, 420 ]
+426 silly gunzTarPerm extractEntry test/compress/sequences.js
+427 silly gunzTarPerm modified mode [ 'test/compress/sequences.js', 436, 420 ]
+428 silly gunzTarPerm extractEntry test/compress/concat-strings.js
+429 silly gunzTarPerm modified mode [ 'test/compress/concat-strings.js', 436, 420 ]
+430 silly gunzTarPerm extractEntry test/compress/switch.js
+431 silly gunzTarPerm modified mode [ 'test/compress/switch.js', 436, 420 ]
+432 silly gunzTarPerm extractEntry test/compress/blocks.js
+433 silly gunzTarPerm modified mode [ 'test/compress/blocks.js', 436, 420 ]
+434 silly gunzTarPerm extractEntry test/compress/typeof.js
+435 silly gunzTarPerm modified mode [ 'test/compress/typeof.js', 436, 420 ]
+436 silly gunzTarPerm extractEntry test/compress/issue-22.js
+437 silly gunzTarPerm modified mode [ 'test/compress/issue-22.js', 436, 420 ]
+438 silly gunzTarPerm extractEntry lib/ast.js
+439 silly gunzTarPerm modified mode [ 'lib/ast.js', 436, 420 ]
+440 silly gunzTarPerm extractEntry lib/compress.js
+441 silly gunzTarPerm modified mode [ 'lib/compress.js', 436, 420 ]
+442 silly gunzTarPerm extractEntry lib/mozilla-ast.js
+443 silly gunzTarPerm modified mode [ 'lib/mozilla-ast.js', 436, 420 ]
+444 silly gunzTarPerm extractEntry lib/output.js
+445 silly gunzTarPerm modified mode [ 'lib/output.js', 436, 420 ]
+446 silly gunzTarPerm extractEntry lib/parse.js
+447 silly gunzTarPerm modified mode [ 'lib/parse.js', 436, 420 ]
+448 silly gunzTarPerm extractEntry lib/scope.js
+449 silly gunzTarPerm modified mode [ 'lib/scope.js', 436, 420 ]
+450 silly gunzTarPerm extractEntry lib/sourcemap.js
+451 silly gunzTarPerm modified mode [ 'lib/sourcemap.js', 436, 420 ]
+452 silly gunzTarPerm extractEntry lib/transform.js
+453 silly gunzTarPerm modified mode [ 'lib/transform.js', 436, 420 ]
+454 silly gunzTarPerm extractEntry lib/utils.js
+455 silly gunzTarPerm modified mode [ 'lib/utils.js', 436, 420 ]
+456 info preinstall uglify-js@2.4.16
+457 silly prepareForInstallMany adding async@~0.2.6 from uglify-js dependencies
+458 silly prepareForInstallMany adding source-map@0.1.34 from uglify-js dependencies
+459 silly prepareForInstallMany adding optimist@~0.3.5 from uglify-js dependencies
+460 silly prepareForInstallMany adding uglify-to-browserify@~1.0.0 from uglify-js dependencies
+461 silly cache add args [ 'async@~0.2.6', null ]
+462 verbose cache add spec async@~0.2.6
+463 silly cache add args [ 'source-map@0.1.34', null ]
+464 verbose cache add spec source-map@0.1.34
+465 silly cache add args [ 'optimist@~0.3.5', null ]
+466 verbose cache add spec optimist@~0.3.5
+467 silly cache add args [ 'uglify-to-browserify@~1.0.0', null ]
+468 verbose cache add spec uglify-to-browserify@~1.0.0
+469 silly cache add parsed spec { raw: 'async@~0.2.6',
+469 silly cache add   scope: null,
+469 silly cache add   name: 'async',
+469 silly cache add   rawSpec: '~0.2.6',
+469 silly cache add   spec: '>=0.2.6 <0.3.0',
+469 silly cache add   type: 'range' }
+470 verbose addNamed async@>=0.2.6 <0.3.0
+471 silly addNamed semver.valid null
+472 silly addNamed semver.validRange >=0.2.6 <0.3.0
+473 silly addNameRange { name: 'async', range: '>=0.2.6 <0.3.0', hasData: false }
+474 verbose mapToRegistry name async
+475 verbose mapToRegistry uri https://registry.npmjs.org/async
+476 verbose addNameRange registry:https://registry.npmjs.org/async not in flight; fetching
+477 silly cache add parsed spec { raw: 'source-map@0.1.34',
+477 silly cache add   scope: null,
+477 silly cache add   name: 'source-map',
+477 silly cache add   rawSpec: '0.1.34',
+477 silly cache add   spec: '0.1.34',
+477 silly cache add   type: 'version' }
+478 verbose addNamed source-map@0.1.34
+479 silly addNamed semver.valid 0.1.34
+480 silly addNamed semver.validRange 0.1.34
+481 verbose mapToRegistry name source-map
+482 verbose mapToRegistry uri https://registry.npmjs.org/source-map
+483 verbose addNameVersion registry:https://registry.npmjs.org/source-map not in flight; fetching
+484 silly cache add parsed spec { raw: 'optimist@~0.3.5',
+484 silly cache add   scope: null,
+484 silly cache add   name: 'optimist',
+484 silly cache add   rawSpec: '~0.3.5',
+484 silly cache add   spec: '>=0.3.5 <0.4.0',
+484 silly cache add   type: 'range' }
+485 verbose addNamed optimist@>=0.3.5 <0.4.0
+486 silly addNamed semver.valid null
+487 silly addNamed semver.validRange >=0.3.5 <0.4.0
+488 silly addNameRange { name: 'optimist', range: '>=0.3.5 <0.4.0', hasData: false }
+489 verbose mapToRegistry name optimist
+490 verbose mapToRegistry uri https://registry.npmjs.org/optimist
+491 verbose addNameRange registry:https://registry.npmjs.org/optimist not in flight; fetching
+492 silly cache add parsed spec { raw: 'uglify-to-browserify@~1.0.0',
+492 silly cache add   scope: null,
+492 silly cache add   name: 'uglify-to-browserify',
+492 silly cache add   rawSpec: '~1.0.0',
+492 silly cache add   spec: '>=1.0.0 <1.1.0',
+492 silly cache add   type: 'range' }
+493 verbose addNamed uglify-to-browserify@>=1.0.0 <1.1.0
+494 silly addNamed semver.valid null
+495 silly addNamed semver.validRange >=1.0.0 <1.1.0
+496 silly addNameRange { name: 'uglify-to-browserify',
+496 silly addNameRange   range: '>=1.0.0 <1.1.0',
+496 silly addNameRange   hasData: false }
+497 verbose mapToRegistry name uglify-to-browserify
+498 verbose mapToRegistry uri https://registry.npmjs.org/uglify-to-browserify
+499 verbose addNameRange registry:https://registry.npmjs.org/uglify-to-browserify not in flight; fetching
+500 verbose request on initialization, where is /async
+501 verbose request after pass 1, where is /async
+502 verbose request url raw /async
+503 verbose request resolving registry [ 'https://registry.npmjs.org/', './async' ]
+504 verbose request after pass 2, where is https://registry.npmjs.org/async
+505 verbose request no auth needed
+506 info attempt registry request try #1 at 10:36:27
+507 http request GET https://registry.npmjs.org/async
+508 verbose request on initialization, where is /source-map
+509 verbose request after pass 1, where is /source-map
+510 verbose request url raw /source-map
+511 verbose request resolving registry [ 'https://registry.npmjs.org/', './source-map' ]
+512 verbose request after pass 2, where is https://registry.npmjs.org/source-map
+513 verbose request no auth needed
+514 info attempt registry request try #1 at 10:36:27
+515 http request GET https://registry.npmjs.org/source-map
+516 verbose request on initialization, where is /uglify-to-browserify
+517 verbose request after pass 1, where is /uglify-to-browserify
+518 verbose request url raw /uglify-to-browserify
+519 verbose request resolving registry [ 'https://registry.npmjs.org/', './uglify-to-browserify' ]
+520 verbose request after pass 2, where is https://registry.npmjs.org/uglify-to-browserify
+521 verbose request no auth needed
+522 info attempt registry request try #1 at 10:36:27
+523 http request GET https://registry.npmjs.org/uglify-to-browserify
+524 verbose request on initialization, where is /optimist
+525 verbose request after pass 1, where is /optimist
+526 verbose request url raw /optimist
+527 verbose request resolving registry [ 'https://registry.npmjs.org/', './optimist' ]
+528 verbose request after pass 2, where is https://registry.npmjs.org/optimist
+529 verbose request no auth needed
+530 info attempt registry request try #1 at 10:36:27
+531 verbose etag "42W63OGHD17H9QITW866KSTGU"
+532 http request GET https://registry.npmjs.org/optimist
+533 http 200 https://registry.npmjs.org/uglify-to-browserify
+534 silly registry.get cb [ 200,
+534 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:27 GMT',
+534 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+534 silly registry.get     etag: '"9RCOUAJVORG45Z8K8P701NYGC"',
+534 silly registry.get     'content-type': 'application/json',
+534 silly registry.get     'cache-control': 'max-age=60',
+534 silly registry.get     'content-length': '4887',
+534 silly registry.get     'accept-ranges': 'bytes',
+534 silly registry.get     via: '1.1 varnish',
+534 silly registry.get     age: '47',
+534 silly registry.get     'x-served-by': 'cache-atl6224-ATL',
+534 silly registry.get     'x-cache': 'HIT',
+534 silly registry.get     'x-cache-hits': '1',
+534 silly registry.get     'x-timer': 'S1421249787.632154,VS0,VE0',
+534 silly registry.get     vary: 'Accept',
+534 silly registry.get     'keep-alive': 'timeout=10, max=50',
+534 silly registry.get     connection: 'Keep-Alive' } ]
+535 silly addNameRange number 2 { name: 'uglify-to-browserify',
+535 silly addNameRange   range: '>=1.0.0 <1.1.0',
+535 silly addNameRange   hasData: true }
+536 silly addNameRange versions [ 'uglify-to-browserify',
+536 silly addNameRange   [ '0.0.1', '1.0.0', '1.0.1', '1.0.2' ] ]
+537 verbose addNamed uglify-to-browserify@1.0.2
+538 silly addNamed semver.valid 1.0.2
+539 silly addNamed semver.validRange 1.0.2
+540 verbose addRemoteTarball https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz not in flight; adding
+541 verbose addRemoteTarball [ 'https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz',
+541 verbose addRemoteTarball   '6e0924d6bda6b5afe349e39a6d632850a0f882b7' ]
+542 info retry fetch attempt 1 at 10:36:27
+543 info attempt registry request try #1 at 10:36:27
+544 http fetch GET https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz
+545 http 200 https://registry.npmjs.org/optimist
+546 silly registry.get cb [ 200,
+546 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:27 GMT',
+546 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+546 silly registry.get     etag: '"E7QKRCYDU1NBIP4WC02G1JPIA"',
+546 silly registry.get     'content-type': 'application/json',
+546 silly registry.get     'cache-control': 'max-age=60',
+546 silly registry.get     'content-length': '48297',
+546 silly registry.get     'accept-ranges': 'bytes',
+546 silly registry.get     via: '1.1 varnish',
+546 silly registry.get     age: '45',
+546 silly registry.get     'x-served-by': 'cache-atl6228-ATL',
+546 silly registry.get     'x-cache': 'HIT',
+546 silly registry.get     'x-cache-hits': '4',
+546 silly registry.get     'x-timer': 'S1421249787.631372,VS0,VE0',
+546 silly registry.get     vary: 'Accept',
+546 silly registry.get     'keep-alive': 'timeout=10, max=50',
+546 silly registry.get     connection: 'Keep-Alive' } ]
+547 silly addNameRange number 2 { name: 'optimist', range: '>=0.3.5 <0.4.0', hasData: true }
+548 silly addNameRange versions [ 'optimist',
+548 silly addNameRange   [ '0.0.1',
+548 silly addNameRange     '0.0.2',
+548 silly addNameRange     '0.0.4',
+548 silly addNameRange     '0.0.5',
+548 silly addNameRange     '0.0.6',
+548 silly addNameRange     '0.0.7',
+548 silly addNameRange     '0.1.0',
+548 silly addNameRange     '0.1.1',
+548 silly addNameRange     '0.1.2',
+548 silly addNameRange     '0.1.3',
+548 silly addNameRange     '0.1.4',
+548 silly addNameRange     '0.1.5',
+548 silly addNameRange     '0.1.6',
+548 silly addNameRange     '0.1.7',
+548 silly addNameRange     '0.1.8',
+548 silly addNameRange     '0.1.9',
+548 silly addNameRange     '0.0.3',
+548 silly addNameRange     '0.2.0',
+548 silly addNameRange     '0.2.1',
+548 silly addNameRange     '0.2.2',
+548 silly addNameRange     '0.2.3',
+548 silly addNameRange     '0.2.4',
+548 silly addNameRange     '0.2.5',
+548 silly addNameRange     '0.2.6',
+548 silly addNameRange     '0.2.7',
+548 silly addNameRange     '0.2.8',
+548 silly addNameRange     '0.3.0',
+548 silly addNameRange     '0.3.1',
+548 silly addNameRange     '0.3.3',
+548 silly addNameRange     '0.3.4',
+548 silly addNameRange     '0.3.5',
+548 silly addNameRange     '0.3.6',
+548 silly addNameRange     '0.3.7',
+548 silly addNameRange     '0.4.0',
+548 silly addNameRange     '0.5.0',
+548 silly addNameRange     '0.5.1',
+548 silly addNameRange     '0.5.2',
+548 silly addNameRange     '0.6.0',
+548 silly addNameRange     '0.6.1' ] ]
+549 verbose addNamed optimist@0.3.7
+550 silly addNamed semver.valid 0.3.7
+551 silly addNamed semver.validRange 0.3.7
+552 verbose addRemoteTarball https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz not in flight; adding
+553 verbose addRemoteTarball [ 'https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz',
+553 verbose addRemoteTarball   'c90941ad59e4273328923074d2cf2e7cbc6ec0d9' ]
+554 info retry fetch attempt 1 at 10:36:27
+555 info attempt registry request try #1 at 10:36:27
+556 http fetch GET https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+557 http 200 https://registry.npmjs.org/async
+558 silly registry.get cb [ 200,
+558 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:27 GMT',
+558 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+558 silly registry.get     etag: '"W8DVKHTQ3YRGIPCHEXQ93TPH"',
+558 silly registry.get     'content-type': 'application/json',
+558 silly registry.get     'cache-control': 'max-age=60',
+558 silly registry.get     'content-length': '106928',
+558 silly registry.get     'accept-ranges': 'bytes',
+558 silly registry.get     via: '1.1 varnish',
+558 silly registry.get     age: '36',
+558 silly registry.get     'x-served-by': 'cache-atl6232-ATL',
+558 silly registry.get     'x-cache': 'HIT',
+558 silly registry.get     'x-cache-hits': '4',
+558 silly registry.get     'x-timer': 'S1421249787.597136,VS0,VE0',
+558 silly registry.get     vary: 'Accept',
+558 silly registry.get     'keep-alive': 'timeout=10, max=50',
+558 silly registry.get     connection: 'Keep-Alive' } ]
+559 http 200 https://registry.npmjs.org/source-map
+560 silly registry.get cb [ 200,
+560 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:27 GMT',
+560 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+560 silly registry.get     etag: '"CJZL5H9VIOVPO3TF85DYQ3IHH"',
+560 silly registry.get     'content-type': 'application/json',
+560 silly registry.get     'cache-control': 'max-age=60',
+560 silly registry.get     'content-length': '98734',
+560 silly registry.get     'accept-ranges': 'bytes',
+560 silly registry.get     via: '1.1 varnish',
+560 silly registry.get     age: '36',
+560 silly registry.get     'x-served-by': 'cache-atl6229-ATL',
+560 silly registry.get     'x-cache': 'HIT',
+560 silly registry.get     'x-cache-hits': '3',
+560 silly registry.get     'x-timer': 'S1421249787.630887,VS0,VE0',
+560 silly registry.get     vary: 'Accept',
+560 silly registry.get     'keep-alive': 'timeout=10, max=50',
+560 silly registry.get     connection: 'Keep-Alive' } ]
+561 http fetch 200 https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz
+562 silly fetchAndShaCheck shasum 6e0924d6bda6b5afe349e39a6d632850a0f882b7
+563 silly addNameRange number 2 { name: 'async', range: '>=0.2.6 <0.3.0', hasData: true }
+564 silly addNameRange versions [ 'async',
+564 silly addNameRange   [ '0.1.0',
+564 silly addNameRange     '0.1.1',
+564 silly addNameRange     '0.1.2',
+564 silly addNameRange     '0.1.3',
+564 silly addNameRange     '0.1.4',
+564 silly addNameRange     '0.1.5',
+564 silly addNameRange     '0.1.6',
+564 silly addNameRange     '0.1.7',
+564 silly addNameRange     '0.1.8',
+564 silly addNameRange     '0.1.9',
+564 silly addNameRange     '0.1.10',
+564 silly addNameRange     '0.1.11',
+564 silly addNameRange     '0.1.12',
+564 silly addNameRange     '0.1.13',
+564 silly addNameRange     '0.1.14',
+564 silly addNameRange     '0.1.15',
+564 silly addNameRange     '0.1.16',
+564 silly addNameRange     '0.1.17',
+564 silly addNameRange     '0.1.18',
+564 silly addNameRange     '0.1.19',
+564 silly addNameRange     '0.1.20',
+564 silly addNameRange     '0.1.21',
+564 silly addNameRange     '0.1.22',
+564 silly addNameRange     '0.2.0',
+564 silly addNameRange     '0.2.1',
+564 silly addNameRange     '0.2.2',
+564 silly addNameRange     '0.2.3',
+564 silly addNameRange     '0.2.4',
+564 silly addNameRange     '0.2.5',
+564 silly addNameRange     '0.2.6',
+564 silly addNameRange     '0.2.7',
+564 silly addNameRange     '0.2.8',
+564 silly addNameRange     '0.2.9',
+564 silly addNameRange     '0.2.10',
+564 silly addNameRange     '0.3.0',
+564 silly addNameRange     '0.4.0',
+564 silly addNameRange     '0.4.1',
+564 silly addNameRange     '0.5.0',
+564 silly addNameRange     '0.6.0',
+564 silly addNameRange     '0.6.1',
+564 silly addNameRange     '0.6.2',
+564 silly addNameRange     '0.7.0',
+564 silly addNameRange     '0.8.0',
+564 silly addNameRange     '0.9.0' ] ]
+565 verbose addNamed async@0.2.10
+566 silly addNamed semver.valid 0.2.10
+567 silly addNamed semver.validRange 0.2.10
+568 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz not in flight; adding
+569 verbose addTmpTarball already have metadata; skipping unpack for uglify-to-browserify@1.0.2
+570 verbose addRemoteTarball https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz not in flight; adding
+571 verbose addRemoteTarball [ 'https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz',
+571 verbose addRemoteTarball   'a7cfe89aec7b1682c3b198d0acfb47d7d090566b' ]
+572 verbose addRemoteTarball https://registry.npmjs.org/async/-/async-0.2.10.tgz not in flight; adding
+573 verbose addRemoteTarball [ 'https://registry.npmjs.org/async/-/async-0.2.10.tgz',
+573 verbose addRemoteTarball   'b6bbe0b0674b9d719708ca38de8c237cb526c3d1' ]
+574 info retry fetch attempt 1 at 10:36:27
+575 info attempt registry request try #1 at 10:36:27
+576 http fetch GET https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+577 info retry fetch attempt 1 at 10:36:27
+578 info attempt registry request try #1 at 10:36:27
+579 http fetch GET https://registry.npmjs.org/async/-/async-0.2.10.tgz
+580 silly cache afterAdd uglify-to-browserify@1.0.2
+581 verbose afterAdd /Users/appacademy/.npm/uglify-to-browserify/1.0.2/package/package.json not in flight; writing
+582 verbose afterAdd /Users/appacademy/.npm/uglify-to-browserify/1.0.2/package/package.json written
+583 http fetch 200 https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+584 silly fetchAndShaCheck shasum c90941ad59e4273328923074d2cf2e7cbc6ec0d9
+585 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/optimist/-/optimist-0.3.7.tgz not in flight; adding
+586 verbose addTmpTarball already have metadata; skipping unpack for optimist@0.3.7
+587 silly cache afterAdd optimist@0.3.7
+588 verbose afterAdd /Users/appacademy/.npm/optimist/0.3.7/package/package.json not in flight; writing
+589 verbose afterAdd /Users/appacademy/.npm/optimist/0.3.7/package/package.json written
+590 http fetch 200 https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+591 http fetch 200 https://registry.npmjs.org/async/-/async-0.2.10.tgz
+592 silly fetchAndShaCheck shasum b6bbe0b0674b9d719708ca38de8c237cb526c3d1
+593 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/async/-/async-0.2.10.tgz not in flight; adding
+594 verbose addTmpTarball already have metadata; skipping unpack for async@0.2.10
+595 silly cache afterAdd async@0.2.10
+596 verbose afterAdd /Users/appacademy/.npm/async/0.2.10/package/package.json not in flight; writing
+597 verbose afterAdd /Users/appacademy/.npm/async/0.2.10/package/package.json written
+598 silly fetchAndShaCheck shasum a7cfe89aec7b1682c3b198d0acfb47d7d090566b
+599 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/source-map/-/source-map-0.1.34.tgz not in flight; adding
+600 verbose addTmpTarball already have metadata; skipping unpack for source-map@0.1.34
+601 silly cache afterAdd source-map@0.1.34
+602 verbose afterAdd /Users/appacademy/.npm/source-map/0.1.34/package/package.json not in flight; writing
+603 verbose afterAdd /Users/appacademy/.npm/source-map/0.1.34/package/package.json written
+604 silly install resolved [ { name: 'uglify-to-browserify',
+604 silly install resolved     version: '1.0.2',
+604 silly install resolved     description: 'A transform to make UglifyJS work in browserify.',
+604 silly install resolved     keywords: [],
+604 silly install resolved     dependencies: {},
+604 silly install resolved     devDependencies: { 'uglify-js': '~2.4.0', 'source-map': '~0.1.27' },
+604 silly install resolved     scripts: { test: 'node test/index.js' },
+604 silly install resolved     repository:
+604 silly install resolved      { type: 'git',
+604 silly install resolved        url: 'https://github.com/ForbesLindesay/uglify-to-browserify.git' },
+604 silly install resolved     author: { name: 'ForbesLindesay' },
+604 silly install resolved     license: 'MIT',
+604 silly install resolved     bugs: { url: 'https://github.com/ForbesLindesay/uglify-to-browserify/issues' },
+604 silly install resolved     homepage: 'https://github.com/ForbesLindesay/uglify-to-browserify',
+604 silly install resolved     _id: 'uglify-to-browserify@1.0.2',
+604 silly install resolved     dist:
+604 silly install resolved      { shasum: '6e0924d6bda6b5afe349e39a6d632850a0f882b7',
+604 silly install resolved        tarball: 'http://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz' },
+604 silly install resolved     _from: 'uglify-to-browserify@>=1.0.0 <1.1.0',
+604 silly install resolved     _npmVersion: '1.3.14',
+604 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindeay.co.uk' },
+604 silly install resolved     maintainers: [ [Object] ],
+604 silly install resolved     directories: {},
+604 silly install resolved     _shasum: '6e0924d6bda6b5afe349e39a6d632850a0f882b7',
+604 silly install resolved     _resolved: 'https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz' },
+604 silly install resolved   { name: 'optimist',
+604 silly install resolved     version: '0.3.7',
+604 silly install resolved     description: 'Light-weight option parsing with an argv hash. No optstrings attached.',
+604 silly install resolved     main: './index.js',
+604 silly install resolved     dependencies: { wordwrap: '~0.0.2' },
+604 silly install resolved     devDependencies: { hashish: '~0.0.4', tap: '~0.4.0' },
+604 silly install resolved     scripts: { test: 'tap ./test/*.js' },
+604 silly install resolved     repository:
+604 silly install resolved      { type: 'git',
+604 silly install resolved        url: 'http://github.com/substack/node-optimist.git' },
+604 silly install resolved     keywords:
+604 silly install resolved      [ 'argument',
+604 silly install resolved        'args',
+604 silly install resolved        'option',
+604 silly install resolved        'parser',
+604 silly install resolved        'parsing',
+604 silly install resolved        'cli',
+604 silly install resolved        'command' ],
+604 silly install resolved     author:
+604 silly install resolved      { name: 'James Halliday',
+604 silly install resolved        email: 'mail@substack.net',
+604 silly install resolved        url: 'http://substack.net' },
+604 silly install resolved     license: 'MIT/X11',
+604 silly install resolved     engine: { node: '>=0.4' },
+604 silly install resolved     _id: 'optimist@0.3.7',
+604 silly install resolved     dist:
+604 silly install resolved      { shasum: 'c90941ad59e4273328923074d2cf2e7cbc6ec0d9',
+604 silly install resolved        tarball: 'http://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz' },
+604 silly install resolved     _from: 'optimist@>=0.3.5 <0.4.0',
+604 silly install resolved     _npmVersion: '1.2.2',
+604 silly install resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+604 silly install resolved     maintainers: [ [Object] ],
+604 silly install resolved     directories: {},
+604 silly install resolved     _shasum: 'c90941ad59e4273328923074d2cf2e7cbc6ec0d9',
+604 silly install resolved     _resolved: 'https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz' },
+604 silly install resolved   { name: 'async',
+604 silly install resolved     description: 'Higher-order functions and common patterns for asynchronous code',
+604 silly install resolved     main: './lib/async',
+604 silly install resolved     author: { name: 'Caolan McMahon' },
+604 silly install resolved     version: '0.2.10',
+604 silly install resolved     repository: { type: 'git', url: 'https://github.com/caolan/async.git' },
+604 silly install resolved     bugs: { url: 'https://github.com/caolan/async/issues' },
+604 silly install resolved     licenses: [ [Object] ],
+604 silly install resolved     devDependencies: { nodeunit: '>0.0.0', 'uglify-js': '1.2.x', nodelint: '>0.0.0' },
+604 silly install resolved     jam: { main: 'lib/async.js', include: [Object] },
+604 silly install resolved     scripts: { test: 'nodeunit test/test-async.js' },
+604 silly install resolved     _id: 'async@0.2.10',
+604 silly install resolved     dist:
+604 silly install resolved      { shasum: 'b6bbe0b0674b9d719708ca38de8c237cb526c3d1',
+604 silly install resolved        tarball: 'http://registry.npmjs.org/async/-/async-0.2.10.tgz' },
+604 silly install resolved     _from: 'async@>=0.2.6 <0.3.0',
+604 silly install resolved     _npmVersion: '1.3.2',
+604 silly install resolved     _npmUser: { name: 'caolan', email: 'caolan.mcmahon@gmail.com' },
+604 silly install resolved     maintainers: [ [Object] ],
+604 silly install resolved     directories: {},
+604 silly install resolved     _shasum: 'b6bbe0b0674b9d719708ca38de8c237cb526c3d1',
+604 silly install resolved     _resolved: 'https://registry.npmjs.org/async/-/async-0.2.10.tgz' },
+604 silly install resolved   { name: 'source-map',
+604 silly install resolved     description: 'Generates and consumes source maps',
+604 silly install resolved     version: '0.1.34',
+604 silly install resolved     homepage: 'https://github.com/mozilla/source-map',
+604 silly install resolved     author: { name: 'Nick Fitzgerald', email: 'nfitzgerald@mozilla.com' },
+604 silly install resolved     contributors:
+604 silly install resolved      [ [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object],
+604 silly install resolved        [Object] ],
+604 silly install resolved     repository: { type: 'git', url: 'http://github.com/mozilla/source-map.git' },
+604 silly install resolved     directories: { lib: './lib' },
+604 silly install resolved     main: './lib/source-map.js',
+604 silly install resolved     engines: { node: '>=0.8.0' },
+604 silly install resolved     licenses: [ [Object] ],
+604 silly install resolved     dependencies: { amdefine: '>=0.0.4' },
+604 silly install resolved     devDependencies: { dryice: '>=0.4.8' },
+604 silly install resolved     scripts:
+604 silly install resolved      { test: 'node test/run-tests.js',
+604 silly install resolved        build: 'node Makefile.dryice.js' },
+604 silly install resolved     bugs: { url: 'https://github.com/mozilla/source-map/issues' },
+604 silly install resolved     _id: 'source-map@0.1.34',
+604 silly install resolved     _shasum: 'a7cfe89aec7b1682c3b198d0acfb47d7d090566b',
+604 silly install resolved     _from: 'source-map@0.1.34',
+604 silly install resolved     _npmVersion: '1.4.9',
+604 silly install resolved     _npmUser: { name: 'nickfitzgerald', email: 'fitzgen@gmail.com' },
+604 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+604 silly install resolved     dist:
+604 silly install resolved      { shasum: 'a7cfe89aec7b1682c3b198d0acfb47d7d090566b',
+604 silly install resolved        tarball: 'http://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz' },
+604 silly install resolved     _resolved: 'https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz' } ]
+605 info install uglify-to-browserify@1.0.2 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+606 info install optimist@0.3.7 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+607 info install async@0.2.10 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+608 info install source-map@0.1.34 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+609 info installOne uglify-to-browserify@1.0.2
+610 verbose installOne of uglify-to-browserify to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js not in flight; installing
+611 info installOne optimist@0.3.7
+612 verbose installOne of optimist to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js not in flight; installing
+613 info installOne async@0.2.10
+614 verbose installOne of async to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js not in flight; installing
+615 info installOne source-map@0.1.34
+616 verbose installOne of source-map to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js not in flight; installing
+617 verbose lock using /Users/appacademy/.npm/_locks/uglify-to-browserify-90fba6efc6a4dc35.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+618 verbose lock using /Users/appacademy/.npm/_locks/optimist-c4402cf917957c05.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+619 silly install write writing uglify-to-browserify 1.0.2 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+620 silly install write writing optimist 0.3.7 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+621 verbose lock using /Users/appacademy/.npm/_locks/async-abe2a88fb33aeaed.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+622 verbose lock using /Users/appacademy/.npm/_locks/source-map-a8086d4a4c430fe6.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+623 silly install write writing async 0.2.10 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+624 silly install write writing source-map 0.1.34 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+625 silly cache addNamed cb uglify-to-browserify@1.0.2
+626 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+627 silly cache addNamed cb optimist@0.3.7
+628 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+629 silly cache addNamed cb async@0.2.10
+630 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+631 silly cache addNamed cb source-map@0.1.34
+632 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+633 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+634 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+635 verbose tar unpack /Users/appacademy/.npm/uglify-to-browserify/1.0.2/package.tgz
+636 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+637 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+638 verbose tar unpack /Users/appacademy/.npm/optimist/0.3.7/package.tgz
+639 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+640 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+641 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+642 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+643 silly gunzTarPerm modes [ '755', '644' ]
+644 silly gunzTarPerm modes [ '755', '644' ]
+645 verbose tar unpack /Users/appacademy/.npm/async/0.2.10/package.tgz
+646 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+647 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+648 verbose tar unpack /Users/appacademy/.npm/source-map/0.1.34/package.tgz
+649 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+650 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+651 silly gunzTarPerm modes [ '755', '644' ]
+652 silly gunzTarPerm modes [ '755', '644' ]
+653 silly gunzTarPerm extractEntry package.json
+654 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+655 silly gunzTarPerm extractEntry package.json
+656 silly gunzTarPerm extractEntry package.json
+657 silly gunzTarPerm extractEntry package.json
+658 silly gunzTarPerm extractEntry .npmignore
+659 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+660 silly gunzTarPerm extractEntry README.md
+661 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+662 silly gunzTarPerm extractEntry LICENSE
+663 silly gunzTarPerm extractEntry index.js
+664 silly gunzTarPerm extractEntry README.md
+665 silly gunzTarPerm extractEntry LICENSE
+666 silly gunzTarPerm extractEntry component.json
+667 silly gunzTarPerm extractEntry lib/async.js
+668 silly gunzTarPerm extractEntry .npmignore
+669 silly gunzTarPerm extractEntry README.md
+670 silly gunzTarPerm extractEntry LICENSE
+671 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+672 silly gunzTarPerm extractEntry index.js
+673 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+674 silly gunzTarPerm extractEntry example/line_count_options.js
+675 silly gunzTarPerm extractEntry LICENSE
+676 silly gunzTarPerm extractEntry .travis.yml
+677 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+678 silly gunzTarPerm extractEntry test/index.js
+679 silly gunzTarPerm modified mode [ 'test/index.js', 438, 420 ]
+680 silly gunzTarPerm extractEntry example/boolean_double.js
+681 silly gunzTarPerm extractEntry example/divide.js
+682 silly gunzTarPerm extractEntry Makefile.dryice.js
+683 silly gunzTarPerm extractEntry CHANGELOG.md
+684 silly gunzTarPerm extractEntry example/nonopt.js
+685 silly gunzTarPerm extractEntry example/string.js
+686 silly gunzTarPerm extractEntry .tern-port
+687 silly gunzTarPerm extractEntry build/assert-shim.js
+688 silly gunzTarPerm extractEntry example/default_hash.js
+689 silly gunzTarPerm extractEntry example/reflect.js
+690 silly gunzTarPerm extractEntry build/mini-require.js
+691 silly gunzTarPerm extractEntry build/suffix-browser.js
+692 silly gunzTarPerm extractEntry example/default_singles.js
+693 silly gunzTarPerm extractEntry example/usage-options.js
+694 info preinstall uglify-to-browserify@1.0.2
+695 silly gunzTarPerm extractEntry example/bool.js
+696 silly gunzTarPerm extractEntry example/short.js
+697 silly gunzTarPerm extractEntry build/test-prefix.js
+698 silly gunzTarPerm extractEntry build/test-suffix.js
+699 silly install resolved []
+700 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+701 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+702 verbose linkStuff [ false,
+702 verbose linkStuff   false,
+702 verbose linkStuff   false,
+702 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules' ]
+703 info linkStuff uglify-to-browserify@1.0.2
+704 verbose linkBins uglify-to-browserify@1.0.2
+705 verbose linkMans uglify-to-browserify@1.0.2
+706 verbose rebuildBundles uglify-to-browserify@1.0.2
+707 info install uglify-to-browserify@1.0.2
+708 silly gunzTarPerm extractEntry example/xup.js
+709 silly gunzTarPerm extractEntry example/boolean_single.js
+710 info postinstall uglify-to-browserify@1.0.2
+711 verbose unlock done using /Users/appacademy/.npm/_locks/uglify-to-browserify-90fba6efc6a4dc35.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/uglify-to-browserify
+712 silly gunzTarPerm extractEntry build/prefix-source-map.jsm
+713 silly gunzTarPerm extractEntry build/prefix-utils.jsm
+714 silly gunzTarPerm extractEntry example/line_count_wrap.js
+715 silly gunzTarPerm extractEntry example/line_count.js
+716 silly gunzTarPerm extractEntry build/suffix-source-map.jsm
+717 silly gunzTarPerm extractEntry build/suffix-utils.jsm
+718 silly gunzTarPerm extractEntry readme.markdown
+719 silly gunzTarPerm extractEntry test/parse.js
+720 silly gunzTarPerm extractEntry lib/source-map.js
+721 silly gunzTarPerm extractEntry lib/source-map/array-set.js
+722 silly gunzTarPerm extractEntry test/_.js
+723 silly gunzTarPerm extractEntry test/usage.js
+724 silly gunzTarPerm extractEntry test/_/bin.js
+725 silly gunzTarPerm extractEntry test/_/argv.js
+726 silly gunzTarPerm extractEntry lib/source-map/base64-vlq.js
+727 silly gunzTarPerm extractEntry lib/source-map/base64.js
+728 silly gunzTarPerm extractEntry .travis.yml
+729 silly gunzTarPerm extractEntry lib/source-map/binary-search.js
+730 silly gunzTarPerm extractEntry lib/source-map/source-map-consumer.js
+731 silly gunzTarPerm extractEntry lib/source-map/source-map-generator.js
+732 silly gunzTarPerm extractEntry lib/source-map/source-node.js
+733 silly gunzTarPerm extractEntry lib/source-map/util.js
+734 silly gunzTarPerm extractEntry .travis.yml
+735 silly gunzTarPerm extractEntry test/run-tests.js
+736 silly gunzTarPerm extractEntry test/source-map/test-api.js
+737 silly gunzTarPerm extractEntry test/source-map/test-base64-vlq.js
+738 silly gunzTarPerm extractEntry test/source-map/test-base64.js
+739 silly gunzTarPerm extractEntry test/source-map/test-binary-search.js
+740 silly gunzTarPerm extractEntry test/source-map/test-array-set.js
+741 info preinstall async@0.2.10
+742 silly gunzTarPerm extractEntry test/source-map/test-source-map-consumer.js
+743 silly gunzTarPerm extractEntry test/source-map/test-source-map-generator.js
+744 silly install resolved []
+745 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+746 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+747 verbose linkStuff [ false,
+747 verbose linkStuff   false,
+747 verbose linkStuff   false,
+747 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules' ]
+748 info linkStuff async@0.2.10
+749 verbose linkBins async@0.2.10
+750 verbose linkMans async@0.2.10
+751 verbose rebuildBundles async@0.2.10
+752 info install async@0.2.10
+753 info postinstall async@0.2.10
+754 silly gunzTarPerm extractEntry test/source-map/test-source-node.js
+755 silly gunzTarPerm extractEntry test/source-map/test-util.js
+756 verbose unlock done using /Users/appacademy/.npm/_locks/async-abe2a88fb33aeaed.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/async
+757 silly gunzTarPerm extractEntry test/source-map/util.js
+758 silly gunzTarPerm extractEntry test/source-map/test-dog-fooding.js
+759 info preinstall optimist@0.3.7
+760 silly prepareForInstallMany adding wordwrap@~0.0.2 from optimist dependencies
+761 silly cache add args [ 'wordwrap@~0.0.2', null ]
+762 verbose cache add spec wordwrap@~0.0.2
+763 silly cache add parsed spec { raw: 'wordwrap@~0.0.2',
+763 silly cache add   scope: null,
+763 silly cache add   name: 'wordwrap',
+763 silly cache add   rawSpec: '~0.0.2',
+763 silly cache add   spec: '>=0.0.2 <0.1.0',
+763 silly cache add   type: 'range' }
+764 verbose addNamed wordwrap@>=0.0.2 <0.1.0
+765 silly addNamed semver.valid null
+766 silly addNamed semver.validRange >=0.0.2 <0.1.0
+767 silly addNameRange { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: false }
+768 verbose mapToRegistry name wordwrap
+769 verbose mapToRegistry uri https://registry.npmjs.org/wordwrap
+770 verbose addNameRange registry:https://registry.npmjs.org/wordwrap not in flight; fetching
+771 verbose request on initialization, where is /wordwrap
+772 verbose request after pass 1, where is /wordwrap
+773 verbose request url raw /wordwrap
+774 verbose request resolving registry [ 'https://registry.npmjs.org/', './wordwrap' ]
+775 verbose request after pass 2, where is https://registry.npmjs.org/wordwrap
+776 verbose request no auth needed
+777 info attempt registry request try #1 at 10:36:28
+778 verbose etag "BWZBG6OAWP3BCANDD0T9BQOBO"
+779 http request GET https://registry.npmjs.org/wordwrap
+780 info preinstall source-map@0.1.34
+781 silly prepareForInstallMany adding amdefine@>=0.0.4 from source-map dependencies
+782 silly cache add args [ 'amdefine@>=0.0.4', null ]
+783 verbose cache add spec amdefine@>=0.0.4
+784 silly cache add parsed spec { raw: 'amdefine@>=0.0.4',
+784 silly cache add   scope: null,
+784 silly cache add   name: 'amdefine',
+784 silly cache add   rawSpec: '>=0.0.4',
+784 silly cache add   spec: '>=0.0.4',
+784 silly cache add   type: 'range' }
+785 verbose addNamed amdefine@>=0.0.4
+786 silly addNamed semver.valid null
+787 silly addNamed semver.validRange >=0.0.4
+788 silly addNameRange { name: 'amdefine', range: '>=0.0.4', hasData: false }
+789 verbose mapToRegistry name amdefine
+790 verbose mapToRegistry uri https://registry.npmjs.org/amdefine
+791 verbose addNameRange registry:https://registry.npmjs.org/amdefine not in flight; fetching
+792 verbose request on initialization, where is /amdefine
+793 verbose request after pass 1, where is /amdefine
+794 verbose request url raw /amdefine
+795 verbose request resolving registry [ 'https://registry.npmjs.org/', './amdefine' ]
+796 verbose request after pass 2, where is https://registry.npmjs.org/amdefine
+797 verbose request no auth needed
+798 info attempt registry request try #1 at 10:36:28
+799 http request GET https://registry.npmjs.org/amdefine
+800 http 200 https://registry.npmjs.org/wordwrap
+801 silly registry.get cb [ 200,
+801 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:28 GMT',
+801 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+801 silly registry.get     etag: '"AP32JG7VC3WCYSL499KF9Q0G8"',
+801 silly registry.get     'content-type': 'application/json',
+801 silly registry.get     'cache-control': 'max-age=60',
+801 silly registry.get     'content-length': '2348',
+801 silly registry.get     'accept-ranges': 'bytes',
+801 silly registry.get     via: '1.1 varnish',
+801 silly registry.get     age: '48',
+801 silly registry.get     'x-served-by': 'cache-atl6224-ATL',
+801 silly registry.get     'x-cache': 'HIT',
+801 silly registry.get     'x-cache-hits': '5',
+801 silly registry.get     'x-timer': 'S1421249788.416928,VS0,VE0',
+801 silly registry.get     vary: 'Accept',
+801 silly registry.get     'keep-alive': 'timeout=10, max=50',
+801 silly registry.get     connection: 'Keep-Alive' } ]
+802 silly addNameRange number 2 { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: true }
+803 silly addNameRange versions [ 'wordwrap', [ '0.0.1', '0.0.2' ] ]
+804 verbose addNamed wordwrap@0.0.2
+805 silly addNamed semver.valid 0.0.2
+806 silly addNamed semver.validRange 0.0.2
+807 silly cache afterAdd wordwrap@0.0.2
+808 verbose afterAdd /Users/appacademy/.npm/wordwrap/0.0.2/package/package.json not in flight; writing
+809 verbose afterAdd /Users/appacademy/.npm/wordwrap/0.0.2/package/package.json written
+810 silly install resolved [ { name: 'wordwrap',
+810 silly install resolved     description: 'Wrap those words. Show them at what columns to start and stop.',
+810 silly install resolved     version: '0.0.2',
+810 silly install resolved     repository:
+810 silly install resolved      { type: 'git',
+810 silly install resolved        url: 'git://github.com/substack/node-wordwrap.git' },
+810 silly install resolved     main: './index.js',
+810 silly install resolved     keywords: [ 'word', 'wrap', 'rule', 'format', 'column' ],
+810 silly install resolved     directories: { lib: '.', example: 'example', test: 'test' },
+810 silly install resolved     scripts: { test: 'expresso' },
+810 silly install resolved     devDependencies: { expresso: '=0.7.x' },
+810 silly install resolved     engines: { node: '>=0.4.0' },
+810 silly install resolved     license: 'MIT/X11',
+810 silly install resolved     author:
+810 silly install resolved      { name: 'James Halliday',
+810 silly install resolved        email: 'mail@substack.net',
+810 silly install resolved        url: 'http://substack.net' },
+810 silly install resolved     _id: 'wordwrap@0.0.2',
+810 silly install resolved     dependencies: {},
+810 silly install resolved     _engineSupported: true,
+810 silly install resolved     _npmVersion: '1.0.10',
+810 silly install resolved     _nodeVersion: 'v0.5.0-pre',
+810 silly install resolved     _defaultsLoaded: true,
+810 silly install resolved     dist:
+810 silly install resolved      { shasum: 'b79669bb42ecb409f83d583cad52ca17eaa1643f',
+810 silly install resolved        tarball: 'http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz' },
+810 silly install resolved     maintainers: [ [Object] ],
+810 silly install resolved     _shasum: 'b79669bb42ecb409f83d583cad52ca17eaa1643f',
+810 silly install resolved     _resolved: 'https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz',
+810 silly install resolved     _from: 'wordwrap@>=0.0.2 <0.1.0',
+810 silly install resolved     bugs: { url: 'https://github.com/substack/node-wordwrap/issues' },
+810 silly install resolved     readme: 'ERROR: No README data found!',
+810 silly install resolved     homepage: 'https://github.com/substack/node-wordwrap' } ]
+811 info install wordwrap@0.0.2 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+812 info installOne wordwrap@0.0.2
+813 verbose installOne of wordwrap to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist not in flight; installing
+814 verbose lock using /Users/appacademy/.npm/_locks/wordwrap-7a7b56c22e470f80.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+815 silly install write writing wordwrap 0.0.2 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+816 silly cache addNamed cb wordwrap@0.0.2
+817 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+818 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+819 verbose tar unpack /Users/appacademy/.npm/wordwrap/0.0.2/package.tgz
+820 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+821 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+822 silly gunzTarPerm modes [ '755', '644' ]
+823 silly gunzTarPerm extractEntry index.js
+824 silly gunzTarPerm extractEntry .npmignore
+825 silly gunzTarPerm extractEntry package.json
+826 silly gunzTarPerm extractEntry README.markdown
+827 silly gunzTarPerm extractEntry example/center.js
+828 silly gunzTarPerm extractEntry example/meat.js
+829 silly gunzTarPerm extractEntry test/wrap.js
+830 silly gunzTarPerm extractEntry test/break.js
+831 silly gunzTarPerm extractEntry test/idleness.txt
+832 info preinstall wordwrap@0.0.2
+833 silly install resolved []
+834 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+835 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+836 verbose linkStuff [ false,
+836 verbose linkStuff   false,
+836 verbose linkStuff   false,
+836 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules' ]
+837 info linkStuff wordwrap@0.0.2
+838 verbose linkBins wordwrap@0.0.2
+839 verbose linkMans wordwrap@0.0.2
+840 verbose rebuildBundles wordwrap@0.0.2
+841 info install wordwrap@0.0.2
+842 info postinstall wordwrap@0.0.2
+843 verbose unlock done using /Users/appacademy/.npm/_locks/wordwrap-7a7b56c22e470f80.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+844 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+845 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+846 verbose linkStuff [ false,
+846 verbose linkStuff   false,
+846 verbose linkStuff   false,
+846 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules' ]
+847 info linkStuff optimist@0.3.7
+848 verbose linkBins optimist@0.3.7
+849 verbose linkMans optimist@0.3.7
+850 verbose rebuildBundles optimist@0.3.7
+851 verbose rebuildBundles [ 'wordwrap' ]
+852 info install optimist@0.3.7
+853 info postinstall optimist@0.3.7
+854 http 200 https://registry.npmjs.org/amdefine
+855 silly registry.get cb [ 200,
+855 silly registry.get   { date: 'Wed, 14 Jan 2015 15:36:28 GMT',
+855 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+855 silly registry.get     etag: '"8HKYVFMA74F1ZOF5PI07S4URB"',
+855 silly registry.get     'content-type': 'application/json',
+855 silly registry.get     'cache-control': 'max-age=60',
+855 silly registry.get     'content-length': '43464',
+855 silly registry.get     'accept-ranges': 'bytes',
+855 silly registry.get     via: '1.1 varnish',
+855 silly registry.get     age: '60',
+855 silly registry.get     'x-served-by': 'cache-atl6234-ATL',
+855 silly registry.get     'x-cache': 'HIT',
+855 silly registry.get     'x-cache-hits': '5',
+855 silly registry.get     'x-timer': 'S1421249788.446555,VS0,VE0',
+855 silly registry.get     vary: 'Accept',
+855 silly registry.get     'keep-alive': 'timeout=10, max=50',
+855 silly registry.get     connection: 'Keep-Alive' } ]
+856 verbose unlock done using /Users/appacademy/.npm/_locks/optimist-c4402cf917957c05.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/optimist
+857 silly addNameRange number 2 { name: 'amdefine', range: '>=0.0.4', hasData: true }
+858 silly addNameRange versions [ 'amdefine',
+858 silly addNameRange   [ '0.0.1',
+858 silly addNameRange     '0.0.2',
+858 silly addNameRange     '0.0.3',
+858 silly addNameRange     '0.0.4',
+858 silly addNameRange     '0.0.5',
+858 silly addNameRange     '0.0.6',
+858 silly addNameRange     '0.0.7',
+858 silly addNameRange     '0.0.8',
+858 silly addNameRange     '0.1.0' ] ]
+859 verbose addNamed amdefine@0.1.0
+860 silly addNamed semver.valid 0.1.0
+861 silly addNamed semver.validRange 0.1.0
+862 verbose addRemoteTarball https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz not in flight; adding
+863 verbose addRemoteTarball [ 'https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz',
+863 verbose addRemoteTarball   '3ca9735cf1dde0edf7a4bf6641709c8024f9b227' ]
+864 info retry fetch attempt 1 at 10:36:28
+865 info attempt registry request try #1 at 10:36:28
+866 http fetch GET https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz
+867 http fetch 200 https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz
+868 silly fetchAndShaCheck shasum 3ca9735cf1dde0edf7a4bf6641709c8024f9b227
+869 verbose addTmpTarball /var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/npm-71577-32ca89ac/registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz not in flight; adding
+870 verbose addTmpTarball already have metadata; skipping unpack for amdefine@0.1.0
+871 silly cache afterAdd amdefine@0.1.0
+872 verbose afterAdd /Users/appacademy/.npm/amdefine/0.1.0/package/package.json not in flight; writing
+873 verbose afterAdd /Users/appacademy/.npm/amdefine/0.1.0/package/package.json written
+874 silly install resolved [ { name: 'amdefine',
+874 silly install resolved     description: 'Provide AMD\'s define() API for declaring modules in the AMD format',
+874 silly install resolved     version: '0.1.0',
+874 silly install resolved     homepage: 'http://github.com/jrburke/amdefine',
+874 silly install resolved     author:
+874 silly install resolved      { name: 'James Burke',
+874 silly install resolved        email: 'jrburke@gmail.com',
+874 silly install resolved        url: 'http://github.com/jrburke' },
+874 silly install resolved     licenses: [ [Object], [Object] ],
+874 silly install resolved     repository: { type: 'git', url: 'https://github.com/jrburke/amdefine.git' },
+874 silly install resolved     main: './amdefine.js',
+874 silly install resolved     engines: { node: '>=0.4.2' },
+874 silly install resolved     readme: '# amdefine\n\nA module that can be used to implement AMD\'s define() in Node. This allows you\nto code to the AMD API and have the module work in node programs without\nrequiring those other programs to use AMD.\n\n## Usage\n\n**1)** Update your package.json to indicate amdefine as a dependency:\n\n```javascript\n    "dependencies": {\n        "amdefine": ">=0.1.0"\n    }\n```\n\nThen run `npm install` to get amdefine into your project.\n\n**2)** At the top of each module that uses define(), place this code:\n\n```javascript\nif (typeof define !== \'function\') { var define = require(\'amdefine\')(module) }\n```\n\n**Only use these snippets** when loading amdefine. If you preserve the basic structure,\nwith the braces, it will be stripped out when using the [RequireJS optimizer](#optimizer).\n\nYou can add spaces, line breaks and even require amdefine with a local path, but\nkeep the rest of the structure to get the stripping behavior.\n\nAs you may know, because `if` statements in JavaScript don\'t have their own scope, the var\ndeclaration in the above snippet is made whether the `if` expression is truthy or not. If\nRequireJS is loaded then the declaration is superfluous because `define` is already already\ndeclared in the same scope in RequireJS. Fortunately JavaScript handles multiple `var`\ndeclarations of the same variable in the same scope gracefully.\n\nIf you want to deliver amdefine.js with your code rather than specifying it as a dependency\nwith npm, then just download the latest release and refer to it using a relative path:\n\n[Latest Version](https://github.com/jrburke/amdefine/raw/latest/amdefine.js)\n\n### amdefine/intercept\n\nConsider this very experimental.\n\nInstead of pasting the piece of text for the amdefine setup of a `define`\nvariable in each module you create or consume, you can use `amdefine/intercept`\ninstead. It will automatically insert the above snippet in each .js file loaded\nby Node.\n\n**Warning**: you should only use this if you are creating an application that\nis consuming AMD style defined()\'d modules that are distributed via npm and want\nto run that code in Node.\n\nFor library code where you are not sure if it will be used by others in Node or\nin the browser, then explicitly depending on amdefine and placing the code\nsnippet above is suggested path, instead of using `amdefine/intercept`. The\nintercept module affects all .js files loaded in the Node app, and it is\ninconsiderate to modify global state like that unless you are also controlling\nthe top level app.\n\n#### Why distribute AMD-style nodes via npm?\n\nnpm has a lot of weaknesses for front-end use (installed layout is not great,\nshould have better support for the `baseUrl + moduleID + \'.js\' style of loading,\nsingle file JS installs), but some people want a JS package manager and are\nwilling to live with those constraints. If that is you, but still want to author\nin AMD style modules to get dynamic require([]), better direct source usage and\npowerful loader plugin support in the browser, then this tool can help.\n\n#### amdefine/intercept usage\n\nJust require it in your top level app module (for example index.js, server.js):\n\n```javascript\nrequire(\'amdefine/intercept\');\n```\n\nThe module does not return a value, so no need to assign the result to a local\nvariable.\n\nThen just require() code as you normally would with Node\'s require(). Any .js\nloaded after the intercept require will have the amdefine check injected in\nthe .js source as it is loaded. It does not modify the source on disk, just\nprepends some content to the text of the module as it is loaded by Node.\n\n#### How amdefine/intercept works\n\nIt overrides the `Module._extensions[\'.js\']` in Node to automatically prepend\nthe amdefine snippet above. So, it will affect any .js file loaded by your\napp.\n\n## define() usage\n\nIt is best if you use the anonymous forms of define() in your module:\n\n```javascript\ndefine(function (require) {\n    var dependency = require(\'dependency\');\n});\n```\n\nor\n\n```javascript\ndefine([\'dependency\'], function (dependency) {\n\n});\n```\n\n## RequireJS optimizer integration. <a name="optimizer"></name>\n\nVersion 1.0.3 of the [RequireJS optimizer](http://requirejs.org/docs/optimization.html)\nwill have support for stripping the `if (typeof define !== \'function\')` check\nmentioned above, so you can include this snippet for code that runs in the\nbrowser, but avoid taking the cost of the if() statement once the code is\noptimized for deployment.\n\n## Node 0.4 Support\n\nIf you want to support Node 0.4, then add `require` as the second parameter to amdefine:\n\n```javascript\n//Only if you want Node 0.4. If using 0.5 or later, use the above snippet.\nif (typeof define !== \'function\') { var define = require(\'amdefine\')(module, require) }\n```\n\n## Limitations\n\n### Synchronous vs Asynchronous\n\namdefine creates a define() function that is callable by your code. It will\nexecute and trace dependencies and call the factory function *synchronously*,\nto keep the behavior in line with Node\'s synchronous dependency tracing.\n\nThe exception: calling AMD\'s callback-style require() from inside a factory\nfunction. The require callback is called on process.nextTick():\n\n```javascript\ndefine(function (require) {\n    require([\'a\'], function(a) {\n        //\'a\' is loaded synchronously, but\n        //this callback is called on process.nextTick().\n    });\n});\n```\n\n### Loader Plugins\n\nLoader plugins are supported as long as they call their load() callbacks\nsynchronously. So ones that do network requests will not work. However plugins\nlike [text](http://requirejs.org/docs/api.html#text) can load text files locally.\n\nThe plugin API\'s `load.fromText()` is **not supported** in amdefine, so this means\ntranspiler plugins like the [CoffeeScript loader plugin](https://github.com/jrburke/require-cs)\nwill not work. This may be fixable, but it is a bit complex, and I do not have\nenough node-fu to figure it out yet. See the source for amdefine.js if you want\nto get an idea of the issues involved.\n\n## Tests\n\nTo run the tests, cd to **tests** and run:\n\n```\nnode all.js\nnode all-intercept.js\n```\n\n## License\n\nNew BSD and MIT. Check the LICENSE file for all the details.\n',
+874 silly install resolved     readmeFilename: 'README.md',
+874 silly install resolved     bugs: { url: 'https://github.com/jrburke/amdefine/issues' },
+874 silly install resolved     _id: 'amdefine@0.1.0',
+874 silly install resolved     dist:
+874 silly install resolved      { shasum: '3ca9735cf1dde0edf7a4bf6641709c8024f9b227',
+874 silly install resolved        tarball: 'http://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz' },
+874 silly install resolved     _from: 'amdefine@>=0.0.4',
+874 silly install resolved     _npmVersion: '1.3.8',
+874 silly install resolved     _npmUser: { name: 'jrburke', email: 'jrburke@gmail.com' },
+874 silly install resolved     maintainers: [ [Object] ],
+874 silly install resolved     directories: {},
+874 silly install resolved     _shasum: '3ca9735cf1dde0edf7a4bf6641709c8024f9b227',
+874 silly install resolved     _resolved: 'https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz' } ]
+875 info install amdefine@0.1.0 into /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+876 info installOne amdefine@0.1.0
+877 verbose installOne of amdefine to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map not in flight; installing
+878 verbose lock using /Users/appacademy/.npm/_locks/amdefine-0192c503bac5b337.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+879 silly install write writing amdefine 0.1.0 to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+880 silly cache addNamed cb amdefine@0.1.0
+881 verbose unbuild node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+882 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+883 verbose tar unpack /Users/appacademy/.npm/amdefine/0.1.0/package.tgz
+884 verbose tar unpacking to /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+885 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+886 silly gunzTarPerm modes [ '755', '644' ]
+887 silly gunzTarPerm extractEntry package.json
+888 silly gunzTarPerm extractEntry README.md
+889 silly gunzTarPerm extractEntry LICENSE
+890 silly gunzTarPerm extractEntry amdefine.js
+891 silly gunzTarPerm extractEntry intercept.js
+892 info preinstall amdefine@0.1.0
+893 silly install resolved []
+894 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+895 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+896 verbose linkStuff [ false,
+896 verbose linkStuff   false,
+896 verbose linkStuff   false,
+896 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules' ]
+897 info linkStuff amdefine@0.1.0
+898 verbose linkBins amdefine@0.1.0
+899 verbose linkMans amdefine@0.1.0
+900 verbose rebuildBundles amdefine@0.1.0
+901 info install amdefine@0.1.0
+902 info postinstall amdefine@0.1.0
+903 verbose unlock done using /Users/appacademy/.npm/_locks/amdefine-0192c503bac5b337.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+904 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+905 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+906 verbose linkStuff [ false,
+906 verbose linkStuff   false,
+906 verbose linkStuff   false,
+906 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules' ]
+907 info linkStuff source-map@0.1.34
+908 verbose linkBins source-map@0.1.34
+909 verbose linkMans source-map@0.1.34
+910 verbose rebuildBundles source-map@0.1.34
+911 verbose rebuildBundles [ 'amdefine' ]
+912 info install source-map@0.1.34
+913 info postinstall source-map@0.1.34
+914 verbose unlock done using /Users/appacademy/.npm/_locks/source-map-a8086d4a4c430fe6.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js/node_modules/source-map
+915 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+916 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+917 verbose linkStuff [ false,
+917 verbose linkStuff   false,
+917 verbose linkStuff   false,
+917 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules' ]
+918 info linkStuff uglify-js@2.4.16
+919 verbose linkBins uglify-js@2.4.16
+920 verbose link bins [ { uglifyjs: 'bin/uglifyjs' },
+920 verbose link bins   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/.bin',
+920 verbose link bins   false ]
+921 verbose linkMans uglify-js@2.4.16
+922 verbose rebuildBundles uglify-js@2.4.16
+923 verbose rebuildBundles [ 'async', 'optimist', 'source-map', 'uglify-to-browserify' ]
+924 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/.bin/uglifyjs
+925 info install uglify-js@2.4.16
+926 info postinstall uglify-js@2.4.16
+927 verbose unlock done using /Users/appacademy/.npm/_locks/uglify-js-33caebd9972999ef.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs/node_modules/uglify-js
+928 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+929 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+930 verbose linkStuff [ false,
+930 verbose linkStuff   false,
+930 verbose linkStuff   false,
+930 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules' ]
+931 info linkStuff sharedjs@0.0.2
+932 verbose linkBins sharedjs@0.0.2
+933 verbose link bins [ {},
+933 verbose link bins   '/Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/.bin',
+933 verbose link bins   false ]
+934 verbose linkMans sharedjs@0.0.2
+935 verbose rebuildBundles sharedjs@0.0.2
+936 verbose rebuildBundles [ '.bin', 'uglify-js' ]
+937 info install sharedjs@0.0.2
+938 info postinstall sharedjs@0.0.2
+939 verbose unlock done using /Users/appacademy/.npm/_locks/sharedjs-84521ead26979405.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/node_modules/sharedjs
+940 verbose about to build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+941 info build /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+942 verbose linkStuff [ false,
+942 verbose linkStuff   false,
+942 verbose linkStuff   false,
+942 verbose linkStuff   '/Users/appacademy/Desktop/StudyBlocks/node_modules' ]
+943 info linkStuff linter@0.0.7
+944 verbose linkBins linter@0.0.7
+945 verbose link bins [ { linter: './bin/cli.js' },
+945 verbose link bins   '/Users/appacademy/Desktop/StudyBlocks/node_modules/.bin',
+945 verbose link bins   false ]
+946 verbose linkMans linter@0.0.7
+947 verbose rebuildBundles linter@0.0.7
+948 verbose rebuildBundles [ 'argsparser', 'sharedjs' ]
+949 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter
+950 info install linter@0.0.7
+951 verbose unsafe-perm in lifecycle true
+952 info linter@0.0.7 Failed to exec install script
+953 verbose unlock done using /Users/appacademy/.npm/_locks/linter-af0568b4e2750505.lock for /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+954 verbose stack Error: linter@0.0.7 install: `make install`
+954 verbose stack Exit status 2
+954 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+954 verbose stack     at ChildProcess.emit (events.js:98:17)
+954 verbose stack     at maybeClose (child_process.js:756:16)
+954 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+955 verbose pkgid linter@0.0.7
+956 verbose cwd /Users/appacademy/Desktop/StudyBlocks
+957 error Darwin 14.0.0
+958 error argv "node" "/usr/local/bin/npm" "install" "linter"
+959 error node v0.10.33
+960 error npm  v2.1.6
+961 error code ELIFECYCLE
+962 error linter@0.0.7 install: `make install`
+962 error Exit status 2
+963 error Failed at the linter@0.0.7 install script.
+963 error This is most likely a problem with the linter package,
+963 error not with npm itself.
+963 error Tell the author that this fails on your system:
+963 error     make install
+963 error You can get their info via:
+963 error     npm owner ls linter
+963 error There is likely additional logging output above.
+964 verbose exit [ 1, true ]
+965 verbose unbuild node_modules/linter
+966 info preuninstall linter@0.0.7
+967 info uninstall linter@0.0.7
+968 verbose unbuild rmStuff linter@0.0.7 from /Users/appacademy/Desktop/StudyBlocks/node_modules
+969 verbose /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin,[object Object] binRoot
+970 verbose gentlyRm verifying that /Users/appacademy/Desktop/StudyBlocks/node_modules/linter is managed by npm
+971 silly cacheAndTest /Users/appacademy/Desktop/StudyBlocks/node_modules/linter is inside /Users/appacademy/Desktop/StudyBlocks/node_modules
+972 silly gentlyRm /Users/appacademy/Desktop/StudyBlocks/node_modules/linter is managed by npm
+973 silly gentlyRm /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter is not under /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+974 silly gentlyRm checking to see if /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter is a link
+975 silly gentlyRm /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter is a link
+976 silly gentlyRm /Users/appacademy/Desktop/StudyBlocks/node_modules/linter/bin/cli.js inside /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+977 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter
+978 silly gentlyRm removing /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin/linter
+979 silly gentlyRm removing /Users/appacademy/Desktop/StudyBlocks/node_modules/.bin
+980 silly gentlyRm quitting because other entries in /Users/appacademy/Desktop/StudyBlocks/node_modules
+981 info postuninstall linter@0.0.7
+982 verbose gentlyRm vacuuming /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+983 silly gentlyRm purging /Users/appacademy/Desktop/StudyBlocks/node_modules/linter
+984 silly gentlyRm removing /Users/appacademy/Desktop/StudyBlocks/node_modules
+985 silly gentlyRm quitting because other entries in /Users/appacademy/Desktop/StudyBlocks

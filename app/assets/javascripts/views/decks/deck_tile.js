@@ -7,9 +7,15 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
     "click .edit-deck": "editDeck"
   },
 
+  initialize: function (options) {
+    this.writeable = options.writeable;
+  },
+
   render: function () {
-    console.log(this.model.cards())
-    var content = this.template({ deck : this.model });
+    var content = this.template({
+      deck: this.model,
+      writeable: this.writeable
+    });
     this.$el.html(content);
     return this;
   },

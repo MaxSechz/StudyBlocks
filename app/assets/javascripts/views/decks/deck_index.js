@@ -7,6 +7,9 @@ StudyBlocks.Views.DecksIndex = Backbone.CollectionView.extend({
   },
   subModelViewName: "DeckTile",
   selector: ".decks",
+  options: {
+    writeable: true
+  },
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);

@@ -28,13 +28,5 @@ StudyBlocks.Models.Test = Backbone.Model.extend({
       delete response.score;
     }
     return response;
-  },
-
-  // score: function () {
-  //   var results = this.responses().countBy(function (response) {
-  //     console.log(response.result)
-  //     return response.result;
-  //   });
-  //   return results.true / this.responses.length;
-  // }
+  }
 });

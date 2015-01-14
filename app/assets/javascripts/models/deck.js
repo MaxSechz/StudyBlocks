@@ -52,15 +52,17 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
       this.cards().set(response.cards, {parse: true});
       delete response.cards;
     }
-
     if (response.course) {
       this.course().set(response.course);
       delete response.course;
     }
-
     if (response.scores) {
       this.scores = response.scores;
       delete response.scores;
+    }
+    if (response.user) {
+      this.user = new StudyBlocks.Models.User(response.user);
+      delete response.user;
     }
     return response;
   },

@@ -7,7 +7,7 @@ module Api
     end
 
     def show
-      @course = Course.find(params[:id]).includes(decks: :user)
+      @course = Course.includes(decks: :user).find(params[:id])
       render :show
     end
 

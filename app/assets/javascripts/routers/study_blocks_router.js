@@ -76,13 +76,15 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     this._swapView(courseIndex)
   },
 
-  // courseShow: function (id) {
-  //   var course = new StudyBlocks.Models.Course({ id: id });
-  //   course.fetch();
-  //   var courseShow = new StudyBlocks.Views.CourseShow({
-  //
-  //   });
-  // },
+  courseShow: function (id) {
+    var course = new StudyBlocks.Models.Course({ id: id });
+    course.fetch();
+    var courseShow = new StudyBlocks.Views.CourseShow({
+      model: course,
+      collection: course.decks()
+    });
+    this._swapView(courseShow);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

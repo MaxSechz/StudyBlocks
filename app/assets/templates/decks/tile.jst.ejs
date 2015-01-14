@@ -1,11 +1,15 @@
 <ul class="deck-attrs">
   <li>
+    <% console.log(deck) %>
     <a href="<%= "#/decks/" + deck.id %>"><%= deck.escape('title') %></a>
+    <strong><%= deck.author %></strong>
   </li>
+  <% if (writeable) { %>
   <li>
     <button class="delete-deck">Delete</button>
   </li>
   <li>
     <button class="edit-deck">Edit</button>
   </li>
+  <% } %>
 </ul>
