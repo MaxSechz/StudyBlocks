@@ -9,7 +9,8 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     'decks/:id/tests': 'testIndex',
     'decks/:id/tests/:id': 'testShow',
     'courses': "courseIndex",
-    'courses/:id': "courseShow"
+    'courses/new': "courseNew",
+    'courses/:id': "courseShow",
   },
 
   initialize: function (options) {
@@ -102,6 +103,15 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       collection: course.decks()
     });
     this._swapView(courseShow);
+  },
+
+  courseNew: function () {
+    var courses = new StudybBlocks.Collections.Courses();
+    courses.fetch();
+    var courseNew = new StudyBlocks.Views.CourseNew({
+      collection: courses
+    });
+    this._swapView(courseNew);
   },
 
   _swapView: function (view) {
