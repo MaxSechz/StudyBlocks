@@ -30,8 +30,11 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
 
   submitTest: function (event) {
     event.preventDefault();
-    var responses = this.subviews(this.selector).map(function (subview) {
-      var response = { card_id : subview.model.id };
+    var responses = [];
+    var currentSubviews = this.subviews(this.selector);
+    for (var subviewId in currentSubviews) {
+      var subview = currentSubviews[subviewId];
+      var response = { card_id : subviewId };
       if (subview.model.escape('format') === "field") {
         response.response_text = [];
         subview.$("input").each(function (input) {
@@ -40,8 +43,9 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
       } else {
         response.response_text = subview.$("input[type='text'], textarea, input:checked").val();
       }
-      return response;
-    });
+      responses.push(response);
+    };
+    debugger
     var data = { test: { responses_attributes: responses }};
     var thisDeck = this.deck;
     this.model.set(data);

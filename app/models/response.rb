@@ -8,9 +8,9 @@ class Response < ActiveRecord::Base
     if self.card.format == "field"
       back_hash_values = JSON.parse(self.card.back).values
       response_values = JSON.parse(self.response_text)
-      return back_hash_values == response_values
+      return back_hash_values.map(&:downcase) == response_values.map(&:downcase)
     else
-      self.response_text == self.card.back
+      self.response_text.downcase == self.card.back.downcase
     end
   end
 end

@@ -16,7 +16,6 @@
   </tr>
   <tr>
     <td>
-      <% console.log(response.card) %>
       <% if (response.card.escape('format') === "field") { %>
         <% var i = 0 %>
         <% for (attr in response.card.get('back')) { %>
@@ -30,7 +29,7 @@
     <td>
       <% if (response.card.escape('format') === "field") { %>
         <% for (attr in response.card.get('back')) { %>
-          <%= response.card.get('back')[attr] %>
+          <%= attr %>: <%= response.card.get('back')[attr] %>
         <% } %>
       <% } else { %>
         <%= response.card.escape('back') %>

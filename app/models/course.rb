@@ -1,4 +1,10 @@
 class Course < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search,
+                  against: [:title, :instructor, :course_code],
+                  :using => {
+                    :tsearch => {:prefix => true}
+                  }
   validates :title, :course_code, :instructor, :school_id, presence: true
 
   belongs_to :school

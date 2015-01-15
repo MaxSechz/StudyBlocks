@@ -1,9 +1,19 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = current_user.school.courses
+    raise "#{params[:query]}"
+    if params[:query]
+      @courses = Course.search(params[:query]).to_a;
+      raise "#{@courses}"
+    else
+      @courses = current_user.school.courses
+    end
     render :index
   end
+
+  # def search
+  #   render :index
+  # end
 
   def show
     @course = Course.find(params[:id])

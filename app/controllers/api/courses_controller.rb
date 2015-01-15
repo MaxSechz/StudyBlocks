@@ -2,7 +2,11 @@ module Api
   class CoursesController < ApplicationController
 
     def index
-      @courses = current_user.courses
+      if params[:query]
+        @courses = current_user.school.courses.search(params[:query]).to_a;
+      else
+        @courses = current_user.courses
+      end
       render json: @courses
     end
 

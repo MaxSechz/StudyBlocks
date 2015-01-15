@@ -2,7 +2,8 @@ module Api
   class CardsController < ApplicationController
     before_action :require_logged_in
     before_action :get_deck
-    before_action :ensure_card_belongs_to_user
+    before_action :ensure_user_has_access, only: [:show, :index]
+    before_action :ensure_card_belongs_to_user, only: [:create, :update, :destroy]
 
     wrap_parameters :card, include: [:front, :back, :format, :deck_id, :image]
 
@@ -56,8 +57,12 @@ module Api
       @deck = Deck.find(params[:deck_id])
     end
 
-    def ensure_card_belongs_to_user
+    def ensure_user_has_access
       redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course} || @deck.user = current_user
+    end
+
+    def ensure_card_belongs_to_user
+      redirect_to root_url unless @deck.user = current_user
     end
   end
 

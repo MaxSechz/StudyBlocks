@@ -4,6 +4,7 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
   template: JST['tests/index'],
 
   initialize: function () {
+    console.log(this.collection)
     this.listenTo(this.collection, "sync", this.prep);
   },
 

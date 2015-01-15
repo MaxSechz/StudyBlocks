@@ -33,7 +33,16 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   },
 
   renderCollection: function () {
-    this.collection.each(this.addModelView.bind(this));
+    var keys = [];
+    for (var i = 0; i < this.collection.models.length; i++) {
+      var modelId = this.addModelView(this.collection.models[i]);
+      modelId && keys.push(modelId.toString());
+    }
+    var trash = _.omit(this.subviews(this.selector), keys);
+    _.each(trash, function (subview) {
+      subview.remove();
+    });
+    this.subviews()[this.selector] = _.pick(this.subviews(this.selector), keys);
   },
 
   addModelView: function (subModel) {
@@ -42,5 +51,6 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
     }
     var subView = this.subModelView({ model: subModel });
     this.addSubview(this.selector, subView);
+    return subModel.id;
   },
 });

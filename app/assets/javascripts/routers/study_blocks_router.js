@@ -106,8 +106,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   courseNew: function () {
-    var courses = new StudybBlocks.Collections.Courses();
-    courses.fetch();
+    var courses = new StudyBlocks.Collections.Courses();
     var courseNew = new StudyBlocks.Views.CourseNew({
       collection: courses
     });

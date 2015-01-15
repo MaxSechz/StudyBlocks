@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :deck, inverse_of: :cards
-  has_many :responses
+  has_many :responses, dependent: :destroy
 
   def average_score
     responses = self.responses.count

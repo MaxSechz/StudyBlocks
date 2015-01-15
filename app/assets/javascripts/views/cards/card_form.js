@@ -98,9 +98,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     reader.onloadend = function(){
       that._updatePreview(reader.result);
       that.model.set('image', reader.result);
-
-      console.log(that.model);
-    }
+    };
 
     if (file) {
       reader.readAsDataURL(file);

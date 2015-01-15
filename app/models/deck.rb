@@ -4,8 +4,8 @@ class Deck < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :course
-  has_many :cards, inverse_of: :deck
-  has_many :tests
+  has_many :cards, inverse_of: :deck, dependent: :destroy
+  has_many :tests, dependent: :destroy
 
   accepts_nested_attributes_for :cards
 
