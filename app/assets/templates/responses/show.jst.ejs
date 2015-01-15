@@ -1,0 +1,40 @@
+<table>
+  <caption>
+    <% if (response.card.escape('image')) { %>
+      <img src="<%= response.card.escape('image') %>" alt="" />
+    <% } else { %>
+      <%= response.card.escape('front') %>
+    <% } %>
+  </caption>
+  <tr>
+    <th>
+      Your Answer
+    </th>
+    <th>
+      Correct Answer
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <% console.log(response.card) %>
+      <% if (response.card.escape('format') === "field") { %>
+        <% var i = 0 %>
+        <% for (attr in response.card.get('back')) { %>
+          <%= attr %>: <%= JSON.parse(response.get('response_text'))[i] %>
+          <% i++ %>
+        <% } %>
+        <% } else { %>
+          <%= response.escape('response_text') %>
+        <% } %>
+    </td>
+    <td>
+      <% if (response.card.escape('format') === "field") { %>
+        <% for (attr in response.card.get('back')) { %>
+          <%= response.card.get('back')[attr] %>
+        <% } %>
+      <% } else { %>
+        <%= response.card.escape('back') %>
+      <% } %>
+    </td>
+  </tr>
+</table>

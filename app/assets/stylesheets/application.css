@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+a, div {
+  margin: 0px;
+  border: 0px;
+  outline: 0px;
+  padding: 0px;
+  box-shadow: none;
+  background: inherit;
+  text-decoration: none;
+}
+
+div > .google-visualization-tooltip, circle {
+  background: inherit;
+  display: block;
+  margin: 0px;
+  border: 0px;
+  outline: 0px;
+  padding: 0px;
+  box-shadow: none;
+}
+
+.google-visualization-tooltip {
+  background: transparent;
+  display: block;
+}
+
+.tooltip {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #3366cc;
+  border-radius: 50%;
+  -webkit-transition: width 0.2s, height 0.2s, border-radius 0.2s;
+}
+
+.fakeout {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.fakeout:hover > .tooltip:hover {
+  width: 110px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.tooltip > strong {
+  display: block;
+  white-space: nowrap;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s;
+}
+
+
+.tooltip:hover > strong {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+}

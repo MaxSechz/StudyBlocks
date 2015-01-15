@@ -4,7 +4,7 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
   },
 
   initialize: function (attrs, options) {
-    this.deck = options.deck;
+      this.deck = options.deck;
   },
 
   parse: function (response, options) {
@@ -13,7 +13,7 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
       delete response.deck;
     }
     if (response.image === "/images/original/missing.png") {
-      delete response.image
+      delete response.image;
     }
     try {
       response.back = JSON.parse(response.back);

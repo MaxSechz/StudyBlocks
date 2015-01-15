@@ -8,7 +8,7 @@ module Api
     end
 
     def show
-      @test = @deck.test(params[:test_id]).includes(:responses)
+      @test = @deck.tests.includes(responses: :card).find(params[:id])
       render :show
     end
 
