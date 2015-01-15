@@ -1,7 +1,8 @@
 class Card < ActiveRecord::Base
   FORMATS = %w(boolean field choice response)
-  validates :front, :back, :format, :deck, presence: true
+  validates :back, :format, :deck, presence: true
   validates :format, inclusion: { in: FORMATS }
+  validate :has_image_or_front
 
   has_attached_file :image, default_url: '', styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
@@ -15,4 +16,13 @@ class Card < ActiveRecord::Base
     results = self.responses.map {|response| response.result}
     results.count(true) * 100 / self.responses.count
   end
+
+  private
+
+  def has_image_or_front
+    if image.nil? && front.nil?
+        errors.add(:base, "Must have either an image or text on the front of the card")
+    end
+  end
+
 end
