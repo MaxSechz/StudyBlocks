@@ -1,4 +1,6 @@
 <label>True
-  <input type="radio" name="back" value="true">
-</label>False
-  <input type="radio" name="back" value="false">
+  <input type="radio" name="back" value="true" <%= card.get('back') && "checked" %>>
+</label>
+<label>False
+  <input type="radio" name="back" value="false" <%= !card.get('back') && "checked" %>>
+</label>

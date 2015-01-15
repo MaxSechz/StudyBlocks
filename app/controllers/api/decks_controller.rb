@@ -50,7 +50,8 @@ module Api
     private
 
     def ensure_user_has_access
-      redirect_to root_url unless current_user.courses.any? {|course| course == Deck.find(params[:id]).course}
+      @deck = Deck.find(params[:id])
+      redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course} || @deck.user == current_user
     end
 
     def deck_params

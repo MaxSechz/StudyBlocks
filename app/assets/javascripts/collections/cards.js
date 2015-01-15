@@ -8,6 +8,16 @@ StudyBlocks.Collections.Cards = Backbone.Collection.extend({
     this.deck = options.deck;
   },
 
+  toJSON: function () {
+    var targetCards = [];
+    _.each(this.models, function (card) {
+      if (card.isNew() || card.hasChanged()) {
+          targetCards.push(card.toJSON());
+      }
+    });
+    return targetCards;
+  },
+
   parse: function (response, options) {
     var thisDeck = this.deck;
     response.forEach(function (obj) {

@@ -57,7 +57,7 @@ module Api
     end
 
     def ensure_card_belongs_to_user
-      redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course}
+      redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course} || @deck.user = current_user
     end
   end
 

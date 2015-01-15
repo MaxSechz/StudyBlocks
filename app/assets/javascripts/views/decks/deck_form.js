@@ -25,10 +25,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
     event.preventDefault();
     var formView = this;
     var deck = this.$el.serializeJSON();
-    deck.cards_attributes = this.model.cards().toJSON();
-    var data = { deck: deck };
-    this.model.set(data);
-    this.model.save({}, {
+    this.model.save(deck, {
       success: function (model, response) {
         Backbone.history.navigate("decks/" + model.id, {trigger: true});
       },
