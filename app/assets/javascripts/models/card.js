@@ -4,7 +4,7 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
   },
 
   initialize: function (attrs, options) {
-      this.deck = options.deck;
+      this.deck = this.collection.deck;
   },
 
   toJSON: function () {

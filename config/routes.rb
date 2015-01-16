@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
     resources :schools, only: [:index, :show, :create]
     resources :courses, only: [:index, :show, :create]
-    resources :registrations, only: [:new, :create, :destroy]
+    resources :registrations, only: [:show, :create, :destroy]
   end
 end

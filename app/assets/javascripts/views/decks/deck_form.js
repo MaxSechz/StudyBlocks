@@ -17,8 +17,10 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   initialize: function () {
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
+    this.collection.fetch();
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.courses, "sync", this.render);
-    this.listenTo(this.model.cards(), "sync add", this.renderCollection);
+    this.listenTo(this.collection, "sync add", this.renderCollection);
   },
 
   submit: function (event) {
@@ -27,7 +29,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
     var deck = this.$el.serializeJSON();
     this.model.save(deck, {
       success: function (model, response) {
-        Backbone.history.navigate("decks/" + model.id, {trigger: true});
+        // Backbone.history.navigate("decks/" + model.id, {trigger: true});
       },
       error: function (model, response) {
         jQuery.extend(formView.model.errors(), response.responseJSON);

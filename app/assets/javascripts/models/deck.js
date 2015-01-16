@@ -18,7 +18,6 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
   },
 
   toJSON: function (options) {
-    console.log(options);
     var attrs = _.clone(this.attributes);
     attrs.cards_attributes = this.cards().toJSON();
     return { deck: attrs };

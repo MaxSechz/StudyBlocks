@@ -1,16 +1,16 @@
-StudyBlocks.Views.CourseIndex = Backbone.View.extend({
-  tagName: "ul",
+StudyBlocks.Views.CourseIndex = Backbone.CollectionView.extend({
+  tagName: "section",
   className: "courses",
   events: {},
   template: JST["courses/index"],
-
-  initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+  selector: ".course-list",
+  subModelViewName: 'CourseTile',
+  options: {
+    tagName: 'li'
   },
 
-  render: function () {
-    var content = this.template({ courses: this.collection });
-    this.$el.html(content);
-    return this;
-  }
+  initialize: function () {
+    this.options.collection = this.collection;
+    this.listenTo(this.collection, "sync remove", this.render);
+  },
 });

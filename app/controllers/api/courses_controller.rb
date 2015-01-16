@@ -16,13 +16,13 @@ module Api
     end
 
     def create
-      @course = Course.new(course_params)
+      @course = current_user.school.courses.new(course_params)
       @course.registrations.new(user_id: current_user.id)
 
       if @course.save
-        redirect_to course_url(@course)
+        render json: @course
       else
-        render "registrations/new"
+        render json: @course.errors.messages
       end
     end
 

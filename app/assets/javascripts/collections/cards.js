@@ -11,8 +11,8 @@ StudyBlocks.Collections.Cards = Backbone.Collection.extend({
   toJSON: function () {
     var targetCards = [];
     _.each(this.models, function (card) {
-      if (card.isNew() || card.hasChanged()) {
-          targetCards.push(card.toJSON());
+      if (card.isNew() || card.get('changed')) {
+        targetCards.push(card.toJSON());
       }
     });
     return targetCards;

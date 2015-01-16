@@ -1,13 +1,16 @@
 module Api
   class RegistrationsController < ApplicationController
-    def new
-      @registration = Registration.new
-      render :new
+
+    def show
+      @registration = Registration.find_by(
+                      course_id: params[:id],
+                      user_id: current_user.id
+                      )
+      render json: @registration
     end
 
     def create
       @registration = current_user.registrations.new(registration_params)
-
       if @registration.save
         render json: @registration
       else
@@ -16,7 +19,7 @@ module Api
     end
 
     def destroy
-      @registration = Registration.find_by(course_id: registration_params[:course_id], user_id: current_user.id)
+      @registration = Registration.find(params[:id])
       @registration.destroy
       render json: @registration
     end

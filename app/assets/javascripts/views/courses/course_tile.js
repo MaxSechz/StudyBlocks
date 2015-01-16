@@ -1,15 +1,30 @@
 StudyBlocks.Views.CourseTile = Backbone.View.extend({
   tagName: '',
   className: "course-tile",
-  template: JST["courses/tile"],
+  templates: {
+    li: JST["courses/tile_list"],
+    option: JST["courses/tile_option"],
+  },
+  events: {
+    "click .drop-course": "dropCourse"
+  },
+
   id: function () {
     return this.model.id;
   },
-  attributes: function () {
-      return { value: this.id() }
-  },
+
   initialize: function (options) {
+    console.log(options)
+    this.registration = new StudyBlocks.Models.Registration({
+      id: this.model.id
+    });
+    this.registration.fetch({
+      success: function (model, response) {
+        console.log(model,response)
+      }
+    });
     this.tagName = options.tagName;
+    this.template = this.templates[this.tagName];
   },
 
   render: function () {
@@ -17,4 +32,16 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
     this.$el.html(content);
     return this;
   },
+
+  dropCourse: function (event) {
+    event.preventDefault();
+    var thisView = this;
+    debugger
+    this.registration.destroy({
+      success: function (model, response) {
+        console.log(model, response)
+        thisView.collection.remove(thisView.model);
+      }
+    });
+  }
 });

@@ -63,6 +63,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     }
     var thisForm = this;
     var thisDeck = this.model.deck;
+    this.model.set('changed', true);
     this.model.set(attrs);
     if (this.submit) {
       this.model.save({}, {

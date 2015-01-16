@@ -10,11 +10,13 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
   selector: ".course-list",
   subModelViewName: 'CourseTile',
   options: {
-    tagName: 'option'
+    tagName: 'option',
+    attributes: function () {
+      return { value: this.id() };
+    }
   },
 
   searchCourses: function (event) {
-    console.log(this.$el)
     event.preventDefault();
     var thisView = this;
     this.collection.fetch({
@@ -38,8 +40,15 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
   },
 
   createAndRegister: function (event) {
-    event.preventDefault()
-    console.log(event)
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var data = $target.serializeJSON();
+    var course = new StudyBlocks.Models.Course(data);
+    course.save({
+      success: function (model) {
+          console.log(model);
+      }
+    });
 
   }
 });
