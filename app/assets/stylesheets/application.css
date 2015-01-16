@@ -129,13 +129,14 @@ button {
   width: 100%;
 }
 .card {
+  margin: 20px;
   text-align: center;
   padding: 20px;
   background: #eee;
   display: block;
   float: left;
   width: 260px;
-  height: 260px;
+  min-height: 260px;
 }
 /*ToolTip reset and styles*/
 div > .google-visualization-tooltip, circle {
