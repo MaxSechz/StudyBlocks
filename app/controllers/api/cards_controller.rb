@@ -53,16 +53,12 @@ module Api
       params.require(:card).permit(:front, :back, :format, :deck_id, :image)
     end
 
-    def get_deck
-      @deck = Deck.find(params[:deck_id])
-    end
-
     def ensure_user_has_access
-      redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course} || @deck.user = current_user
+      render json: {errors: "You don't have access to that card"} unless get_deck.has_access?(current_user)
     end
 
     def ensure_card_belongs_to_user
-      redirect_to root_url unless @deck.user = current_user
+      render json: {errors: "You don't own that deck"} unless get_deck.can_write?(current_user)
     end
   end
 

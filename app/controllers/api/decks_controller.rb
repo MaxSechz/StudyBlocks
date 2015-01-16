@@ -51,13 +51,11 @@ module Api
     private
 
     def ensure_user_has_access
-      @deck = Deck.find(params[:id])
-      redirect_to root_url unless current_user.courses.any? {|course| course == @deck.course} || @deck.user == current_user
+      render json: {errors: "You don't have access to that deck"} unless get_deck.has_access?(current_user)
     end
 
     def ensure_user_owns_deck
-      @deck = Deck.find(params[:id])
-      redirect_to root_url unless @deck.user == current_user
+      render json: {errors: "You don't own that deck"} unless get_deck.can_write?(current_user)
     end
 
     def deck_params

@@ -1,6 +1,6 @@
 StudyBlocks.Routers.Router = Backbone.Router.extend({
   routes: {
-    '': "deckIndex",
+    // '': "home",
     'decks': "deckIndex",
     'decks/:id': "deckShow",
     'decks/:id/study': "deckStudy",

@@ -13,22 +13,130 @@
  *= require_tree .
  *= require_self
  */
-a, div {
+body, a, div, ul, li, h1, h2, h3, button, strong {
   margin: 0;
   border: 0;
-  outline: 0;
   padding: 0;
   box-shadow: none;
   background: inherit;
   text-decoration: none;
+  list-style: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: sans-serif;
 }
 
+body {
+  background: #CCCCCC;
+  height: 1500px;
+  width: 1500px;
+}
+
+button {
+  appearance: none;
+}
+
+a, img {
+  width: 100%;
+  display: block;
+}
+
+button {
+  background: #ffacac;
+}
+
+.group:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  font-size: 16px;
+  background: #acffac;
+  color: #acffac;
+  width: 60px;
+  height: 100%;
+  float: left;
+  -webkit-transition: width 1s, color 1s;
+}
+
+.navbar:hover {
+  color: #333;
+  width: 200px;
+}
+
+.navbar .logo {
+  text-align: center;
+  font-size: 24px;
+  display: block;
+  font-weight: bold;
+}
+
+.logo a {
+  padding: 20px 0px;
+}
+
+.navbar .nav-links {
+  list-style: square;
+  display: block;
+  /*position: relative;*/
+}
+
+.nav-links > li {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.nav-links a {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.nav-links button {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.content {
+  width: 1200px;
+  padding: 30px;
+  display: block;
+  float: left;
+}
+
+.content h1 {
+  font-size: 36px;
+}
+
+.cards {
+  width: 100%;
+}
+.card {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+  display: block;
+  float: left;
+  width: 260px;
+  height: 260px;
+}
+/*ToolTip reset and styles*/
 div > .google-visualization-tooltip, circle {
   background: inherit;
   display: block;
   margin: 0;
   border: 0;
-  outline: 0;
   padding: 0;
   box-shadow: none;
 }

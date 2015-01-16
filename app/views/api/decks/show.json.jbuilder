@@ -13,3 +13,5 @@ end
 if @deck.course
   json.course @deck.course, :id, :title, :course_code, :instructor, :school_id if @deck.course
 end
+
+json.writeable @deck.can_write?(current_user)

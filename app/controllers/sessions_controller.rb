@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if @user.valid_password_and_name?
       login!(@user)
-      redirect_to root_url
+      render 'static/studyblocks'
     else
       render :new
     end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!(current_user)
-    redirect_to new_session_url
+    redirect_to root_url
   end
 
 end

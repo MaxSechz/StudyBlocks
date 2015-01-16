@@ -21,10 +21,12 @@
       <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
     </li>
   <% } %>
-  <li>
-    <button class="delete-card">Delete</button>
-  </li>
-  <li>
-    <button class="edit-card">Edit</button>
-  </li>
+  <% if (card.get('writeable')) { %>
+    <li>
+      <button class="delete-card">Delete</button>
+    </li>
+    <li>
+      <button class="edit-card">Edit</button>
+    </li>
+  <% } %>
 </ul>

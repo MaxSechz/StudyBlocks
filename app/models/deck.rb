@@ -13,6 +13,14 @@ class Deck < ActiveRecord::Base
     tests.map { |test| test.score }
   end
 
+  def has_access?(user)
+    user.courses.any? {|course| course == self.course} || self.user = user
+  end
+
+  def can_write?(user)
+    self.user == user
+  end
+
   private
 
   def owner_school_equals_course_school
