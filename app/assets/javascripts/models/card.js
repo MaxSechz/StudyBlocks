@@ -4,7 +4,11 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
   },
 
   initialize: function (attrs, options) {
+    if (options.deck) {
+      this.deck = options.deck
+    } else if (this.collection) {
       this.deck = this.collection.deck;
+    }
   },
 
   toJSON: function () {

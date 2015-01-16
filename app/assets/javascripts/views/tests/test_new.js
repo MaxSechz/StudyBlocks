@@ -14,6 +14,7 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
 
   initialize: function () {
     this.deck = this.model.deck();
+    this.deck.fetch();
     this.listenTo(this.collection, "sync", this.render);
   },
 
@@ -45,7 +46,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
       }
       responses.push(response);
     };
-    debugger
     var data = { test: { responses_attributes: responses }};
     var thisDeck = this.deck;
     this.model.set(data);
