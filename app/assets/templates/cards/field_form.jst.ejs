@@ -1,10 +1,17 @@
-<% try { %>
-  <% var back = card.get('back') %>
-  <% for (var field in back) { %>
-    <div class="field">
-      <input type="text" name="back[<%= field %>]" value="<%= field %>">
-      <input type="text" name="back[<%= field %>]" value="<%= back[field] %>">
-    </div>
-  <% } %>
-<% } catch(error) {console.log(error)} %>
+<% var back = card.get('back') %>
+<% if (typeof back === "object") { %>
+  <% try { %>
+    <% for (var field in back) { %>
+      <div class="field">
+        <input type="text" name="back[<%= field %>]" value="<%= field %>">
+        <input type="text" name="back[<%= field %>]" value="<%= back[field] %>">
+      </div>
+    <% } %>
+  <% } catch(error) {console.log(error)} %>
+<% } else { %>
+  <div class="field">
+    <input type="text" name="field" value="">
+    <input type="text" name="definition" value="">
+  </div>
+<% } %>
 <button class="new-field">Add Field</button>

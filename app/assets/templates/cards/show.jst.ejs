@@ -16,7 +16,7 @@
         <strong><%= card.escape('back') %></strong>
       <% } %>
   </li>
-  <% if (card.get('averageScore')) { %>
+  <% if (typeof card.get('averageScore') === "number") { %>
     <li>
       <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
     </li>

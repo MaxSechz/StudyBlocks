@@ -2,9 +2,9 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
   tagName: 'main',
   className: 'performance',
   template: JST['tests/index'],
+  toolTemplate: JST['tests/tooltip'],
 
   initialize: function () {
-    console.log(this.collection)
     this.listenTo(this.collection, "sync", this.prep);
   },
 
@@ -16,12 +16,12 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
     this.data.addColumn({type: 'string', role: 'tooltip', p: { html: true }});
     this.collection.each(function (test) {
       var date = new Date(test.get('created_at'));
-      var fakeDiv = $("<div>").addClass('fakeout');
-      var htmlString = $("<a>").attr('href', thisView.model.linkUrl('tests/' + test.id));
-      var innerText = $("<strong>").text(date.toDateString());
-      htmlString.append($(innerText)).addClass('tooltip');
-      fakeDiv.append(htmlString);
-      thisView.data.addRow([date, test.score, fakeDiv.prop('outerHTML')]);
+      var htmlString = thisView.toolTemplate({
+        date: date,
+        test: test,
+        deck: thisView.model
+      });
+      thisView.data.addRow([date, test.score, htmlString]);
     });
     this.render();
   },

@@ -14,10 +14,10 @@
  *= require_self
  */
 a, div {
-  margin: 0px;
-  border: 0px;
-  outline: 0px;
-  padding: 0px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
   box-shadow: none;
   background: inherit;
   text-decoration: none;
@@ -26,10 +26,10 @@ a, div {
 div > .google-visualization-tooltip, circle {
   background: inherit;
   display: block;
-  margin: 0px;
-  border: 0px;
-  outline: 0px;
-  padding: 0px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
   box-shadow: none;
 }
 
@@ -49,6 +49,7 @@ div > .google-visualization-tooltip, circle {
   height: 15px;
   background: #3366cc;
   border-radius: 50%;
+  -moz-transition: width 0.2s, height 0.2s, border-radius 0.2s;
   -webkit-transition: width 0.2s, height 0.2s, border-radius 0.2s;
 }
 
@@ -59,26 +60,28 @@ div > .google-visualization-tooltip, circle {
   height: 200px;
 }
 
-.fakeout:hover > .tooltip:hover {
+.fakeout:hover .tooltip:hover {
   width: 110px;
   height: 60px;
   border-radius: 10px;
 }
 
-.tooltip > strong {
+.tooltip strong {
   display: block;
   white-space: nowrap;
   position: relative;
-  top: 20px;
+  top: 15px;
   text-align: center;
   width: 100%;
   color: white;
   opacity: 0;
+  -moz-transition: opacity 0.1s;
   -webkit-transition: opacity 0.1s;
 }
 
 
 .tooltip:hover > strong {
   opacity: 1;
+  -moz-transition: opacity 1s;
   -webkit-transition: opacity 1s;
 }
