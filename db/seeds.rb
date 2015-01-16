@@ -2,20 +2,25 @@ School.create!([
   {name: "Franklin & Marshall", country: "USA", state: "Pennsylvania", city: "Lancaster"}
 ])
 User.create!([
-  {username: "Maxwell", email: "msechzer@example.com", password: "maxwell", school_id: 1},
-  {username: "Guest", email: "guest@example.com", password: "password", school_id: 1}
+  {username: "Guest", email: "guest@example.com", password_digest: "$2a$10$9HyCvqy2R7nkWwHnHH2t..YnSYB8iAn8KXedrgyON1fn015crU5HC", session_token: "X4GW_CMINosaZKIDrvyq5A", school_id: 1},
+  {username: "Maxwell", email: "msechzer@example.com", password_digest: "$2a$10$AOv.BhbiLapDGWbwNTMemOB7bBJTDgBvzKXjf/UCvurj0J1TrBpxi", session_token: "5p6dOQgBzsu9_gU5yC11bg", school_id: 1}
 ])
 Course.create!([
-  {title: "Intro to Testing Decks", course_code: "app110", instructor: "Test Guy", school_id: 1}
+  {title: "Intro to Testing Decks", course_code: "app110", instructor: "Test Guy", school_id: 1},
+  {title: "Intro to Algorithms", course_code: "app110", instructor: "Test Guy", school_id: 1},
+  {title: "Intro to Test Driven Development", course_code: "test 120", instructor: "Susan Guy", school_id: 1}
 ])
 Registration.create!([
   {course_id: 1, user_id: 1},
-  {course_id: 1, user_id: 2}
+  {course_id: 1, user_id: 2},
+  {course_id: 2, user_id: 1},
+  {course_id: 3, user_id: 1}
 ])
 Deck.create!([
   {title: "Test", description: "This is the Test Deck", user_id: 1, course_id: 1},
   {title: "Assorted Notes", description: "This is from my first day of school", user_id: 2, course_id: 1},
-  {title: "Trivia", description: "Random Facts!", user_id: 2, course_id: 1}
+  {title: "Trivia", description: "Random Facts!", user_id: 2, course_id: 1},
+  {title: "Testing some images", description: "Images of cute animals", user_id: 1, course_id: 3}
 ])
 Card.create!([
   {front: "Front side test", back: "Back side test", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
@@ -34,12 +39,20 @@ Card.create!([
   {front: "Which impressionist had a fascination with dancers", back: "Degas", format: "choice", deck_id: 2, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "Which impressionist lived in a brothel", back: "Tolouse-Loutrec", format: "choice", deck_id: 2, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "What is the full name of the artist who painted 'Nocturne in Black and Gold'", back: "{\"first\":\"James\",\"second\":\"Abbott\",\"third\":\"McNeill\",\"last\":\"Whistler\"}", format: "field", deck_id: 2, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
-  {front: "Birdie", back: "true", format: "boolean", deck_id: 1, created_at: "2015-01-15 13:45:25", updated_at: "2015-01-15 13:45:25", image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 6054452, image_updated_at: "2015-01-15 13:45:23"},
+  {front: "Birdie", back: "true", format: "boolean", deck_id: 1, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 6054452, image_updated_at: "2015-01-15 13:45:23"},
   {front: "The most common name in the world", back: "Mohammed", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "What does karaoke mean in japanese?", back: "Empty Orchestra", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "How many bones are in the human body?", back: "206", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "Each ear has 2 bones", back: "false", format: "boolean", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
-  {front: "In what year did it become legal for women to wear pants in Paris to wear pants", back: "2012", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil}
+  {front: "In what year did it become legal for women to wear pants in Paris to wear pants", back: "2012", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
+  {front: "What melted in the pocket of the inventor of the microwave", back: "Chocolate", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
+  {front: "What is the farthest north I've seen a painted bunting?", back: "Lancaster PA", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
+  {front: "", back: "bunny", format: "choice", deck_id: 4, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 22439, image_updated_at: "2015-01-15 22:52:40"},
+  {front: "", back: "cuttlefish", format: "choice", deck_id: 4, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 397648, image_updated_at: "2015-01-15 22:52:40"},
+  {front: "", back: "dik dik", format: "choice", deck_id: 4, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 28823, image_updated_at: "2015-01-15 22:55:42"},
+  {front: "What is the capital of Pennsylvania?", back: "Harrisburg", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
+  {front: "", back: "sea otter", format: "choice", deck_id: 4, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 109996, image_updated_at: "2015-01-15 23:10:12"},
+  {front: "", back: "seal", format: "choice", deck_id: 4, image_file_name: "data", image_content_type: "image/png", image_file_size: 314980, image_updated_at: "2015-01-15 23:41:23"}
 ])
 Test.create!([
   {deck_id: 1, user_id: 2},
@@ -47,7 +60,12 @@ Test.create!([
   {deck_id: 1, user_id: 2},
   {deck_id: 2, user_id: 2},
   {deck_id: 3, user_id: 2},
-  {deck_id: 1, user_id: 2}
+  {deck_id: 1, user_id: 2},
+  {deck_id: 1, user_id: 1},
+  {deck_id: 2, user_id: 1},
+  {deck_id: 4, user_id: 1},
+  {deck_id: 4, user_id: 1},
+  {deck_id: 2, user_id: 1}
 ])
 Response.create!([
   {response_text: "Back side test", test_id: 1, card_id: 1},
@@ -95,5 +113,39 @@ Response.create!([
   {response_text: "Two weeks", test_id: 6, card_id: 5},
   {response_text: "William Shakespeare", test_id: 6, card_id: 6},
   {response_text: "Candy", test_id: 6, card_id: 7},
-  {response_text: "true", test_id: 6, card_id: 8}
+  {response_text: "true", test_id: 6, card_id: 8},
+  {response_text: "Back side test", test_id: 7, card_id: 1},
+  {response_text: "Back side test2", test_id: 7, card_id: 2},
+  {response_text: "The first president of the USA", test_id: 7, card_id: 3},
+  {response_text: "The common crow", test_id: 7, card_id: 4},
+  {response_text: "Two weeks", test_id: 7, card_id: 5},
+  {response_text: "William Shakespeare", test_id: 7, card_id: 6},
+  {response_text: "Candy", test_id: 7, card_id: 7},
+  {response_text: "true", test_id: 7, card_id: 8},
+  {response_text: "true", test_id: 7, card_id: 17},
+  {response_text: "Gold", test_id: 7, card_id: 23},
+  {response_text: "2", test_id: 8, card_id: 9},
+  {response_text: "Eventing", test_id: 8, card_id: 10},
+  {response_text: "false", test_id: 8, card_id: 11},
+  {response_text: "Matisse", test_id: 8, card_id: 12},
+  {response_text: "Degas", test_id: 8, card_id: 13},
+  {response_text: "Degas", test_id: 8, card_id: 14},
+  {response_text: "Tolouse-Loutrec", test_id: 8, card_id: 15},
+  {response_text: "[\"James\",\"Abbott\",\"McNeill\",\"Whistler\"]", test_id: 8, card_id: 16},
+  {response_text: "sea otter", test_id: 9, card_id: 25},
+  {response_text: "cuttlefish", test_id: 9, card_id: 26},
+  {response_text: "dik dik", test_id: 9, card_id: 27},
+  {response_text: "bunny", test_id: 9, card_id: 29},
+  {response_text: "bunny", test_id: 10, card_id: 25},
+  {response_text: "cuttlefish", test_id: 10, card_id: 26},
+  {response_text: "dik dik", test_id: 10, card_id: 27},
+  {response_text: "sea otter", test_id: 10, card_id: 29},
+  {response_text: "2", test_id: 11, card_id: 9},
+  {response_text: "Football", test_id: 11, card_id: 10},
+  {response_text: "false", test_id: 11, card_id: 11},
+  {response_text: "Matisse", test_id: 11, card_id: 12},
+  {response_text: "Manet", test_id: 11, card_id: 13},
+  {response_text: "Tolouse-Loutrec", test_id: 11, card_id: 14},
+  {response_text: "Manet", test_id: 11, card_id: 15},
+  {response_text: "[\"James\",\"Abbott\",\"McNeill\",\"Whistler\"]", test_id: 11, card_id: 16}
 ])
