@@ -1,13 +1,16 @@
+<nav class="deck-navbar group">
+  <% if (deck.progress()) { %>
+    <a href="<%= deck.linkUrl('tests')%>">Performance: <%= deck.progress() %>%</a>
+  <% } %>
+    <a href="<%= deck.linkUrl('study') %>" class="study">Study</a>
+    <a href="<%= deck.linkUrl('review') %>" class="review">Review</a>
+    <a href="<%= deck.linkUrl('test') %>" class="test">Test</a>
+    <a class="new" href="#">Add Card</a>
+    <a class="delete" href="#">Delete</a>
+</nav>
+
 <h1><%= deck.escape('title') %></h1>
-<% if (deck.progress()) { %>
-  <h2><a href="<%= deck.linkUrl('tests')%>">Performance: <%= deck.progress() %>%</a></h3>
-<% } %>
 <h2><%= deck.escape('description') %></h2>
 <h3><%= deck.course().escape('title') %></h3>
-<a href="<%= deck.linkUrl('study') %>" class="study">Study</a>
-<a href="<%= deck.linkUrl('review') %>" class="review">Review</a>
-<a href="<%= deck.linkUrl('test') %>" class="test">Test</a>
-<button class="new">Add Card</button>
-<button class="delete">Delete</button>
 <ul class="cards">
 </ul>

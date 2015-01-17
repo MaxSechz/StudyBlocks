@@ -1,20 +1,20 @@
 <div class="navbar">
   <strong class="logo">
-      <a href="#">Home</a>
+      <a href="#">StudyBlocks</a>
   </strong>
   <ul class='nav-links'>
     <% if logged_in? %>
       <li>
-        <a href="#/decks">My Decks</a>
+        <a href="#/decks">Decks</a>
       </li>
       <li>
-        <a href="#/courses">My Courses</a>
+        <a href="#/courses">Courses</a>
       </li>
       <li>
-        <a href="#/courses/new">Register for a Course</a>
+        <a href="#/courses/new">Register</a>
       </li>
       <li>
-        <a href="#/account">My Account</a>
+        <a href="#/account">Account</a>
       </li>
       <li>
           <form action="<%= session_url %>" method="post">

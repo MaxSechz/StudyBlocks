@@ -1,13 +1,12 @@
 <ul class="card-attrs">
-  <li>
-    <strong><%= card.escape('front') %></strong>
-  </li>
+  <li class="front">
   <% if ( card.get('image') && card.get('image') !== "/images/original/missing.png") { %>
-    <li>
-      <img src="<%= card.get('image') %>" alt="" />
-    </li>
+    <img src="<%= card.get('image') %>" alt="" />
+  <% } else {%>
+    <strong><%= card.escape('front') %></strong>
   <% } %>
-  <li>
+  </li>
+  <li class="back">
       <% if (typeof card.get('back') === "object") { %>
         <% for (var attr in card.get('back')) { %>
           <strong><%= attr %>: <%= card.get('back')[attr] %></strong>
@@ -17,16 +16,12 @@
       <% } %>
   </li>
   <% if (typeof card.get('averageScore') === "number") { %>
-    <li>
+    <li class="score">
       <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
-    </li>
-  <% } %>
-  <% if (card.get('writeable')) { %>
-    <li>
-      <button class="delete-card">Delete</button>
-    </li>
-    <li>
-      <button class="edit-card">Edit</button>
+      <% if (card.get('writeable')) { %>
+        <button class="delete-card">Delete</button>
+        <button class="edit-card">Edit</button>
+      <% } %>
     </li>
   <% } %>
 </ul>

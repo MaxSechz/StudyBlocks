@@ -3,7 +3,7 @@ json.(@deck, :id, :title, :user_id, :description, :course_id)
 json.cards @deck.cards do |card|
   json.(card, :id, :front, :back, :format, :deck_id)
   json.averageScore card.average_score
-  json.image card.image.url(:medium) if card.image
+  json.image card.image.url(:thumb) if card.image
 end
 
 if @deck.scores

@@ -8,7 +8,7 @@ json.responses @test.responses do |response|
   json.(response, :id, :response_text, :test_id, :card_id)
   json.card response.card, :id, :front, :back, :format, :deck_id
   json.card do
-    json.image response.card.image.url(:medium) if response.card.image
+    json.image response.card.image.url(:thumb) if response.card.image
     json.score response.card.average_score
   end
 end
