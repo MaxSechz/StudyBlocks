@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if @user.valid_password_and_name?
       login!(@user)
-      render 'static/home'
+      redirect_to '#/decks'
     else
       render :new
     end

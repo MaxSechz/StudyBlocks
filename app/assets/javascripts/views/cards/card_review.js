@@ -3,25 +3,21 @@ StudyBlocks.Views.CardReview = Backbone.View.extend({
   className: "card-review",
   template: JST["cards/review"],
   events: {
-    'click .flip': 'flipCard'
+    'click .cube': 'flipCard'
   },
 
   initialize: function () {
-    this.sides = ['front', 'back'];
   },
 
   render: function () {
     var content = this.template({
-      card: this.model,
-      currentSide: this.sides[0]
+      card: this.model
     });
     this.$el.html(content);
     return this;
   },
 
   flipCard: function (event) {
-    event.preventDefault();
-    this.sides.reverse();
-    this.render();
+    this.$(".cube").toggleClass('flip')
   }
 });

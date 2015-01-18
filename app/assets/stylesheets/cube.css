@@ -1,0 +1,61 @@
+.cards-list {
+  display: block;
+  overflow: auto;
+  max-height: 850px;
+}
+
+.card-review .card-attrs {
+  -webkit-perspective: 1000px;
+  perspective-origin: 50% 50px;
+}
+
+.cube {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  height: 300px;
+  -webkit-transition: -webkit-transform 0.75s;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card-review {
+  margin: 120px 0;
+}
+
+.card-review .front, .card-review .back, .right {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px 2px rgba(226, 226, 226, 0.5) inset;
+}
+
+.card-review strong {
+  background: transparent;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-review .front {
+  -webkit-transform: translateZ(150px);
+  transform: translateZ(150px);
+}
+
+.card-review .back {
+  -webkit-transform: rotateX(90deg) translateY(150px);
+  transform: rotateX(-90deg) translateY(150px);
+  transform-origin: bottom center;
+}
+
+/* Rotate the cube */
+.flip {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}

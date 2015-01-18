@@ -19,8 +19,7 @@
     <li class="score">
       <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
       <% if (card.get('writeable')) { %>
-        <button class="delete-card">Delete</button>
-        <button class="edit-card">Edit</button>
+        <button class="delete-card">Delete</button><button class="edit-card">Edit</button>
       <% } %>
     </li>
   <% } %>

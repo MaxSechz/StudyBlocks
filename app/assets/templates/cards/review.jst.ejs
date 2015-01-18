@@ -1,17 +1,24 @@
 <ul class="card-attrs">
-  <li>
-    <% if (currentSide === "back" && card.escape('format') === "field") { %>
-      <a title="Click to Flip Card" href="#" class="flip">
-      <% for (attr in card.get('back')) { %>
-        <%= card.get('back')[attr] %>
-      <% } %>
-      </a>
-      <% } else if (currentSide === "front" && card.escape('image')) { %>
-        <a title="Click to Flip Card" href="#" class="flip">
+  <li class="cube">
+    <div class="front">
+      <strong>
+      <% if (card.escape('image')) { %>
           <img src="<%= card.escape('image') %>" alt="" />
-        </a>
       <% } else { %>
-      <a title="Click to Flip Card" href="#" class="flip"><%= card.escape(currentSide) %></a>
-    <% } %>
+        <%= card.escape("front") %>
+      <% } %>
+      </strong>
+    </div>
+    <div class="back">
+      <strong>
+        <% if (card.escape('format') === "field") { %>
+          <% for (attr in card.get('back')) { %>
+            <%= card.get('back')[attr] %>
+          <% } %>
+        <% } else { %>
+          <%= card.escape("back") %>
+        <% } %>
+      </strong>
+    </div>
   </li>
 </ul>
