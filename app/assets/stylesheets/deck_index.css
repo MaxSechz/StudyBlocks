@@ -1,0 +1,42 @@
+.decks {
+  padding: 20px;
+}
+
+.deck-tile {
+  margin: 20px;
+  text-align: center;
+  float: left;
+  border: 2px solid #999;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.deck-tile:hover {
+  border-color: #acffac;
+}
+
+.deck-tile button {
+  margin: 10px auto;
+}
+
+.deck-tile button:first-of-type {
+  background: #acffac
+}
+
+.deck-tile button:first-of-type:hover {
+  background: #85ff85;
+}
+
+.header button:hover {
+  background: #85ff85;
+}
+
+.deck-tile a {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.deck-tile a:hover {
+  color: #acffac;
+}

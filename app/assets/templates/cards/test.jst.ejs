@@ -1,16 +1,17 @@
 <ul class="card-attrs">
-  <li>
+  <li class="front">
     <% if (card.escape('image')) { %>
       <img src="<%= card.escape('image') %>" alt="" />
     <% } else {%>
     <%= card.escape('front') %>
     <% } %>
   </li>
+  <li class="back">
   <% if (card.get('format') === 'boolean') { %>
-    <label for="true<%= card.id %>">True</label>
     <input id="true<%= card.id %>" type="radio" name="response_text<%= card.id %>" value="true">
-    <label for="false<%= card.id %>">False</label>
+    <label for="true<%= card.id %>">True</label>
     <input id="false<%= card.id %>" type="radio" name="response_text<%= card.id %>" value="false">
+    <label for="false<%= card.id %>">False</label>
   <% } else if (card.get('format') === 'field') { %>
     <% for (var attr in card.get('back')) { %>
       <label for="<%= attr %>"><%= attr %></label>
@@ -24,4 +25,5 @@
   <% } else { %>
     <textarea name="response_text"></textarea>
   <% } %>
+  </li>
 </ul>

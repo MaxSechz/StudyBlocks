@@ -1,0 +1,55 @@
+.course-registration {
+  position: static;
+  background: white;
+  width: 50%;
+  height: 100%;
+}
+
+.forms form.create, .forms form.register {
+  position: static;
+  width: 300px;
+  height: 500px;
+  margin: 20px;
+  margin-top: 100px;
+  transform: none;
+}
+
+form.create {
+  float: right;
+}
+
+form.register {
+  float: left;
+}
+
+.forms select {
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  padding: 5px;
+  height: 230px;
+  -webkit-appearance: none;
+}
+
+.forms option {
+  background: white;
+  padding: 10px;
+}
+
+.forms option {
+  border: 2px solid white;
+  border-bottom: 0;
+}
+
+option:last-of-type {
+  border: 2px solid white;
+}
+
+option:enabled {
+  border-color: #acffac;
+}
+
+option:checked {
+  box-shadow: 0 0 10px 100px #acffac inset;
+}

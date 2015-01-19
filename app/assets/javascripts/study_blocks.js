@@ -10,6 +10,7 @@ window.StudyBlocks = {
     var decks = new StudyBlocks.Collections.Decks();
     var router = new StudyBlocks.Routers.Router({
       $rootEl: $("main.content"),
+      $modalEl: $("div.modal"),
       decks: decks
     });
     Backbone.history.start();

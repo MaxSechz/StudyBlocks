@@ -1,0 +1,47 @@
+.deck-test .card {
+  float: none;
+  margin: 100px auto;
+  width: 50%;
+  height: 400px;
+  font-size: 24px;
+}
+
+.deck-test textarea {
+  width: 90%;
+  height: 200px;
+}
+
+
+.deck-test input[type="radio"] {
+  position: absolute;
+  left: -100%;
+}
+
+.deck-test label {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid black;
+}
+
+.deck-test label:hover {
+  border: 2px solid #85ff85;
+}
+
+.deck-test input[type="radio"]:checked + label {
+  background: #acffac;
+}
+
+.header button {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: block;
+  background: #acffac;
+  color: black;
+}
+
+.deck-test button:hover {
+    background: #85ff85;
+}

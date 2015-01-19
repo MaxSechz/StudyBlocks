@@ -1,0 +1,45 @@
+.courses {
+  padding: 20px;
+  position: absolute;
+  background: white;
+  min-height: 600px;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.course-list {
+  padding: 20px;
+}
+
+.course-list li {
+  border: 2px solid white;
+  display: block;
+}
+
+.course-list a {
+  padding: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.course-list a:hover {
+  color: #acffac;
+}
+
+.course-list .drop-course:hover {
+  color: #ff8585;
+}
+
+.course-list .drop-course  {
+  float: right;
+}
+
+.course-list li:hover {
+  border: 2px solid #acffac;
+}
+
+.course-list strong {
+  margin-right: 40px;
+}

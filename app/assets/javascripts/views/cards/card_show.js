@@ -30,6 +30,6 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
       model: this.model,
       submit: this.submit
     });
-    this.addSubview('.card-attrs', formView);
+    $(".modal").html(formView.render().$el).addClass("form");
   }
 });

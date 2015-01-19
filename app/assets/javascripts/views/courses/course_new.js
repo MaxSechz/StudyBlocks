@@ -4,6 +4,7 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
   template: JST["courses/new"],
   events: {
     "keyup .search": "searchCourses",
+    "focusout .search": "openSelect",
     "submit .register": "registerForCourse",
     "submit .create": "createAndRegister"
   },
@@ -14,6 +15,12 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     attributes: function () {
       return { value: this.id() };
     }
+  },
+
+  openSelect: function (event) {
+    event.preventDefault();
+    this.$($("option")[0]).prop('selected', true);
+    this.$("select").click();
   },
 
   searchCourses: function (event) {

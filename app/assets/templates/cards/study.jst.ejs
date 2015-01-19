@@ -1,12 +1,12 @@
 <ul class="card-attrs">
-  <li>
+  <li class="front">
     <% if (card.escape('image')) { %>
       <img src="<%= card.escape('image') %>" alt="" />
     <% } else { %>
       <strong><%= card.escape('front') %></strong>
       <% } %>
   </li>
-  <li>
+  <li class="back">
     <% if (card.escape('format') === "field") { %>
       <% for (attr in card.get('back')) { %>
         <strong><%= card.get('back')[attr] %></strong>

@@ -1,6 +1,6 @@
 StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   tagName: "li",
-  tagClass: "deck",
+  className: "deck-tile",
   template: JST["decks/tile"],
   events: {
     "click .delete-deck": "destroyDeck",
@@ -32,6 +32,6 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
       model: this.model,
       collection: this.model.cards()
     });
-    this.addSubview(".deck-attrs", formView);
+    $(".modal").html(formView.render().$el).addClass("form");
   }
 });

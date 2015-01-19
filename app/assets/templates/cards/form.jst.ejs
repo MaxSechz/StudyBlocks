@@ -1,27 +1,31 @@
+<a class="cancel close" href="#">✖</a>
+
+<input id="response" class="format" type="radio" name="format" value="response">
+<label for="response" class="format">Enter Full Response</label>
+<input id="boolean" class="format" type="radio" name="format" value="boolean">
+<label for="boolean" class="format">True or False</label>
+<input id="field" class="format" type="radio" name="format" value="field">
+<label for="field" class="format">Enter Response by Field</label>
+<input id="choice" class="format" type="radio" name="format" value="choice">
+<label for="choice" class="format">Multiple Choice</label>
+
+<label for="input-image" class="input-image">Use an image</label>
+<input type="file" name="image" id="input-image">
+
 <label for="front">Front</label>
 <textarea id="front" name="front" rows="8" cols="40"><%= card.escape('front') %></textarea>
 
-<label for="image">Image</label>
-<input type="file" name="image" id="input-image">
 
-<img src="" width="50" id="preview-image">
+<div class="image-view">
+  <a class="cancel discard" href="#">✖</a>
+  <img src="" id="preview-image">
+</div>
 
-<label for="back">Back</label>
-<div class="back">
+
+<label for="answer">Back</label>
+<div class="answer">
   <%= template({card: card}) %>
 </div>
 
-<label>Enter Full Response
-  <input class="format" type="radio" name="format" value="response">
-</label>
-<label> True or False
-  <input class="format" type="radio" name="format" value="boolean">
-</label>
-<label>Enter Response by Field
-  <input class="format" type="radio" name="format" value="field">
-</label>
-<label>Multiple Choice
-  <input class="format" type="radio" name="format" value="choice">
-</label>
 
-<button>Update Card</button>
+<button>Submit</button>

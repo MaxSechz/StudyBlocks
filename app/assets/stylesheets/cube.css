@@ -4,17 +4,15 @@
   max-height: 850px;
 }
 
-.card-review .card-attrs {
+.cube-wrap {
   -webkit-perspective: 1000px;
   perspective-origin: 50% 50px;
 }
 
 .cube {
   position: relative;
-  width: 40%;
   text-align: center;
   margin: auto;
-  height: 300px;
   -webkit-transition: -webkit-transform 0.75s;
   -webkit-transform-style: preserve-3d;
 }
@@ -23,40 +21,25 @@
   margin: 120px 0;
 }
 
-.card-review .front, .card-review .back, .right {
+.front-face, .back-face, .right-face, .left-face, .top-face, .bottom-face {
   position: absolute;
   background: white;
-  width: 100%;
-  height: 300px;
   box-sizing: border-box;
-  box-shadow: 0 0 20px 2px rgba(226, 226, 226, 0.5) inset;
 }
 
-.card-review strong {
-  background: transparent;
-  display: block;
-  width: 100%;
-  height: 100%
-  font-size: 24px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card-review .front {
+.front-face {
   -webkit-transform: translateZ(150px);
   transform: translateZ(150px);
 }
 
-.card-review .back {
+.bottom-face {
   -webkit-transform: rotateX(90deg) translateY(150px);
   transform: rotateX(-90deg) translateY(150px);
   transform-origin: bottom center;
 }
 
 /* Rotate the cube */
-.flip {
+.flip-up {
   -webkit-transform: rotateX(90deg);
   transform: rotateX(90deg);
 }

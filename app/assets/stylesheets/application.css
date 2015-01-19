@@ -13,10 +13,11 @@
  *= require_tree .
  *= require_self
  */
-body, a, div, ul, li, h1, h2, h3, button, strong {
+body, form, a, div, ul, li, h1, h2, h3, button, strong, label, input {
   margin: 0;
   border: 0;
   padding: 0;
+  outline: none;
   box-shadow: none;
   background: inherit;
   text-decoration: none;
@@ -32,8 +33,18 @@ body {
   height: 100vh;
 }
 
+select {
+  overflow: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 button {
-  appearance: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
 }
 
 a, img {
@@ -44,6 +55,21 @@ img {
   margin: auto;
   display: block;
   width: 50%;
+}
+
+label {
+  cursor: pointer;
+}
+
+textarea, input[type="text"] {
+  padding: 5px;
+  border: 2px solid #999;
+  resize: none;
+}
+
+textarea:focus, input[type="text"]:focus {
+  border: 2px solid white;
+  outline: 2px solid #85ff85;
 }
 
 button {
@@ -64,6 +90,26 @@ button:hover {
     clear: both;
 }
 
+div.modal {
+  float: left;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+div.modal.active {
+  z-index: 1;
+}
+
+div.modal.form {
+  z-index: 1;
+  background: rgba(0,0,0,0.6);
+}
+
 .navbar {
   white-space: nowrap;
   overflow: hidden;
@@ -74,7 +120,7 @@ button:hover {
   width: 2%;
   height: 100%;
   float: left;
-  -webkit-transition: width 1s, color 1s;
+  -webkit-transition: width 0.25s 0.25s, color 0.25s 0.25s;
 }
 
 .navbar:hover {
@@ -141,31 +187,33 @@ button:hover {
   float: left;
   height: 100%;
   width: 98%;
-  -webkit-transition: width 1s;
+  -webkit-transition: width 0.25s 0.25s;
 }
 
 .navbar:hover + .content {
   width: 90%;
 }
 
-.content h1 {
+h1 {
   font-size: 36px;
 }
 
 .cards {
-  margin: 20px;
+  border-top: 2px solid #999;
+  margin-top: 20px;
   padding: 20px;
   display: block;
   background: #eee;
-  height: 650px;
+  height: calc(100vh - 246px);
   overflow: auto;
 }
+
 .card {
   position: relative;
   font-size: 12px;
   background: white;
   border: 2px solid #999;
-  margin: 10px;
+  margin: 20px;
   text-align: center;
   float: left;
   padding: 20px;
@@ -174,8 +222,20 @@ button:hover {
   min-height: 260px;
 }
 
-.card li {
-  margin: 40px 0;
+.front, .back {
+  padding: 40px 0;
+  width: calc(100% - 40px);
+}
+
+.front {
+  position: absolute;
+  top: 0;
+  border-bottom: 1px dotted #999;
+}
+
+.back {
+  position: absolute;
+  bottom: 0;
 }
 
 .card .score {
@@ -235,13 +295,13 @@ button:hover {
   padding: 5px;
 }
 
-.info a {
+.nav-link {
   display: inline-block;
   font-size: 12px;
   color: #acd6ff
 }
 
-.info a:hover {
+.nav-link:hover {
   color: #85c2ff;
 }
 

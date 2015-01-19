@@ -1,0 +1,6 @@
+.nav-link:last-of-type {
+  top: 10px;
+}
+.nav-link:first-of-type {
+  top: -10px;
+}

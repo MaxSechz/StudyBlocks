@@ -16,6 +16,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.decks = options.decks;
+    this.$modalEl = options.$modalEl;
   },
 
   deckIndex: function () {
@@ -39,7 +40,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       model: targetDeck,
       collection: targetDeck.cards()
     });
-    this._swapView(studyView);
+    this._modalify(studyView)
   },
 
   deckReview: function (id) {
@@ -48,7 +49,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       model: targetDeck,
       collection: targetDeck.cards()
     });
-    this._swapView(studyView);
+    this._modalify(studyView);
   },
 
   deckTest: function (id) {
@@ -58,7 +59,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       model: emptyTest,
       collection: targetDeck.cards()
     });
-    this._swapView(testView);
+    this._modalify(testView);
   },
 
   testIndex: function (id) {
@@ -69,7 +70,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       collection: deckTests,
       model: targetDeck
     });
-    this._swapView(indexView);
+    this._modalify(indexView);
   },
 
   testShow: function (deck_id, test_id) {
@@ -92,7 +93,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     var courseIndex = new StudyBlocks.Views.CourseIndex({
       collection: courses
     });
-    this._swapView(courseIndex);
+    this._modalify(courseIndex, "form");
   },
 
   courseShow: function (id) {
@@ -110,12 +111,19 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     var courseNew = new StudyBlocks.Views.CourseNew({
       collection: courses
     });
-    this._swapView(courseNew);
+    this._modalify(courseNew, "form");
   },
 
   _swapView: function (view) {
+    this.$modalEl.empty().removeClass("form").removeClass("active");
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
+  },
+
+  _modalify: function (view, option) {
+    this.$modalEl.empty().removeClass("active").removeClass("form");
+    var cssClass = option || "active"
+    this.$modalEl.addClass(cssClass).html(view.render().$el)
   }
 });

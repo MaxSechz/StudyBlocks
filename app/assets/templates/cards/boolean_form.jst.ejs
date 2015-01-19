@@ -1,6 +1,4 @@
-<label>True
-  <input type="radio" name="back" value="true" <%= card.get('back') && "checked" %>>
-</label>
-<label>False
-  <input type="radio" name="back" value="false" <%= !card.get('back') && "checked" %>>
-</label>
+<input id="true"type="radio" name="back" value="true" <%= card.get('back') && "checked" %>>
+<label for="true" class="boolean">True</label>
+<input id="false" type="radio" name="back" value="false" <%= !card.get('back') && "checked" %>>
+<label for="false" class="boolean">False</label>

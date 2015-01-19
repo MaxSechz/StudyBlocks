@@ -24,7 +24,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
       model: emptyCard,
       submit: true
     });
-    this.addSubview('.cards', formView);
+    $(".modal").html(formView.render().$el).addClass("form");
   },
 
   deleteDeck: function (event) {

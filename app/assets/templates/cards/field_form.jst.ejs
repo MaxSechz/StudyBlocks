@@ -1,17 +1,15 @@
+<a class="new-field">Add Field</a> <a class="remove-field">Remove Field</a>
 <% var back = card.get('back') %>
 <% if (typeof back === "object") { %>
   <% try { %>
     <% for (var field in back) { %>
       <div class="field">
-        <input type="text" name="back[<%= field %>]" value="<%= field %>">
-        <input type="text" name="back[<%= field %>]" value="<%= back[field] %>">
+        <input type="text" name="back[<%= field %>]" value="<%= field %>"><input type="text" name="back[<%= field %>]" value="<%= back[field] %>">
       </div>
     <% } %>
   <% } catch(error) {console.log(error)} %>
 <% } else { %>
   <div class="field">
-    <input type="text" name="field" value="">
-    <input type="text" name="definition" value="">
+    <input type="text" name="field" value=""><input type="text" name="definition" value="">
   </div>
 <% } %>
-<button class="new-field">Add Field</button>

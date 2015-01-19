@@ -18,6 +18,6 @@ StudyBlocks.Views.CardReview = Backbone.View.extend({
   },
 
   flipCard: function (event) {
-    this.$(".cube").toggleClass('flip')
+    this.$(".cube").toggleClass('flip-up')
   }
 });

@@ -1,6 +1,6 @@
-<ul class="card-attrs">
+<ul class="card-attrs cube-wrap">
   <li class="cube">
-    <div class="front">
+    <div class="front-face">
       <strong>
       <% if (card.escape('image')) { %>
           <img src="<%= card.escape('image') %>" alt="" />
@@ -9,7 +9,7 @@
       <% } %>
       </strong>
     </div>
-    <div class="back">
+    <div class="bottom-face">
       <strong>
         <% if (card.escape('format') === "field") { %>
           <% for (attr in card.get('back')) { %>

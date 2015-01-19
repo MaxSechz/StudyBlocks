@@ -22,7 +22,7 @@ StudyBlocks.Views.DecksIndex = Backbone.CollectionView.extend({
       model: emptyDeck,
       collection: emptyDeck.cards()
     });
-    this.addSubview(".decks", deckForm);
+    $(".modal").html(deckForm.render().$el).addClass("form");
   },
 
 });

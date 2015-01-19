@@ -4,7 +4,10 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   template: JST["cards/form"],
   events: {
     "submit": "addCard",
+    "click .close": "cancel",
+    "click .discard": "removeImage",
     "click .new-field": "addField",
+    "click .remove-field": "removeField",
     "click .format": "changeCardType",
     "change #input-image": "fileInputChange"
   },
@@ -46,7 +49,13 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     var $field = $("<input>").prop("type", "text").prop("name", "field");
     var $value = $("<input>").prop("type", "text").prop("name", "definition");
     var $fullField = $("<div class='field'>").append([$field, $value]);
-    this.$el.find("div.back").append($fullField);
+    this.$el.find("div.answer").append($fullField);
+  },
+
+  removeField: function (event) {
+    event.preventDefault();
+    this.$("input[type='text']").last().remove();
+    this.$("input[type='text']").last().remove();
   },
 
   addCard: function (event) {
@@ -89,13 +98,13 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     var content = this.subTemplates[this.selected]({
       card: this.model
     });
-    this.$el.find("div.back").html(content);
+    this.$el.find("div.answer").html(content);
   },
 
-  fileInputChange: function(event){
-
+  fileInputChange: function(event) {
     var that = this;
     var file = event.currentTarget.files[0];
+    console.log($("#input-image")[0].files);
     var reader = new FileReader();
 
     reader.onloadend = function(){
@@ -106,14 +115,33 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this._updatePreview("");
+      this.removeImage();
       delete this.model.unset('image');
 
       console.log(this.model);
     }
   },
 
+  cancel: function (event) {
+    event.preventDefault();
+    this.$el.parent().removeClass("form");
+    this.remove();
+  },
+
+  removeImage: function (event) {
+    event.preventDefault();
+    this.$el.find("#preview-image").attr("src", '');
+    this.$(".image-view").removeClass("active");
+    this.$("#front").removeClass("inactive");
+    $("#input-image").val('');
+    $(".input-image").removeClass("inactive");
+  },
+
   _updatePreview: function(src){
     this.$el.find("#preview-image").attr("src", src);
+    this.$(".image-view").addClass("active");
+    this.$("#front").addClass("inactive");
+    $("#input-image").val('');
+    $(".input-image").addClass("inactive");
   }
 });

@@ -1,6 +1,6 @@
 StudyBlocks.Views.CourseTile = Backbone.View.extend({
   tagName: '',
-  className: "course-tile",
+  className: "course-tile group",
   templates: {
     li: JST["courses/tile_list"],
     option: JST["courses/tile_option"],
@@ -14,13 +14,11 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    console.log(options)
     this.registration = new StudyBlocks.Models.Registration({
       id: this.model.id
     });
     this.registration.fetch({
       success: function (model, response) {
-        console.log(model,response)
       }
     });
     this.tagName = options.tagName;

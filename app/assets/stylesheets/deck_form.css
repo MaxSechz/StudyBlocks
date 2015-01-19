@@ -1,0 +1,24 @@
+.deck-form select {
+  padding: 20px;
+  height: 20px;
+  display: block;
+  overflow: visible;
+  margin: 20px auto;
+}
+
+.modal .deck-form {
+  padding: 10px 40px;
+  border: none;
+  width: 707px;
+}
+
+.deck-form .card-form {
+ width: 800px;
+ height: 100%;
+}
+
+.cards-preview {
+  border: 2px solid #999;
+  max-height: 500px;
+  overflow: auto;
+}

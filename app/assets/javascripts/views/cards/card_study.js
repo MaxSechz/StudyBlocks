@@ -1,6 +1,6 @@
 StudyBlocks.Views.CardStudy = Backbone.View.extend({
   tagName: "li",
-  className: "card-study",
+  className: "card",
   template: JST["cards/study"],
 
   render: function () {

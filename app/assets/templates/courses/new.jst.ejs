@@ -3,20 +3,24 @@
 <label for="search">Find a Course</label>
 <input class="search" type="text" name="some_name" value="">
 
-<form class="register">
-  <select class="course-list" name="course_id">
-  </select>
-  <button class="register">Register</button>
-</form>
+<div class="forms group">
+  <form class="register">
+  <label for="course-list">Pick from the courses listed here</label>
+    <select class="course-list" size="10" name="course_id">
+    </select>
+    <button class="register">Register</button>
+  </form>
 
-<form class="create">
-  <label for="title">Course Title</label>
-  <input class="title" type="text" name="title" value="">
+  <form class="create">
+    <label for="create">Can't find your course? Add it here</label>
+    <label for="title">Course Title</label>
+    <input class="title" type="text" name="title" value="">
 
-  <label for="course_code">Course Code</label>
-  <input class="course_code" type="text" name="course_code" value="">
+    <label for="course_code">Course Code</label>
+    <input class="course_code" type="text" name="course_code" value="">
 
-  <label for="instructor">Instructor Name</label>
-  <input class="instructor" type="text" name="instructor" value="">
-  <button class="create">Register</button>
-</form>
+    <label for="instructor">Instructor Name</label>
+    <input class="instructor" type="text" name="instructor" value="">
+    <button class="create">Register</button>
+  </form>
+</div>

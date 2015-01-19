@@ -1,14 +1,10 @@
+<div class="header">
 <h1>Results of test taken on
   <%= new Date(test.get('created_at')).toDateString() %>
    for <%= deck.escape('title') %>
    </h1>
-<ul class="links">
-  <li>
-    <a href="<%= deck.linkUrl('tests') %>">Back to Performance</a>
-  </li>
-  <li>
-    <a href="<%= deck.linkUrl() %>">To <%= deck.escape('title') %></a>
-  </li>
-</ul>
+    <a class="nav-link" href="<%= deck.linkUrl('tests') %>">Back to Performance</a>
+    <a class="nav-link" href="<%= deck.linkUrl() %>">To <%= deck.escape('title') %></a>
+</div>
 <ul class="responses">
 </ul>

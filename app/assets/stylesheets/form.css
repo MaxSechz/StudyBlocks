@@ -1,0 +1,100 @@
+.modal form {
+  padding: 40px;
+  background: white;
+  border: 1px solid #999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 500px;
+}
+
+.cancel {
+  float: right;
+}
+
+.cancel:hover {
+  color: #ff8585;
+}
+
+.modal input, .modal textarea {
+  display: block;
+}
+
+.modal input[type="radio"], .modal input[type="file"] {
+  position: absolute;
+  left: -500%;
+}
+
+.modal label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  display: block
+}
+
+.modal .format, .modal .boolean {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid white;
+}
+
+.modal input[type="text"] {
+  display: inline-block;
+  margin: 2px auto;
+}
+
+.input-image:hover {
+  color: #85ff85;
+}
+
+.image-view {
+  margin: 10px auto;
+  padding: 10px;
+  border: 2px solid #999;
+  display: none;
+  width: 208px;
+  height: 105px;
+}
+
+#front.inactive, .input-image.inactive {
+    display: none;
+}
+
+.image-view img {
+  margin: none;
+  padding: none;
+}
+
+.image-view.active {
+  display: block;
+}
+
+.modal .format:hover, .modal .boolean:hover {
+  border: 2px solid #85ff85;
+}
+
+.modal input[type="radio"]:checked + .format, .modal input[type="radio"]:checked + .boolean {
+  background: #acffac;
+}
+
+.modal * {
+  margin: auto;
+  text-align: center;
+}
+
+.modal button {
+  margin: 20px auto;
+}
+
+.new-field, .remove-field {
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.new-field:hover {
+  color: #85ff85;
+}
+
+.remove-field:hover {
+  color: #ff8585;
+}
