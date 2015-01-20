@@ -5,8 +5,17 @@ window.StudyBlocks = {
   Routers: {},
   initialize: function() {
     // alert('Hello from Backbone!');
-    this.header = new StudyBlocks.Views.Navbar({ el: ".navbar" });
-    this.header.render();
+    this.currentUser = new StudyBlocks.Models.User();
+    this.navbar = new StudyBlocks.Views.NavBar();
+    var navbar = this.navbar
+    this.currentUser.fetch({
+      success: function () {
+        $("body").prepend(navbar.render().$el);
+      },
+      error: function () {
+        $("body").prepend(navbar.render().$el);
+      }
+    });
     var decks = new StudyBlocks.Collections.Decks();
     var router = new StudyBlocks.Routers.Router({
       $rootEl: $("main.content"),

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
       resources :cards
       resources :tests
     end
-
+    
+    resource :user, only: [:create, :show]
+    resource :session, only: [:create, :destroy]
     resources :schools, only: [:index, :show, :create]
     resources :courses, only: [:index, :show, :create]
     resources :registrations, only: [:show, :create, :destroy]

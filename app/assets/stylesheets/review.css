@@ -26,6 +26,7 @@
 .cube {
   width: 40%;
   height: 300px;
+  cursor: pointer;
 }
 
 .card-review {

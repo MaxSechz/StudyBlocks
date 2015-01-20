@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :registrations
   has_many :courses, through: :registrations, source: :course
 
+  accepts_nested_attributes_for :school
+  
   def self.generate_token
     SecureRandom::urlsafe_base64
   end

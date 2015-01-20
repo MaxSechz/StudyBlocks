@@ -1,9 +1,16 @@
 StudyBlocks.Models.User = Backbone.Model.extend({
+  urlRoot: "api/user",
+
   decks: function () {
     if (!this._decks) {
       this._decks = new StudyBlocks.Collections.Decks()
     }
     return this._decks
+  },
+
+  toJSON: function () {
+      var attrs = _.clone(this.attributes);
+      return { user: attrs };
   },
 
   parse: function (response) {
