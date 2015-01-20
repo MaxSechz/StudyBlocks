@@ -26,11 +26,11 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    redirect_to new_session_url unless logged_in?
+    redirect_to '#' unless logged_in?
   end
 
   def require_logged_out
-    redirect_to root_url if logged_in?
+    redirect_to '#' if logged_in?
   end
 
   def get_deck

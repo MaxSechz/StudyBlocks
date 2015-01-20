@@ -34,7 +34,6 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
   dropCourse: function (event) {
     event.preventDefault();
     var thisView = this;
-    debugger
     this.registration.destroy({
       success: function (model, response) {
         console.log(model, response)

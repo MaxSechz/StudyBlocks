@@ -14,13 +14,15 @@
     <label for="false<%= card.id %>">False</label>
   <% } else if (card.get('format') === 'field') { %>
     <% for (var attr in card.get('back')) { %>
-      <label for="<%= attr %>"><%= attr %></label>
-      <input class="<%= attr %>" type="text" name="response_text" value="">
+      <div class="field-row">
+        <label class="field" for="<%= attr %>"><%= attr %></label>
+        <input class="<%= attr %>" type="text" name="response_text" value="">
+      </div>
     <% } %>
   <% } else if (card.get('format') === 'choice') { %>
     <% for (var i = 0; i < choices.length; i++) { %>
-      <label for="<%= choices[i].escape('back') + card.id %>"><%= choices[i].escape('back') %></label>
       <input id="<%= choices[i].escape('back') + card.id %>" type="radio" name="<%= card.id %>_response" value="<%= choices[i].escape('back') %>">
+      <label for="<%= choices[i].escape('back') + card.id %>"><%= choices[i].escape('back') %></label>
     <% } %>
   <% } else { %>
     <textarea name="response_text"></textarea>

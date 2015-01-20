@@ -15,22 +15,27 @@
     </th>
   </tr>
   <tr>
-    <td>
+    <% console.log(response.get('result')) %>
+    <td class="<%= response.get('result') ? 'correct' : 'incorrect' %>">
       <% if (response.card.escape('format') === "field") { %>
-        <% var i = 0 %>
-        <% for (attr in response.card.get('back')) { %>
-          <%= attr %>: <%= JSON.parse(response.get('response_text'))[i] %>
-          <% i++ %>
-        <% } %>
+        <ul class="fields">
+          <% var i = 0 %>
+          <% for (attr in response.card.get('back')) { %>
+            <li class="field"><%= attr %>: <%= JSON.parse(response.get('response_text'))[i] %></li>
+            <% i++ %>
+          <% } %>
+        </ul>
         <% } else { %>
           <%= response.escape('response_text') %>
         <% } %>
     </td>
-    <td>
+    <td class="correct">
       <% if (response.card.escape('format') === "field") { %>
-        <% for (attr in response.card.get('back')) { %>
-          <%= attr %>: <%= response.card.get('back')[attr] %>
-        <% } %>
+        <ul class="fields">
+          <% for (attr in response.card.get('back')) { %>
+            <li class="field"><%= attr %>: <%= response.card.get('back')[attr] %></li>
+          <% } %>
+        </ul>
       <% } else { %>
         <%= response.card.escape('back') %>
       <% } %>

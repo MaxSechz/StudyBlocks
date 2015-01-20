@@ -3,6 +3,7 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
   className: "course-registration",
   template: JST["courses/new"],
   events: {
+    "click .cancel": "closeForm",
     "keyup .search": "searchCourses",
     "focusout .search": "openSelect",
     "submit .register": "registerForCourse",
@@ -23,6 +24,13 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     this.$("select").click();
   },
 
+  closeForm: function (event) {
+    event && event.preventDefault();
+    Backbone.history.history.back();
+    this.remove();
+    $(".modal").removeClass("form");
+  },
+
   searchCourses: function (event) {
     event.preventDefault();
     var thisView = this;
@@ -39,9 +47,10 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var $target = $(event.currentTarget);
     var data = $target.serializeJSON();
     var registration = new StudyBlocks.Models.Registration(data);
-    registration.save({
+    var thisView = this;
+    registration.save({}, {
       success: function (model) {
-        console.log(model);
+        thisView.closeForm();
       }
     });
   },
@@ -51,9 +60,10 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var $target = $(event.currentTarget);
     var data = $target.serializeJSON();
     var course = new StudyBlocks.Models.Course(data);
-    course.save({
+    var thisView = this;
+    course.save({}, {
       success: function (model) {
-          console.log(model);
+        thisView.closeForm();
       }
     });
 

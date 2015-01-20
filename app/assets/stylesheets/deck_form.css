@@ -9,7 +9,7 @@
 .modal .deck-form {
   padding: 10px 40px;
   border: none;
-  width: 707px;
+  width: 630px;
 }
 
 .deck-form .card-form {
@@ -18,7 +18,7 @@
 }
 
 .cards-preview {
-  border: 2px solid #999;
+  background: #eee;
   max-height: 500px;
   overflow: auto;
 }

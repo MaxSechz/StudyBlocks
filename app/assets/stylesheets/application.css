@@ -54,7 +54,6 @@ a, img {
 img {
   margin: auto;
   display: block;
-  width: 50%;
 }
 
 label {
@@ -196,77 +195,6 @@ div.modal.form {
 
 h1 {
   font-size: 36px;
-}
-
-.cards {
-  border-top: 2px solid #999;
-  margin-top: 20px;
-  padding: 20px;
-  display: block;
-  background: #eee;
-  height: calc(100vh - 246px);
-  overflow: auto;
-}
-
-.card {
-  position: relative;
-  font-size: 12px;
-  background: white;
-  border: 2px solid #999;
-  margin: 20px;
-  text-align: center;
-  float: left;
-  padding: 20px;
-  display: block;
-  width: 260px;
-  min-height: 260px;
-}
-
-.front, .back {
-  padding: 40px 0;
-  width: calc(100% - 40px);
-}
-
-.front {
-  position: absolute;
-  top: 0;
-  border-bottom: 1px dotted #999;
-}
-
-.back {
-  position: absolute;
-  bottom: 0;
-}
-
-.card .score {
-  margin: 0;
-  width: 100%;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.card strong {
-  display: block;
-}
-
-.card:hover {
-  border-color: #acffac;
-}
-.card button {
-  font-size: 0;
-  max-height: 0;
-  padding: 0;
-  display: inline-block;
-  -webkit-transition: font-size 0.5s 0.25s, max-height 0.5s 0.25s, padding 0.5s 0.25s;
-}
-
-.score:hover > button {
-  font-size: 16px;
-  max-height: 100%;
-  padding: 10px 20px;
 }
 
 .deck-navbar {

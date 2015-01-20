@@ -1,10 +1,11 @@
 StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
   tagName: "li",
-  className: "card",
+  className: "card-show cube-wrap",
   template: JST["cards/show"],
   events: {
-    "click .delete-card": "destroyCard",
-    "click .edit-card": "editCard"
+    "click .flip-right .delete-card": "destroyCard",
+    "click .flip-right .edit-card": "editCard",
+    "click .cube": "flip",
   },
 
   initialize: function (options) {
@@ -31,5 +32,10 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
       submit: this.submit
     });
     $(".modal").html(formView.render().$el).addClass("form");
+  },
+
+  flip: function (event) {
+    event.preventDefault();
+    this.$(".cube").toggleClass("flip-right");
   }
 });

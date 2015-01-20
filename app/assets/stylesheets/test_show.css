@@ -4,3 +4,37 @@
 .nav-link:first-of-type {
   top: -10px;
 }
+
+.responses {
+  overflow: auto;
+  background: #eee;
+}
+
+.response {
+  margin: 40px auto;
+  border: 2px solid #999;
+  width: 30%;
+  padding: 20px;
+  background: white;
+}
+
+.correct {
+  background: #acffac;
+}
+
+.incorrect {
+  background: #ffacac;
+}
+
+caption {
+  font-size: 24px;
+  /*width: 100%;*/
+}
+
+table {
+  width: 100%;
+}
+
+.field {
+  margin: 10px;
+}

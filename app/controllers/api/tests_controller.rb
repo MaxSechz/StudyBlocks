@@ -1,5 +1,6 @@
 module Api
   class TestsController < ApplicationController
+    before_action :require_logged_in
     before_action :get_deck
 
     def index

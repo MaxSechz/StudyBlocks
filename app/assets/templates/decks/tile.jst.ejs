@@ -4,7 +4,9 @@
     <strong><%= deck.user && deck.user.get('username') %></strong>
   </li>
   <% if (writeable) { %>
-    <button class="edit-deck">Edit</button>
-    <button class="delete-deck">Delete</button>
+    <div class="options">
+      <a class="edit-deck" href="#"><div class="pencil"></div></a>
+      <button class="delete-deck">Delete</button>
+    </div>
   <% } %>
 </ul>

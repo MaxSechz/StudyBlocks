@@ -1,0 +1,60 @@
+.card-show .cube {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.card-show .front-face, .card-show .bottom-face {
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+}
+
+.card-show .right-face {
+  width: 100px;
+  height: 300px;
+  border: 2px solid black;
+}
+.card-show .cube:hover li {
+  border: 2px solid #acffac;
+}
+
+.card-show .right-face {
+  transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
+  transform-origin: top right;
+}
+
+.card-show .cube:hover {
+  -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -45deg);
+  /*transform: rotateY(-45deg);*/
+}
+
+.cube.flip-right:hover {
+  -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -70deg);
+}
+
+.card-show .right-face button {
+  height: 50%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.cards {
+  border-top: 2px solid #999;
+  margin-top: 20px;
+  padding: 20px;
+  display: block;
+  background: #eee;
+  height: calc(100vh - 246px);
+  overflow: auto;
+}
+
+.card-show {
+  float: left;
+}
+
+.card-show img {
+  max-height: 150px
+}

@@ -15,6 +15,19 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     'courses/:id': "courseShow",
   },
 
+  execute: function (callback, args) {
+    if (StudyBlocks.currentUser.isNew() && !this.sessionRoute()) {
+      Backbone.history.navigate('', { replace: true });
+    } else {
+      callback.apply(this, args);
+    }
+  },
+
+  sessionRoute: function () {
+    return Backbone.history.fragment === "login" ||
+    Backbone.history.fragment === "register";
+  },
+
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.decks = options.decks;
@@ -86,7 +99,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       model: targetTest,
       collection: targetTest.responses(),
     });
-    this._swapView(testShow);
+    this._modalify(testShow);
   },
 
   courseIndex: function () {

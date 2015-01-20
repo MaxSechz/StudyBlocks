@@ -38,7 +38,6 @@ StudyBlocks.Views.UserNew = Backbone.CollectionView.extend({
     this.model.save(data, {
       success: function (model) {
         StudyBlocks.currentUser = model;
-        console.log(model);
         thisView.remove();
         $(".modal").removeClass("form");
         StudyBlocks.navbar.render()

@@ -1,6 +1,7 @@
 module Api
   class CoursesController < ApplicationController
-
+    before_action :require_logged_in
+    
     def index
       if params[:query]
         @courses = current_user.school.courses.search(params[:query]).to_a;

@@ -1,6 +1,7 @@
 module Api
   class RegistrationsController < ApplicationController
-
+    before_action :require_logged_in
+    
     def show
       @registration = Registration.find_by(
                       course_id: params[:id],

@@ -1,26 +1,25 @@
-<ul class="card-attrs">
-  <li class="front">
+<ul class="cube">
+  <li class="front-face">
   <% if ( card.get('image') && card.get('image') !== "/images/original/missing.png") { %>
     <img src="<%= card.get('image') %>" alt="" />
   <% } else {%>
     <strong><%= card.escape('front') %></strong>
   <% } %>
+  <div class="back">
+    <% if (typeof card.get('back') === "object") { %>
+      <% for (var attr in card.get('back')) { %>
+        <strong class="field-row"><%= attr %>: <%= card.get('back')[attr] %></strong>
+        <% } %>
+    <% } else { %>
+      <strong><%= card.escape('back') %></strong>
+    <% } %>
+      <strong class="score">Correct <%= card.get('averageScore') %>% of the time</strong>
+  </div>
   </li>
-  <li class="back">
-      <% if (typeof card.get('back') === "object") { %>
-        <% for (var attr in card.get('back')) { %>
-          <strong><%= attr %>: <%= card.get('back')[attr] %></strong>
-          <% } %>
-      <% } else { %>
-        <strong><%= card.escape('back') %></strong>
-      <% } %>
+  <li class="right-face">
+    <% if (card.get('writeable')) { %>
+      <button class="edit-card">Edit</button>
+      <button class="delete-card">Delete</button>
+    <% } %>
   </li>
-  <% if (typeof card.get('averageScore') === "number") { %>
-    <li class="score">
-      <strong>Correct <%= card.get('averageScore') %>% of the time</strong>
-      <% if (card.get('writeable')) { %>
-        <button class="delete-card">Delete</button><button class="edit-card">Edit</button>
-      <% } %>
-    </li>
-  <% } %>
 </ul>

@@ -8,7 +8,7 @@
 
 .deck-test textarea {
   width: 90%;
-  height: 200px;
+  min-height: 200px;
 }
 
 
@@ -23,8 +23,12 @@
   border: 2px solid black;
 }
 
+.deck-test .field {
+  border: none;
+}
+
 .deck-test label:hover {
-  border: 2px solid #85ff85;
+  border-color: #85ff85;
 }
 
 .deck-test input[type="radio"]:checked + label {
@@ -44,4 +48,10 @@
 
 .deck-test button:hover {
     background: #85ff85;
+}
+
+.deck-test .back {
+  margin-top: 10px;
+  width: calc(100% - 40px);
+  text-align: center;
 }
