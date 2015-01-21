@@ -17,9 +17,8 @@
 <input type="text" name="email" value="<%= user.escape('email') %>">
 
 <label for="search">Find a School</label>
-<input class="search" type="text" name="some_name" value="">
+<input class="search" type="text" name="some_name" value="<%= user.get('school') && user.get('school').name %>">
 
-<input class="search" type="button" name="some_name" value="<%= user.get('school') && user.get('school').name %>">
 <select class="school-list" size="10" name="school_id">
 </select>
 

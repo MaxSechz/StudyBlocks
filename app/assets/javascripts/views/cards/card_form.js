@@ -107,16 +107,13 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
 
     reader.onloadend = function(){
       that._updatePreview(reader.result);
-      that.model.set('image', reader.result);
+      that.model.image = reader.result;
     };
-
     if (file) {
       reader.readAsDataURL(file);
     } else {
       this.removeImage();
-      delete this.model.unset('image');
-
-      console.log(this.model);
+      delete this.model.image;
     }
   },
 

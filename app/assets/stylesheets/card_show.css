@@ -24,6 +24,10 @@
   min-height: 260px;
 }
 
+strong {
+  word-wrap: break-word;
+}
+
 .front {
   margin: auto;
   padding: 20px 0;

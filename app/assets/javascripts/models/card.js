@@ -14,6 +14,7 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
   toJSON: function () {
     var attrs = _.clone(this.attributes);
     attrs.back = _.escape(attrs.back);
+    attrs.image = this.image;
     return attrs;
   },
 

@@ -17,11 +17,16 @@ module Api
       render :new
     end
 
+    def show
+      @card = Card.find(params[:id])
+      render :show
+    end
+
     def create
       @card = @deck.cards.new(card_params)
 
       if @card.save
-        render json: @card
+        render :show
       else
         render json: @card.errors
       end
@@ -36,7 +41,7 @@ module Api
       @card = Card.find(params[:id])
 
       if @card.update(card_params)
-        render json: @card
+        render :show
       else
         render json: @card.errors.messages
       end

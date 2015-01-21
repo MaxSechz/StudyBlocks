@@ -38,9 +38,14 @@
   border: 2px solid white;
 }
 
+
 .modal input[type="text"] {
-  display: inline-block;
+  display: block;
   margin: 2px auto;
+}
+
+.modal .field input {
+  display: inline-block;
 }
 
 .input-image:hover {
