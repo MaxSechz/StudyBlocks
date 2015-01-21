@@ -3,7 +3,8 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
   className: "login",
   template: JST["users/login"],
   events: {
-    "click .login": "login"
+    "click .login": "login",
+    "click .guest": "loginGuest",
   },
 
   render: function () {
@@ -31,6 +32,12 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
         console.log(response);
       }
     });
+  },
+
+  loginGuest: function () {
+    this.$("#password").val('password');
+    this.$("#username").val('Guest');
+    this.$(".login").click();
   }
 
 });
