@@ -16,6 +16,8 @@
 //= require backbone
 //= require study_blocks
 //= require jquery.serializejson.min.js
+//= require masonry.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

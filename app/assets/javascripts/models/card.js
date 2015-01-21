@@ -17,6 +17,14 @@ StudyBlocks.Models.Card = Backbone.Model.extend({
     return attrs;
   },
 
+  set: function (attrs) {
+    Backbone.Model.prototype.set.call(this, attrs);
+    if (this.get('format') === "field" && typeof this.get('back') !== "object") {
+      this.set('back', JSON.parse(this.get('back')));
+    }
+    return this;
+  },
+
   parse: function (response, options) {
     if (response.deck) {
       this.deck = response.deck;

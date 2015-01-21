@@ -3,7 +3,7 @@
   <% if ( card.get('image') && card.get('image') !== "/images/original/missing.png") { %>
     <img src="<%= card.get('image') %>" alt="" />
   <% } else {%>
-    <strong><%= card.escape('front') %></strong>
+    <strong class="front"><%= card.escape('front') %></strong>
   <% } %>
   <div class="back">
     <% if (typeof card.get('back') === "object") { %>

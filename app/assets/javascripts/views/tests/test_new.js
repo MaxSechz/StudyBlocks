@@ -10,7 +10,7 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
   renderThis: {
     deck: 'deck'
   },
-  renderCallback: 'setupChoices',
+  preRenderCallback: 'setupChoices',
 
   initialize: function () {
     this.deck = this.model.deck();

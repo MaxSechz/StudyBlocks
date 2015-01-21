@@ -4,8 +4,9 @@
   max-height: calc(100vh - 102px);
 }
 
-.card-review .cube-wrap{
+.card-review .cube-wrap {
   width: 50%;
+  height: 300px;
 }
 
 .header {
@@ -30,7 +31,7 @@
 
 .card-review .cube {
   width: 100%;
-  height: 300px;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -40,8 +41,11 @@
 
 .card-review .front-face, .card-review .bottom-face {
   width: 100%;
-  height: 300px;
-  border: 5px solid black;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 2px solid black;
 }
 
 .card-review .cube:hover > .front-face, .card-review .cube:hover > .bottom-face {

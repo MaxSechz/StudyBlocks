@@ -8,6 +8,8 @@
   display: inline-block;
   -webkit-perspective: 1000px;
   perspective-origin: 50% 50px;
+  background: transparent;
+  margin: -20px;
 }
 
 .cube {
@@ -24,9 +26,12 @@
 }
 
 .front-face, .back-face, .right-face, .left-face, .top-face, .bottom-face {
-  position: absolute;
   background: white;
   box-sizing: border-box;
+}
+
+.back-face, .right-face, .left-face, .top-face, .bottom-face {
+  position: absolute;
 }
 
 .front-face {
@@ -47,8 +52,8 @@
 
 /* Rotate the cube */
 .flip-up {
-  -webkit-transform: rotateX(90deg) translate3d(0, -150px, 0);
-  /*transform: rotateX(90deg) translateY(-150px);*/
+  /*-webkit-transform: rotateX(90deg) translate3d(0, -150px, 0);*/
+  transform: rotateX(90deg) translateY(-150px);
 }
 
 .flip-right {

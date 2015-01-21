@@ -1,11 +1,12 @@
 
 .cards {
+  position: relative;
   border-top: 2px solid #999;
-  margin-top: 20px;
-  padding: 20px;
   display: block;
   background: #eee;
-  height: calc(100vh - 246px);
+  min-height: calc(100vh - 246px);
+  max-height: calc(100vh - 246px);
+  /*min-width: 98%;*/
   overflow: auto;
 }
 
@@ -25,14 +26,17 @@
 
 .front {
   margin: auto;
+  padding: 20px 0;
   border-bottom: 1px dotted #999;
 }
 
 .card-show .back {
+  display: block;
+  padding: 60px 0;
   width: calc(100% - 10px);
   text-align: center;
-  position: absolute;
-  bottom: 0;
+  /*position: relative;*/
+  height: 100%;
 }
 
 .deck-study .back {
@@ -45,7 +49,7 @@
 }
 
 .card img {
-  max-height: 150px
+  /*max-height: 150px*/
 }
 
 .card:hover {

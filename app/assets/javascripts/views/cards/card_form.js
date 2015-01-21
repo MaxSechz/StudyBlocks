@@ -67,9 +67,6 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
       $definition.attr('name', "back[" + $field.val() + "]");
     });
     var attrs = this.$el.serializeJSON();
-    if (typeof attrs.back === "object") {
-      attrs.back = JSON.stringify(attrs.back);
-    }
     var thisForm = this;
     var thisDeck = this.model.deck;
     this.model.set('changed', true);
@@ -79,6 +76,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
         success: function (model, response) {
           model.deck = thisDeck;
           thisDeck.cards().add(model, {merge: true});
+          thisForm.cancel();
         },
         error: function (model, response) {
           console.log(model);
@@ -86,7 +84,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
         }
       });
     } else {
-      thisForm.remove();
+      thisForm.cancel();
       thisDeck.cards().add(this.model, {merge: true});
     }
   },
@@ -123,7 +121,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   },
 
   cancel: function (event) {
-    event.preventDefault();
+    event && event.preventDefault();
     this.$el.parent().removeClass("form");
     this.remove();
   },

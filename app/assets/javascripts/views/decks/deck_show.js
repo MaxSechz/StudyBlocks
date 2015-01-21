@@ -12,9 +12,11 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   },
   selector: '.cards',
   options: { submit: true },
+  postRenderCallback: 'adjust',
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
+    this.$el.imagesLoaded(this.adjust.bind(this));
   },
 
   newCard: function (event) {
@@ -31,8 +33,13 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
     event.preventDefault();
     this.model.destroy({
       success: function () {
-        Backbone.history.navigate('', { trigger :true } );
+        Backbone.history.navigate('', { trigger: true } );
       }
     });
+  },
+
+  adjust: function () {
+    this.$(this.selector).masonry({"gutter": 40});
+    this.$(this.selector).masonry("reloadItems");
   }
 });
