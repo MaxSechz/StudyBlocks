@@ -14,7 +14,33 @@ class User < ActiveRecord::Base
   has_many :courses, through: :registrations, source: :course
 
   accepts_nested_attributes_for :school
-  
+
+  def self.find_or_create_by_auth_hash(auth_hash)
+    user = User.find_by(
+    provider: auth_hash[:provider],
+    uid: auth_hash[:uid])
+
+    if user.nil?
+      user = User.find_by(email: auth_hash[:info][:email])
+      if user
+        user.provider = auth_hash[:provider]
+        user.uid = auth_hash[:uid]
+        user.save!
+      end
+    end
+
+    if user.nil?
+      user = User.create!(
+      username: auth_hash[:info][:email],
+      email: auth_hash[:info][:email],
+      password: SecureRandom::urlsafe_base64,
+      provider: auth_hash[:provider],
+      uid: auth_hash[:uid])
+    end
+
+    user
+  end
+
   def self.generate_token
     SecureRandom::urlsafe_base64
   end

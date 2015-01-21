@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'figaro'
-
+gem "omniauth-google-oauth2"
 gem 'paperclip'
 gem 'pg_search'
 gem 'aws-sdk'
