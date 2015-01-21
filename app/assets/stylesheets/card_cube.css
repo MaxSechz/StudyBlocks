@@ -13,7 +13,6 @@
 .card-show .front-face, .card-show .bottom-face {
   width: 300px;
   height: 100%;
-  /*min-height: 300px;*/
   border: 2px solid black;
 }
 
@@ -30,13 +29,12 @@
 }
 
 .card-show .right-face {
-  transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
-  transform-origin: top right;
+ -webkit-transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
+ -webkit-transform-origin: top right;
 }
 
 .card-show .cube:hover {
   -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
-  /*transform: rotateY(-45deg);*/
 }
 
 .cube.flip-right:hover {

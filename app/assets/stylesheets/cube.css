@@ -7,7 +7,7 @@
 .cube-wrap {
   display: inline-block;
   -webkit-perspective: 1000px;
-  perspective-origin: 50% 50px;
+  -webkit-perspective-origin: 50% 50px;
   background: transparent;
   margin: -20px;
 }
@@ -36,24 +36,24 @@
 
 .front-face {
   -webkit-transform: translateZ(150px);
-  transform: translateZ(150px);
+ -webkit-transform: translateZ(150px);
 }
 
 .bottom-face {
   -webkit-transform: rotateX(-90deg) translateY(150px);
-  transform: rotateX(-90deg) translateY(150px);
-  transform-origin: bottom center;
+ -webkit-transform: rotateX(-90deg) translateY(150px);
+  -webkit-transform-origin: bottom center;
 }
 
 .right-face {
-  transform: rotateY(-270deg) translateX(150px);
-  transform-origin: top right;
+ -webkit-transform: rotateY(-270deg) translateX(150px);
+  -webkit-transform-origin: top right;
 }
 
 /* Rotate the cube */
 .flip-up {
   /*-webkit-transform: rotateX(90deg) translate3d(0, -150px, 0);*/
-  transform: rotateX(90deg) translateY(-150px);
+ -webkit-transform: rotateX(90deg) translateY(-150px);
 }
 
 .flip-right {

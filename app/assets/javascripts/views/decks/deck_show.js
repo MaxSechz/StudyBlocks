@@ -39,7 +39,6 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   },
 
   adjust: function () {
-    this.$(this.selector).masonry({"gutter": 40});
-    this.$(this.selector).masonry("reloadItems");
+    this.$(this.selector).masonry({ containerStyle: null, "gutter": 40});
   }
 });

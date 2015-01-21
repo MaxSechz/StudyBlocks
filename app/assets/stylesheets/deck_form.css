@@ -7,18 +7,22 @@
 }
 
 .modal .deck-form {
-  padding: 10px 40px;
+  padding: 10px 20px;
   border: none;
   width: 630px;
 }
 
 .deck-form .card-form {
  width: 800px;
+ padding: 10px;
  height: 100%;
 }
 
 .cards-preview {
   background: #eee;
+  min-height: 500px;
   max-height: 500px;
-  overflow: auto;
+  max-width: 325px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

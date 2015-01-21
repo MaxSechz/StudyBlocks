@@ -17,6 +17,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   options: { submit: false },
 
   initialize: function () {
+    this.$el.imagesLoaded(this.renderCollection.bind(this));
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
     this.collection.fetch();
@@ -57,6 +58,6 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
       submit: false
     });
     this.$el.addClass("inactive");
-    this.addSubview(".cards-preview", cardFormView);
-  }
+    this.addSubview(this.selector, cardFormView);
+  },
 });
