@@ -1,5 +1,5 @@
 StudyBlocks.Models.User = Backbone.Model.extend({
-  urlRoot: "api/user",
+  url: "api/user",
 
   decks: function () {
     if (!this._decks) {

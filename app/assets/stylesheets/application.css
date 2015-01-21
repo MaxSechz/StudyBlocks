@@ -109,6 +109,14 @@ div.modal.form {
   background: rgba(0,0,0,0.6);
 }
 
+.password-fields {
+  display: none;
+}
+
+.password-fields.open {
+  display: block;
+}
+
 .navbar {
   white-space: nowrap;
   overflow: hidden;

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :tests
     end
 
-    resource :user, only: [:create, :show]
+    resource :user, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy]
     resources :schools, only: [:index, :show, :create]
     resources :courses, only: [:index, :show, :create]

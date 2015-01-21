@@ -1,6 +1,7 @@
 StudyBlocks.Routers.Router = Backbone.Router.extend({
   routes: {
     // '': "home",
+    "account": "account",
     "register": "register",
     "login": "login",
     'decks': "deckIndex",
@@ -145,6 +146,15 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       collection: schools
     });
     this._modalify(registerView, "form");
+  },
+
+  account: function () {
+    var schools = new StudyBlocks.Collections.Schools();
+    var accountView = new StudyBlocks.Views.UserAccount({
+      model: StudyBlocks.currentUser,
+      collection: schools
+    });
+    this._modalify(accountView, "form");
   },
 
   _swapView: function (view) {

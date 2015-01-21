@@ -41,6 +41,6 @@ class ApplicationController < ActionController::Base
     new_params = params.require(:user).permit(:username, :password, :email, :school_id,
     school_attributes: [ :name, :country, :state, :city]
     )
-    new_params[:password].empty? ? new_params.except(:password) : new_params
+    new_params[:password].nil? || new_params[:password].empty? ? new_params.except(:password) : new_params
   end
 end

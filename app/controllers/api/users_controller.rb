@@ -31,8 +31,8 @@ module Api
 
     def update
       @user = current_user
-      if @user.update(user_params)
-        redirect_to user_url(@user)
+      if valid_password_change? && @user.update(user_params)
+        render :show
       else
         render :edit
       end
@@ -43,5 +43,14 @@ module Api
       redirect_to root_url
     end
 
+    private
+
+    def valid_password_change?
+      return true if params[:user][:password].empty? || params[:user][:password].nil?
+      if params[:user][:new_password] == params[:user][:password_confirm]
+        params[:user][:password] = params[:user][:new_password]
+      end
+      return true
+    end
   end
 end
