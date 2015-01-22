@@ -6,8 +6,10 @@
   background: #eee;
   min-height: calc(100vh - 246px);
   max-height: calc(100vh - 246px);
-  /*min-width: 98%;*/
-  overflow: auto;
+  min-width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 .card {

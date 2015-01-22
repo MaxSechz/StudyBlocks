@@ -12,12 +12,14 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   },
   selector: '.cards',
   options: { submit: true },
-  postRenderCallback: 'adjust',
+  postRenderCallback: 'adjust2',
 
   initialize: function () {
-    // this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
-    // this.$el.imagesLoaded(this.adjust.bind(this));
+  },
+
+  adjust2: function () {
+    this.$(this.selector).imagesLoaded(this.adjust.bind(this));
   },
 
   newCard: function (event) {
@@ -39,7 +41,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
     });
   },
 
-  adjust: function () {
-    this.$(this.selector).masonry({ "gutter": 40 });
+  adjust: function (thing) {
+    this.$(this.selector).masonry({ containerStyle: null, "gutter": 40 });
   }
 });
