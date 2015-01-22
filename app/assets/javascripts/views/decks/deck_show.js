@@ -15,9 +15,9 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   postRenderCallback: 'adjust',
 
   initialize: function () {
+    // this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "add", this.adjust);
-    this.$el.imagesLoaded(this.adjust.bind(this));
+    // this.$el.imagesLoaded(this.adjust.bind(this));
   },
 
   newCard: function (event) {

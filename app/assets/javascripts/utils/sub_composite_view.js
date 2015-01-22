@@ -8,7 +8,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   preRenderCallback: '',
   postRenderCallback: '',
   onDomCallback: '',
-  
+
   renderObject: function () {
     var renderObject = {};
     for (var attr in this.renderThis) {
@@ -31,7 +31,6 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
     var content = this.template(this.renderObject());
     this.$el.html(content);
     this.renderCollection();
-    this.postRenderCallback && this[this.postRenderCallback]();
     return this;
   },
 
@@ -46,6 +45,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
       subview.remove();
     });
     this.subviews()[this.selector] = _.pick(this.subviews(this.selector), keys);
+    this.postRenderCallback && this[this.postRenderCallback]();
   },
 
   addModelView: function (subModel) {
