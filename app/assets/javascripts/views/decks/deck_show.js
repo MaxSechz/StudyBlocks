@@ -16,6 +16,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.adjust);
     this.$el.imagesLoaded(this.adjust.bind(this));
   },
 
@@ -39,6 +40,6 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   },
 
   adjust: function () {
-    this.$(this.selector).masonry({ containerStyle: null, "gutter": 40});
+    this.$(this.selector).masonry({ "gutter": 40 });
   }
 });

@@ -7,7 +7,8 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
   options: {},
   preRenderCallback: '',
   postRenderCallback: '',
-
+  onDomCallback: '',
+  
   renderObject: function () {
     var renderObject = {};
     for (var attr in this.renderThis) {
