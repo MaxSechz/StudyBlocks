@@ -28,6 +28,19 @@ module Api
       end
     end
 
+    def import
+      @deck = Deck.find(params[:id])
+      csv = CSV.parse(params[:csv])
+      new_cards = Card.create_from_csv(csv)
+      @cards = @deck.cards.<<(*new_cards)
+      if @cards
+        render :show
+      else
+        raise "#{new_cards} aNnddddddasdfasdfasdfasdfasdfasdfafasdfasdfasdfasdfasdvsvxvxcvcxvasddvasdvasdvasvasd #{@cards.errors.messages} adnannanadnanadndanadnanadndandanndndanadnadann #{@deck.cards.to_a}"
+        render json: @cards.errors.messages
+      end
+    end
+
     def edit
       @deck = Deck.find(params[:id])
       render :edit

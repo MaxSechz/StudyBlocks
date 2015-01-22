@@ -6,13 +6,14 @@
     <a href="<%= deck.linkUrl('review') %>" class="review">Review</a>
     <a href="<%= deck.linkUrl('test') %>" class="test">Test</a>
     <a class="new" href="#">Add Card</a>
+    <a class="import" href="#">Import Cards</a>
     <a class="delete" href="#">Delete</a>
 </nav>
 
+<ul class="cards">
 <div class="info">
   <a class="nav-link" href="#/courses/<%= deck.course().id %>"><%= deck.course().escape('title') %></a>
   <h1><%= deck.escape('title') %></h1>
   <h2><%= deck.escape('description') %></h2>
 </div>
-<ul class="cards">
 </ul>

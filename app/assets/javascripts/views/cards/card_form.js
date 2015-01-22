@@ -102,7 +102,6 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   fileInputChange: function(event) {
     var that = this;
     var file = event.currentTarget.files[0];
-    console.log($("#input-image")[0].files);
     var reader = new FileReader();
 
     reader.onloadend = function(){

@@ -225,7 +225,11 @@ h1 {
 }
 
 .info {
-  margin: 20px;
+  width: 100%;
+  display: block;
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px
 }
 .info * {
   padding: 5px;

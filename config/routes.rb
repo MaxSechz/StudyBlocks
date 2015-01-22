@@ -23,6 +23,6 @@ Rails.application.routes.draw do
     resources :courses, only: [:index, :show, :create]
     resources :registrations, only: [:show, :create, :destroy]
   end
-
+  patch "api/decks/:id/import" => "api/decks#import"
   get "auth/:provider/callback" => "api/sessions#omniauth"
 end

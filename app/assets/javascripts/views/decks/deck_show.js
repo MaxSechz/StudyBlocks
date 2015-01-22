@@ -5,6 +5,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   events: {
     "click .new": "newCard",
     "click .delete": "deleteDeck",
+    "click .import": "importCards"
   },
   subModelViewName: "CardShow",
   renderThis: {
@@ -41,7 +42,18 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
     });
   },
 
+  importCards: function (event) {
+    event.preventDefault();
+    var importView = new StudyBlocks.Views.ImportForm({ model: this.model });
+    $(".modal").html(importView.render().$el).addClass("form");
+  },
+
   adjust: function (thing) {
-    this.$(this.selector).masonry({ containerStyle: null, "gutter": 40 });
+    this.$(this.selector).masonry({
+      stamp: ".info",
+      itemSelector: ".card-show",
+      containerStyle: null,
+      "gutter": 0
+    });
   }
 });

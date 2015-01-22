@@ -1,7 +1,7 @@
 module Api
   class CardsController < ApplicationController
     before_action :require_logged_in
-    before_action :get_deck
+    before_action :get_deck, except: [:import]
     before_action :ensure_user_has_access, only: [:show, :index]
     before_action :ensure_card_belongs_to_user, only: [:create, :update, :destroy]
 
@@ -66,5 +66,4 @@ module Api
       render json: {errors: "You don't own that deck"} unless get_deck.can_write?(current_user)
     end
   end
-
 end

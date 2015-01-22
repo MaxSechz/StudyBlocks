@@ -17,6 +17,23 @@ class Card < ActiveRecord::Base
     results.count(true) * 100 / self.responses.count
   end
 
+  def self.create_from_csv(csv)
+    cards = []
+    csv.each do |row|
+      card = Card.new
+      if row[0] =~ /[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)/
+        card.image = row[0]
+      else
+        card.front = row[0]
+      end
+      card.back = row[1]
+      card.format = "response"
+      cards.push(card)
+    end
+
+    cards
+  end
+
   private
 
   def has_image_or_front
