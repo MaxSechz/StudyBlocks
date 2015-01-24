@@ -23,10 +23,6 @@
   border: 2px solid black;
 }
 
-.card-show .cube:hover li {
-  border: 2px solid #acffac;
-}
-
 .card-show .right-face {
  -webkit-transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
  -webkit-transform-origin: top right;

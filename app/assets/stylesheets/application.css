@@ -132,7 +132,7 @@ div.modal.form {
 
 .navbar:hover {
   color: #333;
-  width: 10%;
+  width: 200px;
 }
 
 .navbar .logo {
@@ -198,7 +198,7 @@ div.modal.form {
 }
 
 .navbar:hover + .content {
-  width: 90%;
+  width: calc(100% - 200px);
 }
 
 h1 {
@@ -213,7 +213,9 @@ h1 {
 .deck-navbar a {
   display: block;
   float: left;
-  padding: 20px calc(100% / 16);
+  padding: 20px 0;
+  width: 14%;
+  text-align: center;
 }
 
 .deck-navbar a:hover {

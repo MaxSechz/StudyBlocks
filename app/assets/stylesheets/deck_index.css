@@ -37,10 +37,6 @@
   color: #85ff85;
 }
 
-.header button:hover {
-  background: #85ff85;
-}
-
 .deck-tile a {
   font-size: 16px;
   margin-bottom: 40px;

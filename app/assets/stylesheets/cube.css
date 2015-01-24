@@ -5,7 +5,7 @@
 }
 
 .cube-wrap {
-  display: inline-block;
+  display: block;
   -webkit-perspective: 1000px;
   -webkit-perspective-origin: 50% 50px;
   background: transparent;

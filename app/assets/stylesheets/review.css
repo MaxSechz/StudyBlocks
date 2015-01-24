@@ -7,6 +7,14 @@
 .card-review .cube-wrap {
   width: 50%;
   height: 300px;
+  margin: auto;
+}
+
+.card-review img {
+  max-width: 100%;
+  min-height: 296px;
+  max-height: 296px;
+
 }
 
 .header {
