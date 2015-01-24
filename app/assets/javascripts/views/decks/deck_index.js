@@ -12,7 +12,7 @@ StudyBlocks.Views.DecksIndex = Backbone.CollectionView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.collection, "sync add", this.render);
+    this.listenTo(this.collection, "sync add change", this.render);
   },
 
   newDeck: function () {

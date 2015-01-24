@@ -24,12 +24,6 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     this.$("select").click();
   },
 
-  closeForm: function (event) {
-    event && event.preventDefault();
-    this.remove();
-    $(".modal").removeClass("form");
-  },
-
   searchCourses: function (event) {
     event.preventDefault();
     var thisView = this;
@@ -49,7 +43,7 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var thisView = this;
     registration.save({}, {
       success: function (model) {
-        thisView.closeForm();
+        Backbone.history.navigate("courses/" + model.id, { trigger: true })
       }
     });
   },
@@ -62,7 +56,7 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var thisView = this;
     course.save({}, {
       success: function (model) {
-        thisView.closeForm();
+        Backbone.history.navigate("courses/" + model.id, { trigger: true })
       }
     });
 

@@ -4,6 +4,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   template: JST["cards/form"],
   events: {
     "submit": "addCard",
+    "click .close": "cancelForm",
     "click .discard": "removeImage",
     "click .new-field": "addField",
     "click .remove-field": "removeField",
@@ -75,14 +76,14 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
         success: function (model, response) {
           model.deck = thisDeck;
           thisDeck.cards().add(model, {merge: true});
-          thisForm.cancel();
+          thisForm.$(".close").click();
         },
         error: function (model, response) {
         }
       });
     } else {
-      thisForm.cancel();
       thisDeck.cards().add(this.model, {merge: true});
+      thisForm.$(".close").click();
     }
   },
 
@@ -120,6 +121,15 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     this.$("#front").removeClass("inactive");
     $("#input-image").val('');
     $(".input-image").removeClass("inactive");
+  },
+
+  cancelForm: function (event) {
+      event.preventDefault();
+      if (!this.submit) {
+        this.remove();
+      } else {
+        $(event.target).addClass("cancel");
+      }
   },
 
   _updatePreview: function(src){

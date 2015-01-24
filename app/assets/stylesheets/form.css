@@ -13,12 +13,12 @@ form.import {
     min-height: 100px;
 }
 
-.cancel {
+.cancel, .close {
   float: right;
   display: inline-block;
 }
 
-.cancel:hover {
+.cancel:hover, .close:hover {
   color: #ff8585;
 }
 
