@@ -3,9 +3,14 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
   className: 'performance',
   template: JST['tests/index'],
   toolTemplate: JST['tests/tooltip'],
+  renderThis: {
+    tests: "collection"
+  },
+  preRender: "prep",
+  postRender: "draw",
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.prep);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   prep: function () {
@@ -23,14 +28,6 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
       });
       thisView.data.addRow([date, test.score, htmlString]);
     });
-    this.render();
-  },
-
-  render: function () {
-    var content = this.template({ tests: this.collection });
-    this.$el.html(content);
-    this.draw();
-    return this;
   },
 
   draw: function () {

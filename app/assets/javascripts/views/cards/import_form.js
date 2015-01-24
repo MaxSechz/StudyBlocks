@@ -9,12 +9,6 @@ StudyBlocks.Views.ImportForm = Backbone.View.extend({
   },
   template: JST["cards/import"],
 
-  render: function () {
-    var content = this.template();
-    this.$el.html(content);
-    return this;
-  },
-
   importCards: function (event) {
     event.preventDefault();
     $.ajax({

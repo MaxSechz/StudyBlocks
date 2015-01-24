@@ -7,12 +7,6 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
     "click .guest": "loginGuest",
   },
 
-  render: function () {
-      var content = this.template();
-      this.$el.html(content);
-      return this;
-  },
-
   login: function (event) {
     event.preventDefault();
     var data = { user: this.$el.serializeJSON() };

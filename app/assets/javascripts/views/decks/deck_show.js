@@ -13,7 +13,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   },
   selector: '.cards',
   options: { submit: true },
-  postRenderCallback: 'adjust2',
+  postRender: 'adjust2',
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);

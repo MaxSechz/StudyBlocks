@@ -17,6 +17,11 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     boolean: JST["cards/boolean_form"],
     field: JST["cards/field_form"]
   },
+  renderThis: {
+    card: 'model',
+    template: "subTemplate"
+  },
+  postRender: 'setSelected',
 
   initialize: function (options) {
     this.submit = options.submit;
@@ -27,14 +32,8 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     }
   },
 
-  render: function () {
-    var content = this.template({
-      card: this.model,
-      template: this.subTemplates[this.selected]
-    });
-    this.$el.html(content);
-    this.setSelected();
-    return this;
+  subTemplate: function () {
+    return this.subTemplates[this.selected];
   },
 
   setSelected: function () {

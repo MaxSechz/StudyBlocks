@@ -7,16 +7,13 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
     "click .flip-right .edit-card": "editCard",
     "click .cube": "flip",
   },
+  renderThis: {
+    card: "model"
+  },
 
   initialize: function (options) {
     this.submit = options.submit;
     this.listenTo(this.model, "change", this.render);
-  },
-
-  render: function () {
-    var content = this.template({ card: this.model });
-    this.$el.html(content);
-    return this;
   },
 
   destroyCard: function (event) {

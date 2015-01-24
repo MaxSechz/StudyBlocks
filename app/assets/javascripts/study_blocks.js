@@ -8,10 +8,11 @@ window.StudyBlocks = {
     this.navbar = new StudyBlocks.Views.NavBar();
     var navbar = this.navbar
     this.currentUser.fetch({
-      complete: function () {
+      complete: function (model) {
+        navbar.model = this.currentUser;
         $("body").prepend(navbar.render().$el);
         Backbone.history.start();
-      },
+      }.bind(this),
     });
     this.modal = new StudyBlocks.Views.Modal({ el: $(".modal")[0] })
     var decks = new StudyBlocks.Collections.Decks();

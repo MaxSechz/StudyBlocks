@@ -11,15 +11,9 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     "register-link": "register",
     "login-link": "login",
   },
-
   template: JST["static/navbar"],
-
-  render: function () {
-    var content = this.template({
-      currentUser : StudyBlocks.currentUser
-      });
-    this.$el.html(content);
-    return this;
+  renderThis: {
+    currentUser: "model"
   },
 
   navigate: function (event) {

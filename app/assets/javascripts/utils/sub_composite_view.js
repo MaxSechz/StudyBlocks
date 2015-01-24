@@ -1,22 +1,7 @@
 Backbone.CollectionView = Backbone.CompositeView.extend({
   selector: '',
   subModelViewName: '',
-  renderThis: {
-    model: ''
-  },
   options: {},
-  preRenderCallback: '',
-  postRenderCallback: '',
-  onDomCallback: '',
-
-  renderObject: function () {
-    var renderObject = {};
-    for (var attr in this.renderThis) {
-      var attrVal = this.renderThis[attr];
-      renderObject[attr] = this[attrVal];
-    }
-    return renderObject;
-  },
 
   subModelView: function (obj) {
     var realOptions = {};
@@ -26,12 +11,8 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
     return new StudyBlocks.Views[this.subModelViewName](obj);
   },
 
-  render: function () {
-    this.preRenderCallback && this[this.preRenderCallback]();
-    var content = this.template(this.renderObject());
-    this.$el.html(content);
+  postTasks: function () {
     this.renderCollection();
-    return this;
   },
 
   renderCollection: function () {
@@ -45,7 +26,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
       subview.remove();
     });
     this.subviews()[this.selector] = _.pick(this.subviews(this.selector), keys);
-    this.postRenderCallback && this[this.postRenderCallback]();
+    Backbone.View.prototype.postTasks.apply(this);
   },
 
   addModelView: function (subModel) {

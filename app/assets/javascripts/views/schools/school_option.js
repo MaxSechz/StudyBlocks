@@ -5,14 +5,11 @@ StudyBlocks.Views.SchoolOption = Backbone.View.extend({
   attributes: {
       value: {}
   },
+  renderThis: {
+      school: "model"
+  },
 
   initialize: function () {
     this.attributes.value = this.model.id;
-  },
-
-  render: function () {
-    var content = this.template({ school: this.model });
-    this.$el.html(content);
-    return this;
   }
 });

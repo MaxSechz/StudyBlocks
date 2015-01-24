@@ -7,18 +7,13 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
     "click .edit-deck": "editDeck",
     "click": "navigate"
   },
+  renderThis: {
+    deck: "model",
+    writeable: "writeable"
+  },
 
   initialize: function (options) {
     this.writeable = options.writeable;
-  },
-
-  render: function () {
-    var content = this.template({
-      deck: this.model,
-      writeable: this.writeable
-    });
-    this.$el.html(content);
-    return this;
   },
 
   navigate: function (event) {

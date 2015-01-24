@@ -8,6 +8,9 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
   events: {
     "click .drop-course": "dropCourse"
   },
+  renderThis: {
+    course: "model"
+  },
 
   id: function () {
     return this.model.id;
@@ -17,18 +20,9 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
     this.registration = new StudyBlocks.Models.Registration({
       id: this.model.id
     });
-    this.registration.fetch({
-      success: function (model, response) {
-      }
-    });
+    this.registration.fetch();
     this.tagName = options.tagName;
     this.template = this.templates[this.tagName];
-  },
-
-  render: function () {
-    var content = this.template({ course: this.model });
-    this.$el.html(content);
-    return this;
   },
 
   dropCourse: function (event) {
