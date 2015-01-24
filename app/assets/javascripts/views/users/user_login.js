@@ -45,6 +45,5 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
     event && event.preventDefault();
     this.remove();
     $(".modal").removeClass("form");
-    Backbone.history.history.back();
   }
 });

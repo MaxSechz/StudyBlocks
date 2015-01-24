@@ -26,7 +26,6 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
 
   closeForm: function (event) {
     event && event.preventDefault();
-    Backbone.history.history.back();
     this.remove();
     $(".modal").removeClass("form");
   },

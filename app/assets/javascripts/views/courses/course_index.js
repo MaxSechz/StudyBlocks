@@ -19,7 +19,6 @@ StudyBlocks.Views.CourseIndex = Backbone.CollectionView.extend({
   removeSelf: function (event) {
     if ($(event.currentTarget).hasClass("cancel")) {
       event.preventDefault();
-      Backbone.history.history.back();
       $(".modal").removeClass("active").removeClass("form");
       this.remove();
     } else if ($(event.currentTarget).hasClass("drop-course")) {

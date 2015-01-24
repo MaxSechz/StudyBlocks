@@ -1,6 +1,6 @@
 StudyBlocks.Routers.Router = Backbone.Router.extend({
   routes: {
-    // '': "home",
+    '': "home",
     "account": "account",
     "register": "register",
     "login": "login",
@@ -22,6 +22,11 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     } else {
       callback.apply(this, args);
     }
+  },
+
+  home: function () {
+    var homeView = new StudyBlocks.Views.Home();
+    this._swapView(homeView);
   },
 
   sessionRoute: function () {
@@ -103,15 +108,6 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     this._modalify(testShow);
   },
 
-  courseIndex: function () {
-    var courses = new StudyBlocks.Collections.Courses();
-    courses.fetch();
-    var courseIndex = new StudyBlocks.Views.CourseIndex({
-      collection: courses
-    });
-    this._modalify(courseIndex, "form");
-  },
-
   courseShow: function (id) {
     var course = new StudyBlocks.Models.Course({ id: id });
     course.fetch();
@@ -122,41 +118,6 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     this._swapView(courseShow);
   },
 
-  courseNew: function () {
-    var courses = new StudyBlocks.Collections.Courses();
-    var courseNew = new StudyBlocks.Views.CourseNew({
-      collection: courses
-    });
-    this._modalify(courseNew, "form");
-  },
-
-  login: function () {
-    var user = new StudyBlocks.Models.User();
-    var loginView = new StudyBlocks.Views.UserLogin({
-      model: user
-    });
-    this._modalify(loginView, "form");
-  },
-
-  register: function () {
-    var user = new StudyBlocks.Models.User();
-    var schools = new StudyBlocks.Collections.Schools();
-    var registerView = new StudyBlocks.Views.UserNew({
-      model: user,
-      collection: schools
-    });
-    this._modalify(registerView, "form");
-  },
-
-  account: function () {
-    var schools = new StudyBlocks.Collections.Schools();
-    var accountView = new StudyBlocks.Views.UserAccount({
-      model: StudyBlocks.currentUser,
-      collection: schools
-    });
-    this._modalify(accountView, "form");
-  },
-
   _swapView: function (view) {
     this.$modalEl.empty().removeClass("form").removeClass("active");
     this._currentView && this._currentView.remove();
@@ -164,9 +125,10 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
     this.$rootEl.html(view.render().$el);
   },
 
-  _modalify: function (view, option) {
-    this.$modalEl.empty().removeClass("active").removeClass("form");
-    var cssClass = option || "active"
-    this.$modalEl.addClass(cssClass).html(view.render().$el)
+  _modalify: function (view) {
+    this.$modalEl.empty().removeClass("active");
+    var cssClass = "active";
+    this.$modalEl.addClass(cssClass).html(view.render().$el);
   }
+
 });

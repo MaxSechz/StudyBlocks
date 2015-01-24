@@ -9,7 +9,8 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
     "click .new-field": "addField",
     "click .remove-field": "removeField",
     "click .format": "changeCardType",
-    "change #input-image": "fileInputChange"
+    "change #input-image": "fileInputChange",
+    "click .modal": "cancel"
   },
   subTemplates: {
     response: JST["cards/text_form"],
@@ -79,8 +80,6 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
           thisForm.cancel();
         },
         error: function (model, response) {
-          console.log(model);
-          console.log(response);
         }
       });
     } else {

@@ -23,7 +23,8 @@ form.create {
   float: left;
 }
 
-.forms select {
+.form select {
+  margin-top: 10px;
   text-align: center;
   display: block;
   width: 100%;

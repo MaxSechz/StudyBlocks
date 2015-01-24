@@ -2,7 +2,7 @@ module Api
   class DecksController < ApplicationController
     before_action :require_logged_in
     before_action :ensure_user_has_access, only: [:show]
-    before_action :ensure_user_owns_deck, only: [:edit, :update, :destroy]
+    before_action :ensure_user_owns_deck, only: [:edit, :update, :destroy, :import]
 
     def index
       @decks = current_user.decks
@@ -36,7 +36,6 @@ module Api
       if @cards
         render :show
       else
-        raise "#{new_cards} aNnddddddasdfasdfasdfasdfasdfasdfafasdfasdfasdfasdfasdvsvxvxcvcxvasddvasdvasdvasvasd #{@cards.errors.messages} adnannanadnanadndanadnanadndandanndndanadnadann #{@deck.cards.to_a}"
         render json: @cards.errors.messages
       end
     end

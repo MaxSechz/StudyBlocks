@@ -83,6 +83,14 @@ button:hover {
   background: #ff8585;
 }
 
+.home {
+  position: fixed;
+  right: 0;
+  width: 98%;
+  height: 100%;
+  background: url("https://s3.amazonaws.com/studyblocks-dev/cards/images/000/000/new+folder/splash.jpg");
+}
+
 .group:after {
     content: "";
     display: block;
@@ -118,6 +126,9 @@ div.modal.form {
 }
 
 .navbar {
+  position: relative;
+  left: 0;
+  z-index: 1;
   white-space: nowrap;
   overflow: hidden;
   display: block;
@@ -192,7 +203,7 @@ div.modal.form {
 .content {
   display: block;
   float: left;
-  height: 100%;
+  height: 100vh;
   width: 98%;
   -webkit-transition: width 0.25s 0.25s;
 }

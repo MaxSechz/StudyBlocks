@@ -62,6 +62,5 @@ StudyBlocks.Views.UserAccount = Backbone.CollectionView.extend({
     event && event.preventDefault();
     this.remove();
     $(".modal").removeClass("form");
-    Backbone.history.history.back();
   }
 });

@@ -2,8 +2,10 @@ StudyBlocks.Views.ImportForm = Backbone.View.extend({
   tagName: "form",
   className: "import",
   events: {
+    "click .close": "cancel",
     "click .import": "importCards",
-    "change .cards-input": "fileInputChange"
+    "click .modal": "cancel",
+    "change #cards-input": "fileInputChange"
   },
   template: JST["cards/import"],
 
@@ -23,16 +25,21 @@ StudyBlocks.Views.ImportForm = Backbone.View.extend({
     });
   },
 
+  cancel: function (event) {
+    event && event.preventDefault();
+    this.$el.parent().removeClass("form");
+    this.remove();
+  },
+
   fileInputChange: function(event) {
-    console.log(event)
     var that = this;
     var file = event.currentTarget.files[0];
     this.reader = new FileReader();
-
-    if (file) {
+    if (file && file.type === "text/csv") {
+      $(".file-name").text("File Name: " + file.name);
       this.reader.readAsText(file);
     } else {
-      $(".cards-input").val('');
+      $("#cards-input").val('');
     }
   },
 });

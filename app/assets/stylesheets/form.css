@@ -9,9 +9,13 @@
   min-height: 500px;
 }
 
+form.import {
+    min-height: 100px;
+}
+
 .cancel {
-  text-align: right;
-  display: block;
+  float: right;
+  display: inline-block;
 }
 
 .cancel:hover {
@@ -24,7 +28,7 @@
 
 .modal input[type="radio"], .modal input[type="file"] {
   position: absolute;
-  left: -500%;
+  left: -1000%;
 }
 
 .modal label {
@@ -47,10 +51,6 @@
 
 .modal .field input {
   display: inline-block;
-}
-
-.input-image:hover {
-  color: #85ff85;
 }
 
 .image-view {
@@ -106,4 +106,24 @@
 
 .course-registration {
   margin: auto;
+}
+
+.card-form textarea {
+  margin: auto;
+}
+
+.answer {
+  text-align: center;
+}
+
+.input-image, .cards-input {
+  cursor: pointer;
+}
+
+.cards-input {
+    padding: 20px 0;
+}
+
+.input-image:hover, .cards-input:hover {
+  color: #85ff85;
 }
