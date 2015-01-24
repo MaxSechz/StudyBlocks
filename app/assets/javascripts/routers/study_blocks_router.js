@@ -31,7 +31,8 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   sessionRoute: function () {
     return Backbone.history.fragment === "login" ||
-    Backbone.history.fragment === "register";
+    Backbone.history.fragment === "register" ||
+    Backbone.history.fragment === "";
   },
 
   initialize: function (options) {

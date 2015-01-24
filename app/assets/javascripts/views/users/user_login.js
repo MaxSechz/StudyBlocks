@@ -27,15 +27,14 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
         thisView.remove();
         $(".modal").removeClass("form");
         StudyBlocks.navbar.render()
-        Backbone.history.history.back();
       },
       error: function (response) {
-        console.log(response);
       }
     });
   },
 
-  loginGuest: function () {
+  loginGuest: function (event) {
+    event.preventDefault();
     this.$("#password").val('password');
     this.$("#username").val('Guest');
     this.$(".login").click();
