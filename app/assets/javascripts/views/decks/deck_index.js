@@ -20,9 +20,10 @@ StudyBlocks.Views.DecksIndex = Backbone.CollectionView.extend({
     var emptyDeck = new StudyBlocks.Models.Deck();
     var deckForm = new StudyBlocks.Views.DeckForm({
       model: emptyDeck,
-      collection: emptyDeck.cards()
+      collection: emptyDeck.cards(),
+      decks: this.collection
     });
-    $(".modal").html(deckForm.render().$el).addClass("form");
+    StudyBlocks.modal.set(deckForm, "form");
   },
 
 });

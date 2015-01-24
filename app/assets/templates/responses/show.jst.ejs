@@ -15,7 +15,6 @@
     </th>
   </tr>
   <tr>
-    <% console.log(response.get('result')) %>
     <td class="<%= response.get('result') ? 'correct' : 'incorrect' %>">
       <% if (response.card.escape('format') === "field") { %>
         <ul class="fields">

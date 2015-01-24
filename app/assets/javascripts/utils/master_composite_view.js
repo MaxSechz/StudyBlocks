@@ -1,11 +1,13 @@
 Backbone.CompositeView = Backbone.View.extend({
   addSubview: function (selector, subview) {
     var swapped = true;
-    targetId = subview.model.id || subview.model.cid;
+    var source = subview.model || subview.collection
+    targetId = source.id || source.cid;
     this.subviews(selector)[targetId] &&
     this.subviews(selector)[targetId].remove();
     this.subviews(selector)[targetId] = subview;
     this.attachSubview(selector, subview.render());
+    return this;
   },
 
   attachSubviews: function () {

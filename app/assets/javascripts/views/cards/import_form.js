@@ -21,7 +21,10 @@ StudyBlocks.Views.ImportForm = Backbone.View.extend({
       url: "api/decks/" + this.model.id + "/import",
       data: { csv: this.reader.result },
       type: "PATCH",
-      dataType: "json"
+      dataType: "json",
+      success: function () {
+        Backbone.history.navigate("decks/" + this.model.id, { trigger: true });
+      }.bind(this)
     });
   },
 

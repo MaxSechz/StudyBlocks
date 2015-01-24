@@ -36,7 +36,6 @@ StudyBlocks.Views.CourseTile = Backbone.View.extend({
     var thisView = this;
     this.registration.destroy({
       success: function (model, response) {
-        console.log(model, response)
         thisView.collection.remove(thisView.model);
       }
     });

@@ -54,8 +54,6 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
         Backbone.history.navigate(thisDeck.linkUrl('tests'), { trigger: true });
       },
       error: function (model, response) {
-        console.log(model);
-        console.log(response);
       }
     });
   }

@@ -1,5 +1,5 @@
 <nav class="deck-navbar group">
-  <% if (deck.progress()) { %>
+  <% if (typeof deck.progress() === "number") { %>
     <a href="<%= deck.linkUrl('tests')%>">Performance: <%= deck.progress() %>%</a>
   <% } %>
     <a href="<%= deck.linkUrl('study') %>" class="study">Study</a>

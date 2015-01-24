@@ -13,10 +13,10 @@ window.StudyBlocks = {
         Backbone.history.start();
       },
     });
+    this.modal = new StudyBlocks.Views.Modal({ el: $(".modal")[0] })
     var decks = new StudyBlocks.Collections.Decks();
     var router = new StudyBlocks.Routers.Router({
       $rootEl: $("main.content"),
-      $modalEl: $("div.modal"),
       decks: decks
     });
   }

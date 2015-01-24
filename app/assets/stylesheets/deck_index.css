@@ -9,6 +9,7 @@
 }
 
 .deck-tile {
+  cursor: pointer;
   position: relative;
   background: white;
   margin: 20px;
@@ -47,10 +48,6 @@
   bottom: 10px;
   left: 50%;
  -webkit-transform: translateX(-50%);
-}
-
-.deck-tile a:hover {
-  color: #acffac;
 }
 
 .edit-deck {

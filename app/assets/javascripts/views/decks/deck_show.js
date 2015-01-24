@@ -30,14 +30,14 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
       model: emptyCard,
       submit: true
     });
-    $(".modal").html(formView.render().$el).addClass("form");
+    StudyBlocks.modal.set(formView, "form");
   },
 
   deleteDeck: function (event) {
     event.preventDefault();
     this.model.destroy({
       success: function () {
-        Backbone.history.navigate('', { trigger: true } );
+        Backbone.history.navigate('decks', { trigger: true } );
       }
     });
   },
@@ -45,7 +45,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   importCards: function (event) {
     event.preventDefault();
     var importView = new StudyBlocks.Views.ImportForm({ model: this.model });
-    $(".modal").html(importView.render().$el).addClass("form");
+    StudyBlocks.modal.set(importView, "form");
   },
 
   adjust: function (thing) {

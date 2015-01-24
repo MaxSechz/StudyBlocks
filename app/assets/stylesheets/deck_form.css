@@ -18,9 +18,13 @@
  height: 100%;
 }
 
+.deck-form select {
+  -webkit-appearance: menulist;
+}
+
 .cards-preview {
+  margin: auto;
   background: #eee;
-  min-height: 500px;
   max-height: 500px;
   max-width: 325px;
   overflow-y: auto;

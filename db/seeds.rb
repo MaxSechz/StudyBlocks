@@ -25,7 +25,7 @@ Deck.create!([
   {title: "Assorted Notes", description: "This is from my first day of school", user_id: 2, course_id: 1},
   {title: "Trivia", description: "Random Facts!", user_id: 2, course_id: 1},
   {title: "Testing some images", description: "Images of cute animals", user_id: 1, course_id: 3},
-  {title: "Western Art Final", description: "From pre-classical to modern art", user_id: 1, course_id: 0}
+  {title: "Western Art Final", description: "From early classical to modern art", user_id: 1, course_id: 0}
 ])
 Card.create!([
   {front: "Front side test", back: "Back side test", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},

@@ -36,7 +36,7 @@ StudyBlocks.Models.Test = Backbone.Model.extend({
       });
       delete response.responses;
     }
-    if (response.score) {
+    if (typeof response.score === "number") {
       this.score = response.score;
       delete response.score;
     }

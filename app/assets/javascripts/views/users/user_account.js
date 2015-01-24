@@ -16,7 +16,6 @@ StudyBlocks.Views.UserAccount = Backbone.CollectionView.extend({
   },
 
   initialize: function () {
-    console.log(this.model)
     this.render();
     this.listenTo(this.collection, "sync", this.renderCollection);
   },
@@ -48,7 +47,6 @@ StudyBlocks.Views.UserAccount = Backbone.CollectionView.extend({
         thisView.removeForm();
       },
       error: function (response) {
-        console.log(response);
       }
     });
   },

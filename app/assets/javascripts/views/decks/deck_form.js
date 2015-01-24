@@ -4,8 +4,8 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   template: JST["decks/form"],
   events: {
     "submit": "submit",
-    "click .cancel.deck": "cancelForm",
-    "click .cancel": "subFormCancel",
+    // "click .cancel.deck": "cancelForm",
+    // "click .cancel": "subFormCancel",
     "click .new-card": "newCard"
   },
   subModelViewName: "CardShow",
@@ -16,7 +16,8 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   selector: '.cards-preview',
   options: { submit: false },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.decks = options.decks;
     this.$el.imagesLoaded(this.renderCollection.bind(this));
     this.courses = new StudyBlocks.Collections.Courses();
     this.courses.fetch();
@@ -32,6 +33,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
     var deck = this.$el.serializeJSON();
     this.model.save(deck, {
       success: function (model, response) {
+        formView.decks.add(model);
       },
       error: function (model, response) {
         jQuery.extend(formView.model.errors(), response.responseJSON);
@@ -41,9 +43,9 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
   },
 
   cancelForm: function (event) {
-    event.preventDefault();
+    event && event.preventDefault();
     this.remove();
-    $(".modal").empty().removeClass("form");
+    StudyBlocks.modal.remove();
   },
 
   subFormCancel: function (event) {

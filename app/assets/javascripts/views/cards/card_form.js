@@ -4,13 +4,11 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
   template: JST["cards/form"],
   events: {
     "submit": "addCard",
-    "click .close": "cancel",
     "click .discard": "removeImage",
     "click .new-field": "addField",
     "click .remove-field": "removeField",
     "click .format": "changeCardType",
     "change #input-image": "fileInputChange",
-    "click .modal": "cancel"
   },
   subTemplates: {
     response: JST["cards/text_form"],
@@ -113,12 +111,6 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
       this.removeImage();
       delete this.model.image;
     }
-  },
-
-  cancel: function (event) {
-    event && event.preventDefault();
-    this.$el.parent().removeClass("form");
-    this.remove();
   },
 
   removeImage: function (event) {

@@ -4,7 +4,6 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
   template: JST["users/login"],
   events: {
     "click .login": "login",
-    "click .cancel": "removeForm",
     "click .guest": "loginGuest",
   },
 
@@ -24,8 +23,7 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
       data: data,
       success: function (response) {
         StudyBlocks.currentUser.set(response)
-        thisView.remove();
-        $(".modal").removeClass("form");
+        StudyBlocks.modal.remove();
         StudyBlocks.navbar.render()
       },
       error: function (response) {
@@ -38,11 +36,5 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
     this.$("#password").val('password');
     this.$("#username").val('Guest');
     this.$(".login").click();
-  },
-
-  removeForm: function (event) {
-    event && event.preventDefault();
-    this.remove();
-    $(".modal").removeClass("form");
   }
 });

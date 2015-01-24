@@ -4,7 +4,8 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   template: JST["decks/tile"],
   events: {
     "click .delete-deck": "destroyDeck",
-    "click .edit-deck": "editDeck"
+    "click .edit-deck": "editDeck",
+    "click": "navigate"
   },
 
   initialize: function (options) {
@@ -20,6 +21,13 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
     return this;
   },
 
+  navigate: function (event) {
+    if ($(event.target).hasClass("deck-tile")) {
+      event.preventDefault();
+      this.$("a")[0].click();
+    }
+  },
+
   destroyDeck: function (event) {
     event.preventDefault();
     this.remove();
@@ -32,6 +40,6 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
       model: this.model,
       collection: this.model.cards()
     });
-    $(".modal").html(formView.render().$el).addClass("form");
+    StudyBlocks.modal.set(formView, "form");
   }
 });

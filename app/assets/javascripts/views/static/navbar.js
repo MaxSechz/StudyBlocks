@@ -14,18 +14,6 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
 
   template: JST["static/navbar"],
 
-  initialize: function () {
-    this.$modalEl = $(".modal");
-    this.$modalEl.on("click", this.removeModal.bind(this));
-  },
-
-  removeModal: function (event) {
-    if ($(event.target).hasClass("modal")) {
-      this.modalView && this.modalView.remove();
-      this.$modalEl.removeClass("form");
-    }
-  },
-
   render: function () {
     var content = this.template({
       currentUser : StudyBlocks.currentUser
@@ -88,9 +76,6 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
   },
 
   _modalify: function (view) {
-    this.modalView = view;
-    this.$modalEl.empty().removeClass("form");
-    var cssClass = "form";
-    this.$modalEl.addClass(cssClass).html(view.render().$el);
+    StudyBlocks.modal.set(view, "form");
   }
 });

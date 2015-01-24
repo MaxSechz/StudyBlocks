@@ -1,5 +1,8 @@
 .course-registration {
-  position: static;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: white;
   width: 50%;
   height: calc(100% - 40px);

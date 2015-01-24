@@ -120,16 +120,15 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   _swapView: function (view) {
-    this.$modalEl.empty().removeClass("form").removeClass("active");
+    StudyBlocks.modal.remove();
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
   },
 
   _modalify: function (view) {
-    this.$modalEl.empty().removeClass("active");
-    var cssClass = "active";
-    this.$modalEl.addClass(cssClass).html(view.render().$el);
+    StudyBlocks.modal.remove();
+    StudyBlocks.modal.set(view, "active");
   }
 
 });
