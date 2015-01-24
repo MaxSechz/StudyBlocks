@@ -7,7 +7,6 @@ Backbone.View = Backbone.View.extend({
   onDom: '',
 
   render: function () {
-    console.log(this)
     this.preTasks();
     var content = this.template(this.renderObject());
     this.$el.html(content);
@@ -16,21 +15,20 @@ Backbone.View = Backbone.View.extend({
   },
 
   postTasks: function () {
-
-    if (typeof this.postRender === "Array") {
+    if (typeof this.postRender === "object") {
       _.each(this.postRender, function (callback) {
         this[callback]();
-      });
+      }.bind(this));
     } else if (this.postRender) {
       this[this.postRender]();
     }
   },
 
   preTasks: function () {
-    if (typeof this.preRender === "Array") {
+    if (typeof this.preRender === "object") {
       _.each(this.preRender, function (callback) {
         this[callback]();
-      });
+      }.bind(this));
     } else if (this.preRender) {
       this[this.preRender]();
     }

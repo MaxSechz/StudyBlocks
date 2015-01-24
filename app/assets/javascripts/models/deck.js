@@ -11,7 +11,11 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
     if (!this._cards) {
       this._cards = new StudyBlocks.Collections.Cards([], { deck: this });
     } else if (!this.isNew() && this._cards.isEmpty()) {
-      this._cards.fetch();
+      this._cards.fetch({
+        success: function () {
+          this.done = true;
+        }.bind(this)
+      });
     }
 
     return this._cards;
