@@ -91,6 +91,58 @@ button:hover {
   background: url("https://s3.amazonaws.com/studyblocks-dev/cards/images/000/000/new+folder/splash.jpg");
 }
 
+.welcome {
+  background: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: 4px solid white;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.welcome h1 {
+  margin: 100px;
+  font-size: 100px;
+}
+
+.welcome span {
+  font-size: 60px;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    left: 48%;
+  }
+  50% {
+    left: 52%;
+  }
+}
+
+.pointer {
+  position: absolute;
+  top: 70%;
+  width: 1150px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: 4px solid white;
+  margin-top: 100px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  -webkit-animation: bounce 5s infinite;
+}
+
 .group:after {
     content: "";
     display: block;
