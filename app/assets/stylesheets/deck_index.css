@@ -1,10 +1,10 @@
 .decks {
   border-top: 2px solid #999;
   margin-top: 20px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   display: block;
   background: #eee;
-  height: calc(100vh - 166px);
+  height: calc(100vh - 178px);
   overflow: auto;
 }
 

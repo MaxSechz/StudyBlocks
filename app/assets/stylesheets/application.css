@@ -155,8 +155,8 @@ div.modal {
   z-index: -1;
   top: 50%;
   left: 50%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
  -webkit-transform: translate(-50%, -50%);
 }
 
@@ -258,6 +258,7 @@ div.modal.form {
   height: 100vh;
   width: 98%;
   -webkit-transition: width 0.25s 0.25s;
+  overflow-x: hidden;
 }
 
 .navbar:hover + .content {
@@ -291,9 +292,10 @@ h1 {
 
 .info {
   width: 100%;
-  display: block;
+  display: inline-block;
   background: white;
   padding: 20px;
+  padding-right: 0;
   margin-bottom: 20px
 }
 
