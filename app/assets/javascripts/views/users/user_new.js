@@ -41,6 +41,7 @@ StudyBlocks.Views.UserNew = Backbone.CollectionView.extend({
         thisView.remove();
         $(".modal").removeClass("form");
         StudyBlocks.navbar.render()
+        Backbone.history.navigate('decks', { trigger: true });
       },
       error: function (response) {
       }

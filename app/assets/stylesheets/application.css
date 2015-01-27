@@ -200,7 +200,7 @@ div.modal.form {
   -webkit-transition: width 0.25s 0.25s, color 0.25s 0.25s;
 }
 
-.navbar:hover {
+.navbar:hover, .navbar.hover {
   color: #333;
   width: 200px;
 }
@@ -250,11 +250,11 @@ div.modal.form {
   -webkit-transition: background 1s;
 }
 
-.navbar:hover button {
+.navbar:hover button, .navbar.hover button {
   background: #ffacac;
 }
 
-.navbar:hover button:hover {
+.navbar:hover button:hover, .navbar.hover button:hover {
   background: #ff8585;
   -webkit-transition: background 0s;
 }
@@ -268,7 +268,7 @@ div.modal.form {
   overflow: hidden;
 }
 
-.navbar:hover + .content {
+.navbar:hover + .content, .navbar.hover + .content  {
   width: calc(100% - 200px);
 }
 
