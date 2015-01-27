@@ -1,7 +1,6 @@
 
 .cards {
   position: relative;
-  border-top: 2px solid #999;
   display: block;
   background: #eee;
   min-height: calc(100vh - 62px);
@@ -42,8 +41,6 @@ strong {
   padding: 60px 0;
   width: calc(100% - 10px);
   text-align: center;
-  /*position: relative;*/
-  height: 100%;
 }
 
 .deck-study .back {
@@ -62,6 +59,7 @@ strong {
 .card:hover {
   border-color: #acffac;
 }
+
 .card button {
   font-size: 0;
   max-height: 0;

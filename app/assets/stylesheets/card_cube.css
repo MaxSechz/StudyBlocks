@@ -10,7 +10,7 @@
 }
 
 .card-show .front-face, .card-show .bottom-face {
-  width: 300px;
+  width: 100%;
   height: 100%;
   border: 2px solid black;
 }
@@ -44,9 +44,7 @@
 }
 
 .cards {
-  border-top: 2px solid #999;
   margin-top: 20px;
-  padding: 20px;
   display: block;
   background: #eee;
   height: calc(100vh - 246px);
@@ -59,4 +57,86 @@
 
 .card-show img {
   width: 100%;
+}
+
+/*small media style*/
+@media (max-width: 1300px) {
+  .cube-wrap {
+    display: block;
+    -webkit-perspective: 1000px;
+    -webkit-perspective-origin: 50% 50px;
+    background: transparent;
+    margin: -20px;
+  }
+
+  .card-show .cube {
+    width: 150px;
+    height: 100%;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .card-show div.back {
+    padding: 20px 0;
+  }
+
+  .card-show.cube-wrap {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .card-show .front-face, .card-show .bottom-face {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+  }
+
+  .card-show .right-face {
+    width: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 2px solid black;
+  }
+
+  .flip-right {
+    -webkit-transform: translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -90deg);
+  }
+
+  .card-show .right-face {
+    -webkit-transform: rotate3d(0, 1, 0, -270deg) translate3d(-100px, 0, 100px);
+    -webkit-transform-origin: top right;
+  }
+
+  .card-show .cube:hover {
+    -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
+  }
+
+  .cube.flip-right:hover {
+    -webkit-transform: translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -70deg);
+  }
+
+  .card-show .right-face button {
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .cards {
+    margin-top: 20px;
+    display: block;
+    background: #eee;
+    height: calc(100vh - 246px);
+    overflow: auto;
+  }
+
+  .card-show {
+    float: left;
+  }
+
+  .card-show img {
+    width: 100%;
+  }
+
 }

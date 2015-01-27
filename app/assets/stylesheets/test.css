@@ -47,6 +47,6 @@
 .deck-test .back {
   margin: auto;
   margin-top: 10px;
-  width: 800px;
+  width: 100%;
   text-align: center;
 }

@@ -116,31 +116,38 @@ button:hover {
 }
 
 .welcome span {
-  font-size: 60px;
+  font-size: 50px;
+  display: block;
+  white-space: nowrap;
 }
 
 @-webkit-keyframes bounce {
   0%, 100% {
-    left: 48%;
+    transform: translate(-45%, -50%);
   }
   50% {
-    left: 52%;
+    transform: translate(-55%, -50%);
   }
 }
 
 .pointer {
   position: absolute;
   top: 70%;
-  width: 1150px;
-  transform: translate(-50%, -50%);
+  left: 50%;
   background: transparent;
   border: 4px solid white;
   margin-top: 100px;
-  display: inline-block;
+  display: block;
   border-radius: 10px;
   padding: 10px;
   color: white;
   -webkit-animation: bounce 5s infinite;
+}
+
+@media (max-width: 1300px) {
+    .welcome span {
+      font-size: 30px;
+    }
 }
 
 .group:after {
@@ -258,7 +265,7 @@ div.modal.form {
   height: 100vh;
   width: 98%;
   -webkit-transition: width 0.25s 0.25s;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .navbar:hover + .content {
