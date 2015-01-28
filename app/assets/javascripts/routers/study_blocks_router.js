@@ -18,7 +18,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   execute: function (callback, args) {
     if (StudyBlocks.currentUser.isNew() && !this.sessionRoute()) {
-      Backbone.history.navigate('', { replace: true });
+      Backbone.history.navigate('', { trigger: true });
     } else {
       callback.apply(this, args);
     }

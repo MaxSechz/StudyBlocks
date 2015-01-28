@@ -1,13 +1,15 @@
 class Card < ActiveRecord::Base
   FORMATS = %w(boolean field choice response)
-  validates :back, :format, :deck, presence: true
+  validates :back, :format, presence: true
   validates :format, inclusion: { in: FORMATS }
+  validate :has_deck
   validate :has_image_or_front
 
   has_attached_file :image, default_url: '', styles: { medium: "300x300>", thumb: "100x100>" }, preserve_files: "true"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :deck, inverse_of: :cards
+  has_one :user, through: :deck, source: :user
   has_many :responses, dependent: :destroy
 
   def average_score
@@ -42,4 +44,9 @@ class Card < ActiveRecord::Base
     end
   end
 
+  def has_deck
+    if deck.nil? && deck_id.nil?
+      errors.add(:base, "Must be associated with a deck")
+    end
+  end
 end

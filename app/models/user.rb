@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   has_many :decks
+  has_many :cards, through: :decks, source: :cards
   belongs_to :school, inverse_of: :users
   has_many :registrations
   has_many :courses, through: :registrations, source: :course
