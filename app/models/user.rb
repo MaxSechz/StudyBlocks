@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session
 
   validates :username, :password_digest, :email, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   belongs_to :school, inverse_of: :users
   has_many :registrations
   has_many :courses, through: :registrations, source: :course
-
+  has_many :sessions
   accepts_nested_attributes_for :school
 
   def self.find_or_create_by_auth_hash(auth_hash)
@@ -40,10 +40,6 @@ class User < ActiveRecord::Base
     end
 
     user
-  end
-
-  def self.generate_token
-    SecureRandom::urlsafe_base64
   end
 
   def self.find_by_credentials(creds)
@@ -77,14 +73,12 @@ class User < ActiveRecord::Base
   end
 
   def reset_token!
-    self.session_token = self.class.generate_token
-    self.save!
-    self.session_token
+    @current_session.reset!
   end
 
   private
 
-  def ensure_session_token
-    self.session_token ||= self.class.generate_token
+  def ensure_session
+    @current_session =  @current_session.nil? ? self.sessions.create : self.sessions.first
   end
 end
