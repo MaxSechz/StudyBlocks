@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   validates :format, inclusion: { in: FORMATS }
   validate :has_image_or_front
 
-  has_attached_file :image, default_url: '', styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :image, default_url: '', styles: { medium: "300x300>", thumb: "100x100>" }, preserve_files: "true"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :deck, inverse_of: :cards

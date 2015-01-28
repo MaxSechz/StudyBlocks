@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
   def login!(user)
     session[:session_token] = user.reset_token!
     @current_user = user
+    if @current_user.username == "Guest"
+      require "./db/guest_seeds.rb"
+    end
   end
 
   def logout!(user)
