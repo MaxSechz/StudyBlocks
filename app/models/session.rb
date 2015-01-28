@@ -1,6 +1,6 @@
 class Session < ActiveRecord::Base
   after_initialize :ensure_session_token
-  validates :session_token, :user_id, presence: true
+  validates :session_token, :user, presence: true
   belongs_to :user
 
   def self.generate_token

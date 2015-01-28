@@ -79,6 +79,6 @@ class User < ActiveRecord::Base
   private
 
   def ensure_session
-    @current_session =  @current_session.nil? ? self.sessions.create : self.sessions.first
+    @current_session =  @current_session.nil? ? self.sessions.new : self.sessions.first
   end
 end
