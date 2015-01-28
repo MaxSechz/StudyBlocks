@@ -15,7 +15,7 @@ module Api
         login!(@user)
         render "api/users/show"
       else
-        render :new
+        render json: @user.errors.messages
       end
     end
 
