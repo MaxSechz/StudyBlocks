@@ -2,15 +2,16 @@
 <html>
 <head>
   <title>StudyBlocks</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
   </script>
+  <%= stylesheet_link_tag    'application', media: '(max-width: 1300px)', 'data-turbolinks-track' => true %>
+
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" media="(max-width: 1300px)" href="public/assets/application.css"/>
 </head>
 <body class="group">
 
