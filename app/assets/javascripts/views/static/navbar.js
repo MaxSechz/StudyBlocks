@@ -17,7 +17,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
   },
 
   navigate: function (event) {
-    var $target = $(event.currentTarget)
+    var $target = $(event.currentTarget);
     if ($target.hasClass("google") || $target.hasClass("")) {
       return;
     }

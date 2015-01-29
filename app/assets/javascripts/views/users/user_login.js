@@ -16,9 +16,9 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
       type: "POST",
       data: data,
       success: function (response) {
-        StudyBlocks.currentUser.set(response)
+        StudyBlocks.currentUser.set(response);
         StudyBlocks.modal.remove();
-        StudyBlocks.navbar.render()
+        StudyBlocks.navbar.render();
         Backbone.history.navigate('decks', { trigger: true });
       },
       error: function (response) {

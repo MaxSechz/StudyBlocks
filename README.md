@@ -44,7 +44,7 @@ Considering the likely size of the average deck, and the prevalence of images on
 Creating this functionality as a parent class allowed me to, combined with my Backbone.View extension, greatly DRY up my code and streamline the expansion of the project.
 
 ###Searches
-The searches are a truly full-stack feature. On every key-press a get request is fired to the API's custom search route.
+The searches are a truly full-stack feature. On every key-press a GET request is fired to the API's custom search route.
 Using the pg_search gem, I then search across all columns of the inspected relation. Once all the matching results are gathered they are returned to the client in JSON form.
 An empty collection is continually cleared and repopulated with these results, creating and destroying its subviews as necessary to report only the most recently returned results.
 All told, these factors combined allow for a search that instantly responds to user input, giving them rapid feedback about the state and content of their search.

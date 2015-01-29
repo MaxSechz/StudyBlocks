@@ -1,0 +1,50 @@
+.new-user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 50%;
+  padding: 20px;
+}
+.new-user h3 {
+  text-align: center;
+}
+
+.new-user .school-picked, .new-user .no-school {
+  position: static;
+  width: 30%;
+  -webkit-transform: none;
+}
+
+.school-picked {
+  float: right;
+}
+
+.no-school {
+  padding: 20px;
+  float: left;
+}
+.new-user input.search {
+  margin-bottom: 20px;
+}
+
+.google {
+  display: block;
+  background: #dd4b39;
+  color: white;
+}
+
+.google img {
+  float: left;
+  display: block;
+  width: 40px;
+  margin: 0;
+}
+
+.google span {
+  float: left;
+  padding: 15px;
+  display: inline-block;
+  border-left: 1px solid #ccc;
+}
