@@ -30,8 +30,6 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
   course: function () {
     if (!this._course) {
       this._course = new StudyBlocks.Models.Course({ id: this.course_id});
-    } else if (!this.isNew() && this._course.isNew()) {
-      this._course.fetch();
     }
 
     return this._course;

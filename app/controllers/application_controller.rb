@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.includes(:sessions).find_by(sessions: { session_token: session[:session_token] })
+    @current_user ||= User.includes(:sessions).includes(:courses).find_by(sessions: { session_token: session[:session_token] })
   end
 
   def logged_in?
@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_deck
-    @deck ||= Deck.find(params[:deck_id] || params[:id])
+    @deck ||= Deck.includes(:user).find(params[:deck_id] || params[:id])
   end
 
   def user_params

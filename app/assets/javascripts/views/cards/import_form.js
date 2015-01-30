@@ -16,16 +16,17 @@ StudyBlocks.Views.ImportForm = Backbone.View.extend({
       data: { csv: this.reader.result },
       type: "PATCH",
       dataType: "json",
-      success: function () {
-        Backbone.history.navigate("decks" + this.model.id, { trigger: true });
+      success: function (collection) {
+        this.model.cards().set(collection.cards, { parse: true});
+        this.cancel();
       }.bind(this)
     });
   },
 
   cancel: function (event) {
+    console.log(event);
     event && event.preventDefault();
-    this.$el.parent().removeClass("form");
-    this.remove();
+    StudyBlocks.modal.clear();
   },
 
   fileInputChange: function(event) {

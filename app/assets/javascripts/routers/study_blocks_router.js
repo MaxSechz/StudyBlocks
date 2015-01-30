@@ -62,7 +62,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
       model: targetDeck,
       collection: targetDeck.cards()
     });
-    this._modalify(studyView)
+    this._modalify(studyView);
   },
 
   deckReview: function (id) {

@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
     sql_params = "username = :u OR email = :e"
     sql_vars = { u: creds[:username], e: creds[:email] }
     search_params = [sql_params, sql_vars]
-    user = User.where(search_params).first_or_initialize
+    user = User.where(search_params).includes(:courses).first_or_initialize
     user.test_password_set(creds[:password])
     user
   end

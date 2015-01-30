@@ -23,5 +23,4 @@ Card.create!([
   {front: "In what year did it become legal for women to wear pants in Paris to wear pants", back: "2012", format: "response", deck_id: 3, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "What melted in the pocket of the inventor of the microwave", back: "Chocolate", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "What is the farthest north I've seen a painted bunting?", back: "Lancaster PA", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
-  # {front: "What is the capital of Pennsylvania?", back: "Harrisburg", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
 ])
