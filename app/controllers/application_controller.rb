@@ -19,12 +19,16 @@ class ApplicationController < ActionController::Base
     session[:session_token] = user.reset_token!
     @current_user = user
     if @current_user.username == "Guest"
+      first_deck = @current_user.decks.first
+      first_card = first_deck.cards.first
+      new_deck_id = first_deck.id
+      new_card_id = first_card.id
       @current_user.decks.destroy_all
-      new_deck_id = Deck.last.id + 1
-      new_card_id = Card.last.id + 1
       ActiveRecord::Base.connection.execute("ALTER SEQUENCE decks_id_seq RESTART WITH #{new_deck_id}")
       ActiveRecord::Base.connection.execute("ALTER SEQUENCE cards_id_seq RESTART WITH #{new_card_id}")
       load "./db/guest_seeds.rb"
+      ActiveRecord::Base.connection.execute("ALTER SEQUENCE decks_id_seq RESTART WITH #{Deck.last.id}")
+      ActiveRecord::Base.connection.execute("ALTER SEQUENCE cards_id_seq RESTART WITH #{Card.last.id}")
     end
   end
 
