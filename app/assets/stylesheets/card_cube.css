@@ -37,7 +37,7 @@
 
 .cube.flip-right:hover {
   -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -70deg);
-  transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
+  transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -70deg);
 }
 
 .card-show .right-face button {

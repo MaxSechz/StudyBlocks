@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
       ActiveRecord::Base.connection.execute("ALTER SEQUENCE decks_id_seq RESTART WITH #{new_deck_id}")
       ActiveRecord::Base.connection.execute("ALTER SEQUENCE cards_id_seq RESTART WITH #{new_card_id}")
       load "./db/guest_seeds.rb"
-      ActiveRecord::Base.connection.execute("ALTER SEQUENCE decks_id_seq RESTART WITH #{Deck.last.id}")
-      ActiveRecord::Base.connection.execute("ALTER SEQUENCE cards_id_seq RESTART WITH #{Card.last.id}")
+      ActiveRecord::Base.connection.execute("ALTER SEQUENCE decks_id_seq RESTART WITH #{Deck.last.id + 1}")
+      ActiveRecord::Base.connection.execute("ALTER SEQUENCE cards_id_seq RESTART WITH #{Card.last.id + 1}")
     end
   end
 

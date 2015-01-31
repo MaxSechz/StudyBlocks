@@ -28,7 +28,7 @@ StudyBlocks.Views.CardShow = Backbone.CompositeView.extend({
       model: this.model,
       submit: this.submit
     });
-    $(".modal").html(formView.render().$el).addClass("form");
+  StudyBlocks.modal.set(formView, "form");
   },
 
   flip: function (event) {

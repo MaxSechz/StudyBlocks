@@ -28,7 +28,7 @@ module Api
       if @card.save
         render :show
       else
-        render json: @card.errors
+        render json: @card.errors.messages, status: 422
       end
     end
 
@@ -43,7 +43,7 @@ module Api
       if @card.update(card_params)
         render :show
       else
-        render json: @card.errors.messages
+        render json: @card.errors.messages, status: 422
       end
     end
 
