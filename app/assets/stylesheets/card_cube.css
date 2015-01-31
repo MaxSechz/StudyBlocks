@@ -25,15 +25,19 @@
 
 .card-show .right-face {
  -webkit-transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
+ transform: rotate3d(0, 1, 0, -270deg) translate3d(-50px, 0, 200px);
  -webkit-transform-origin: top right;
+ transform-origin: top right;
 }
 
 .card-show .cube:hover {
   -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
+  transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
 }
 
 .cube.flip-right:hover {
   -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -70deg);
+  transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
 }
 
 .card-show .right-face button {
@@ -64,7 +68,11 @@
   .cube-wrap {
     display: block;
     -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
     -webkit-perspective-origin: 50% 50px;
+    -moz-prespective-origin: 50% 50px;
+    perspective-origin: 50% 50px;
     background: transparent;
     margin: -20px;
   }
@@ -101,19 +109,24 @@
 
   .flip-right {
     -webkit-transform: translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -90deg);
+    transform:  translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -90deg);
   }
 
   .card-show .right-face {
     -webkit-transform: rotate3d(0, 1, 0, -270deg) translate3d(-100px, 0, 150px);
+    transform: rotate3d(0, 1, 0, -270deg) translate3d(-100px, 0, 150px);
     -webkit-transform-origin: top right;
+    transform-origin: top right;
   }
 
   .card-show .cube:hover {
     -webkit-transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
+    transform: translate3d(50px, 0, -200px) rotate3d(0, 1, 0, -25deg);
   }
 
   .cube.flip-right:hover {
     -webkit-transform: translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -70deg);
+    transform: translate3d(100px, 0, -200px) rotate3d(0, 1, 0, -70deg);
   }
 
   .card-show .right-face button {

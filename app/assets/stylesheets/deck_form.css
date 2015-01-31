@@ -20,6 +20,10 @@
 
 .deck-form select {
   -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  -ms-appearance: menulist;
+  -o-appearance: menulist;
+  appearance: menulist;
 }
 
 .cards-preview {

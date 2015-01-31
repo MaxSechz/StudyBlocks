@@ -48,6 +48,7 @@
   bottom: 10px;
   left: 50%;
  -webkit-transform: translateX(-50%);
+ transform: translateX(-50%);
 }
 
 .edit-deck {
@@ -66,6 +67,7 @@
   height: 20px;
   background: black;
  -webkit-transform: rotate(45deg);
+ transform: rotate(45deg);
 }
 
 .pencil:after {

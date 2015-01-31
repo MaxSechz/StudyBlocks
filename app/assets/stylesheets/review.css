@@ -30,7 +30,9 @@
   width: 100%;
   position: absolute;
   left: 50%;
- -webkit-transform: translate(-50%, calc(100px - 200%));
+  -webkit-transform: translate(-50%, calc(100px - 200%));
+  -ms-transform: translate(-50%, calc(100px - 200%));
+  transform: translate(-50%, calc(100px - 200%));
 }
 
 .cards-list {
@@ -68,5 +70,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
- -webkit-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform:  translate(-50%, -50%);
+  transform:  translate(-50%, -50%);
 }
