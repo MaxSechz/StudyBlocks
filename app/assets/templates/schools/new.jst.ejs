@@ -1,0 +1,29 @@
+<label for="search">Find your School</label>
+<input class="search" type="text" name="some_name" value="">
+
+<form class="school-picked" method="post">
+  <h3>Found something?</h3>
+
+  <select class="school-list" size="10" name="school_id">
+  </select>
+
+  <button name="button">Submit</button>
+</form>
+
+<form class="no-school" method="post">
+  <h3>Can't find it? Add it here</h3>
+
+  <label for="school-name">School Name</label>
+  <input id="school-name" type="text" name="school_attributes[name]" value="">
+
+  <label for="school-country">Country</label>
+  <input id="school-country" type="text" name="school_attributes[country]" value="">
+
+  <label for="school-state">State</label>
+  <input id="school-state" type="text" name="school_attributes[state]" value="">
+
+  <label for="school-city">School City</label>
+  <input id="school-city" type="text" name="school_attributes[city]" value="">
+
+  <button name="button">Submit</button>
+</form>

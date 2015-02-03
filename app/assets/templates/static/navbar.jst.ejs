@@ -2,7 +2,8 @@
   <a href="#">StudyBlocks</a>
 </strong>
 <ul class='nav-links'>
-  <% if (!currentUser.isNew()) { %>
+  <% console.log(currentUser) %>
+  <% if (currentUser.id) { %>
   <li>
     <a href="#/decks">Decks</a>
   </li>
@@ -24,10 +25,13 @@
   </li>
   <% } else { %>
   <li>
+    <a class="login-link" href="#/login">Log In</a>
+  </li>
+  <li>
     <a class="register-link" href="#/register">Register</a>
   </li>
   <li>
-    <a class="login-link" href="#/login">Log In</a>
+    <a class="guest" href="#">Guest</a>
   </li>
   <% } %>
 </ul>

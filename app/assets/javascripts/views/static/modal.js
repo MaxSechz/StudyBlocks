@@ -5,7 +5,7 @@ StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
   },
 
   set: function (view, newClass) {
-    this.reset();
+    this.clear();
     this.addSubview(".modal-content", view).$el.addClass(newClass);
   },
 

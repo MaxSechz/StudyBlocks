@@ -1,4 +1,4 @@
-.new-user {
+.new-school {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,11 +9,11 @@
   width: 50%;
   padding: 20px;
 }
-.new-user h3 {
+.new-school h3 {
   text-align: center;
 }
 
-.new-user .school-picked, .new-user .no-school {
+.new-school .school-picked, .new-school .no-school {
   position: static;
   width: 30%;
   -webkit-transform: none;
@@ -29,7 +29,7 @@
   padding: 20px;
   float: left;
 }
-.new-user input.search {
+.new-school input.search {
   margin-bottom: 20px;
 }
 
