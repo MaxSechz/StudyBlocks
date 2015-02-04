@@ -1,4 +1,4 @@
-Card.create!([
+cards = Card.new([
   {front: "Front side test", back: "Back side test", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "Front side test2", back: "Back side test2", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "Who was George Washington?", back: "The first president of the USA", format: "response", deck_id: 1, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
@@ -143,3 +143,5 @@ Card.create!([
   {front: "Opportunity Cost", back: "Monetary value given by how much income is forgone by the household member when performing a specific task", format: "response", deck_id: 4, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil},
   {front: "Replacement Cost", back: "The monetary value equals cost of paying other person to do the housework (generalist vs special wage method)", format: "response", deck_id: 4, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil}
 ])
+
+cards.save(validate: false)
