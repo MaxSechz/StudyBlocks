@@ -4,7 +4,7 @@ Deck.create!([
   {title: "Eastern Art Final", description: "Buddhist to Japanese Art", user_id: 3, course_id: 2},
 ])
 
-Card.create!([
+cards = [
   {front: nil, back: "bunny", format: "choice", deck_id: 5, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 22439, image_updated_at: "2015-01-15 22:52:40"},
   {front: nil, back: "cuttlefish", format: "choice", deck_id: 5, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 397648, image_updated_at: "2015-01-15 22:52:40"},
   {front: nil, back: "dik dik", format: "choice", deck_id: 5, image_file_name: "data", image_content_type: "image/jpeg", image_file_size: 28823, image_updated_at: "2015-01-15 22:55:42"},
@@ -95,4 +95,8 @@ Card.create!([
   {front: nil, back: "Naiku at Ise\nc 5th century", format: "response", deck_id: 7, image_file_name: "ise_aerial_viewnaiku-142E35FB93E7612E746.jpg", image_content_type: "image/jpeg", image_file_size: 300171, image_updated_at: "2015-01-28 16:21:19"},
   {front: nil, back: "Horyuji\nIkaruga, Nara\n\n7th century CE", format: "response", deck_id: 7, image_file_name: "horyuji_aerial_view_layout-142E361B97B71E5D215.jpg", image_content_type: "image/jpeg", image_file_size: 131074, image_updated_at: "2015-01-28 16:21:19"},
   {front: nil, back: "Shaka triadby Shiba Tori\nBronze\n623 CE", format: "response", deck_id: 7, image_file_name: "shaka_triad-142E36419C73381282C.jpg", image_content_type: "image/jpeg", image_file_size: 109933, image_updated_at: "2015-01-28 16:21:20"}
-])
+]
+
+cards.each do |card|
+  Card.new(card).save(validate: false)
+end
