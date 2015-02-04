@@ -1,5 +1,8 @@
 class Card < ActiveRecord::Base
   FORMATS = %w(boolean field choice response)
+
+  before_save :ensure_proper_front
+
   validates :back, :format, presence: true
   validates :format, inclusion: { in: FORMATS }
   validate :has_deck
@@ -47,6 +50,12 @@ class Card < ActiveRecord::Base
   def has_deck
     if deck.nil? && deck_id.nil?
       errors.add(:base, "Must be associated with a deck")
+    end
+  end
+
+  def ensure_proper_front
+    if !self.front.nil?
+      self.image = nil
     end
   end
 end
