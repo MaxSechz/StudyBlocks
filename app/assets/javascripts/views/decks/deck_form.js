@@ -35,8 +35,7 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
         formView.$(".cancel").click();
       },
       error: function (model, response) {
-        jQuery.extend(formView.model.errors(), response.responseJSON);
-        formView.render();
+        formView.displayErrors(response.responseJSON);
       }
     });
   },

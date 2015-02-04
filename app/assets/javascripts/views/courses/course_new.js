@@ -57,6 +57,9 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     course.save({}, {
       success: function (model) {
         Backbone.history.navigate("courses/" + model.id, { trigger: true })
+      },
+      error: function (model, response) {
+        thisView.displayErrors(response.responseJSON);
       }
     });
 

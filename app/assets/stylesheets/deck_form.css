@@ -13,9 +13,10 @@
 }
 
 .deck-form .card-form {
- width: 800px;
+ width: 650px;
  padding: 10px;
  height: 100%;
+ min-height: 500px;
 }
 
 .deck-form select {

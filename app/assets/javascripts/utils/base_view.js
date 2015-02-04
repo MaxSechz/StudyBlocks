@@ -48,4 +48,18 @@ Backbone.View = Backbone.View.extend({
     return renderObject;
   },
 
+  displayErrors: function (errors) {
+    for (var input in errors) {
+      var $input = $("#" + input);
+      var $error = $input.next(".error");
+
+      if ($error.length === 0 ) {
+        $error = $("<span>").addClass("error");
+        $error.text(errors[input]);
+        $input.after($error);
+      } else {
+        $error.text(errors[input]);
+      }
+    }
+  },
 });

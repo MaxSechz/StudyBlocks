@@ -48,12 +48,14 @@ class User < ActiveRecord::Base
     search_params = [sql_params, sql_vars]
     user = User.where(search_params).includes(:courses).first_or_initialize
     user.test_password_set(creds[:password])
+    user.valid_password_and_name?
     user
   end
 
   def valid_password_and_name?
     if self.id.nil? || !self.is_password?(@password)
-      self.errors.add(:base, "Invalid username/email and password combination")
+      self.errors.add(:username, "Invalid username or password")
+      self.errors.add(:password, "Invalid username or password")
       return false
     end
     true

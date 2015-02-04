@@ -83,6 +83,13 @@ button:hover {
   background: #ff8585;
 }
 
+.error {
+    display: block;
+    text-align: center;
+    color: darkred;
+    margin-top: 5px;
+}
+
 .home {
   position: fixed;
   right: 0;

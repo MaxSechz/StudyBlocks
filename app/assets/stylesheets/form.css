@@ -65,8 +65,13 @@ form.import {
 }
 
 .options {
+  display: inline-block;
+  position: relative;
   margin-top: 20px;
-  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #front.inactive, .input-image.inactive {

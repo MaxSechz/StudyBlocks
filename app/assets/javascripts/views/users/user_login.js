@@ -22,6 +22,7 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
         Backbone.history.navigate('decks', { trigger: true });
       },
       error: function (response) {
+        thisView.displayErrors(response.responseJSON);
       }
     });
   },

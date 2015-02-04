@@ -78,6 +78,7 @@ StudyBlocks.Views.CardForm = Backbone.View.extend({
           thisForm.$(".close").click();
         },
         error: function (model, response) {
+          thisForm.displayErrors(response.responseJSON);
         }
       });
     } else {

@@ -19,7 +19,9 @@ module Api
         login!(@user)
         render :show
       else
-        render json: @user
+        password_error = @user.errors.messages[:password_digest]
+        @user.errors.add(:password, password_error)
+        render json: @user.errors.messages.except(:password_digest), status: 422
       end
     end
 
@@ -30,7 +32,7 @@ module Api
 
     def update
       @user = current_user
-      if valid_password_change? && @user.update(user_params)
+      if @user.update(user_params)
         render :show
       else
         render :edit
@@ -44,12 +46,8 @@ module Api
 
     private
 
-    def valid_password_change?
-      return true if params[:user][:password].empty? || params[:user][:password].nil?
-      if params[:user][:new_password] == params[:user][:password_confirm]
-        params[:user][:password] = params[:user][:new_password]
-      end
-      return true
+    def update_params
+      user_params.except(:password)
     end
   end
 end

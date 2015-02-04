@@ -42,14 +42,14 @@ class Card < ActiveRecord::Base
   private
 
   def has_image_or_front
-    if image.nil? && front.nil?
-        errors.add(:base, "Must have either an image or text on the front of the card")
+    if image.is_a?(Paperclip::Attachment) && front.empty?
+        self.errors.add(:front, "Must have either an image or text on the front")
     end
   end
 
   def has_deck
     if deck.nil? && deck_id.nil?
-      errors.add(:base, "Must be associated with a deck")
+      self.errors.add(:base, "Must be associated with a deck")
     end
   end
 

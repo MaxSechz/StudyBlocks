@@ -11,11 +11,11 @@ module Api
     def create
       @user = User.find_by_credentials(user_params)
 
-      if @user.valid?
+      if @user.errors.empty?
         login!(@user)
         render "api/users/show"
       else
-        render json: @user.errors.messages
+        render json: @user.errors.messages, status: 422
       end
     end
 

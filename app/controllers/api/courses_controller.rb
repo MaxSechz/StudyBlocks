@@ -23,7 +23,7 @@ module Api
       if @course.save
         render json: @course
       else
-        render json: @course.errors.messages
+        render json: @course.errors.messages, status: 422
       end
     end
 

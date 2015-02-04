@@ -10,13 +10,19 @@ StudyBlocks.Views.UserNew = Backbone.View.extend({
     event.preventDefault();
     var data = $(event.target).serializeJSON();
     var thisView = this;
-    this.model.set(data);
-    var schools = new StudyBlocks.Collections.Schools();
-    var schoolView = new StudyBlocks.Views.SchoolNew({
-      collection: schools,
-      model: this.model
+    this.model.save(data, {
+      success: function (model) {
+        var schools = new StudyBlocks.Collections.Schools();
+        var schoolView = new StudyBlocks.Views.SchoolNew({
+          collection: schools,
+          model: model
+        });
+        StudyBlocks.modal.set(schoolView, "form");
+      },
+      error: function (model, response) {
+        thisView.displayErrors(response.responseJSON);
+      }
     });
-    StudyBlocks.modal.set(schoolView, "form");
    }
 
 });
