@@ -42,7 +42,7 @@ class Card < ActiveRecord::Base
   private
 
   def has_image_or_front
-    if image.is_a?(Paperclip::Attachment) && front.empty?
+    if image.is_a?(Paperclip::Attachment) && (front.empty? || front.nil?)
         self.errors.add(:front, "Must have either an image or text on the front")
     end
   end
