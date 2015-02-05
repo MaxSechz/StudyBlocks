@@ -96,7 +96,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   testShow: function (deck_id, test_id) {
-    var targetDeck = new StudyBlocks.Models.Deck({ id: deck_id });
+    var targetDeck = this.decks.getOrFetch(deck_id);
     var targetTest = new StudyBlocks.Models.Test(
       {id: test_id },
       {deck: targetDeck}

@@ -4,7 +4,7 @@ StudyBlocks.Models.Test = Backbone.Model.extend({
   },
 
   initialize: function (attrs, options) {
-    this.deck = options.deck;
+    this.deck().set(options.deck);
   },
 
   responses: function () {

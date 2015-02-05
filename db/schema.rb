@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203200723) do
+ActiveRecord::Schema.define(version: 20150205223717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20150203200723) do
     t.datetime "image_updated_at"
   end
 
+  add_index "cards", ["deck_id"], name: "index_cards_on_deck_id", using: :btree
+
   create_table "courses", force: true do |t|
     t.string   "title",       null: false
     t.string   "course_code", null: false
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150203200723) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "courses", ["school_id"], name: "index_courses_on_school_id", using: :btree
 
   create_table "decks", force: true do |t|
     t.string   "title",       null: false
@@ -47,12 +51,16 @@ ActiveRecord::Schema.define(version: 20150203200723) do
     t.integer  "course_id"
   end
 
+  add_index "decks", ["user_id"], name: "index_decks_on_user_id", using: :btree
+
   create_table "registrations", force: true do |t|
     t.integer  "course_id",  null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "registrations", ["course_id", "user_id"], name: "index_registrations_on_course_id_and_user_id", unique: true, using: :btree
 
   create_table "responses", force: true do |t|
     t.text     "response_text"
@@ -61,6 +69,8 @@ ActiveRecord::Schema.define(version: 20150203200723) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "responses", ["test_id", "card_id"], name: "index_responses_on_test_id_and_card_id", unique: true, using: :btree
 
   create_table "schools", force: true do |t|
     t.string   "name",       null: false
@@ -76,12 +86,16 @@ ActiveRecord::Schema.define(version: 20150203200723) do
     t.integer "user_id"
   end
 
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id", using: :btree
+
   create_table "tests", force: true do |t|
     t.integer  "deck_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    null: false
   end
+
+  add_index "tests", ["user_id", "deck_id"], name: "index_tests_on_user_id_and_deck_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false
@@ -96,6 +110,7 @@ ActiveRecord::Schema.define(version: 20150203200723) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
+  add_index "users", ["school_id"], name: "index_users_on_school_id", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
