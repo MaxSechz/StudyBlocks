@@ -17,8 +17,9 @@ StudyBlocks.Views.DeckTile = Backbone.CompositeView.extend({
   },
 
   navigate: function (event) {
-    if ($(event.target).hasClass("deck-tile")) {
-      event.preventDefault();
+    var className = event.target.className;
+    if (className === "pencil" || className === "delete-deck") {
+    } else {
       this.$("a")[0].click();
     }
   },

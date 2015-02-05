@@ -3,8 +3,8 @@
   position: relative;
   display: block;
   background: #eee;
-  min-height: calc(100vh - 62px);
-  max-height: calc(100vh - 62px);
+  min-height: 100vh;
+  max-height: 100vh;
   min-width: 90%;
   overflow-y: auto;
   overflow-x: hidden;

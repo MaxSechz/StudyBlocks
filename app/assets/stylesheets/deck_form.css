@@ -30,7 +30,7 @@
 .cards-preview {
   margin: auto;
   background: #eee;
-  max-height: 500px;
+  max-height: 400px;
   max-width: 325px;
   overflow-y: auto;
   overflow-x: hidden;
