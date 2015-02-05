@@ -1,5 +1,5 @@
 User.find(3).decks.each do |deck|
-  15.times do |time|
+  10.times do |time|
     test = deck.tests.create!({ user_id: deck.user.id, created_at: time.days.ago })
     deck.cards.each do |card|
       if card.format == "field"
