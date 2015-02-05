@@ -13,9 +13,12 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
   preRender: 'setupChoices',
 
   initialize: function () {
-    this.deck = this.model.deck();
-    this.deck.fetch();
-    this.listenTo(this.deck, "sync", this.render);
+    this.deck = this.model.deck;
+    if (this.deck.done) {
+      this.render();
+    } else {
+      this.listenTo(this.deck, "sync", this.render);
+    }
   },
 
   setupChoices: function () {

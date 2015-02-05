@@ -8,6 +8,10 @@ StudyBlocks.Views.DeckReview = Backbone.CollectionView.extend({
     deck: 'model'
   },
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    if (this.model.done) {
+      this.render();
+    } else {
+      this.listenTo(this.collection, "sync", this.render);
+    }
   }
 });
