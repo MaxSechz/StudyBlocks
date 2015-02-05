@@ -36,7 +36,7 @@ Backbone.View = Backbone.View.extend({
 
   renderObject: function (renderThis) {
     var renderObject = {};
-    var renderThis = renderThis || this.renderThis
+    var renderThis = renderThis || this.renderThis;
     for (var attr in renderThis) {
       var attrVal = renderThis[attr];
       if (typeof this[attrVal] === "function") {

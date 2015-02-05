@@ -224,8 +224,6 @@ div.modal.form {
   height: 100%;
   float: left;
   -webkit-transition: width 0.25s 0.25s, color 0.25s 0.25s;
-     -moz-transition: width 0.25s 0.25s, color 0.25s 0.25s;
-      -ms-transition: width 0.25s 0.25s, color 0.25s 0.25s;
           transition: width 0.25s 0.25s, color 0.25s 0.25s;
 }
 
@@ -274,13 +272,12 @@ div.modal.form {
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   cursor: pointer;
   background: #acffac;
   -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -ms-transition: background 1s;
-  transition: background 1s;
+          transition: background 1s;
 }
 
 .navbar:hover button, .navbar.hover button {
@@ -290,9 +287,7 @@ div.modal.form {
 .navbar:hover button:hover, .navbar.hover button:hover {
   background: #ff8585;
   -webkit-transition: background 0s;
-  -moz-transition: background 0s;
-  -ms-transition: background 0s;
-  transition: background 0s;
+          transition: background 0s;
 }
 
 .content {
@@ -301,9 +296,7 @@ div.modal.form {
   height: 100vh;
   width: 98%;
   -webkit-transition: width 0.25s 0.25s;
-  -moz-transition: width 0.25s 0.25s;
-  -ms-transition: width 0.25s 0.25s;
-  transition: width 0.25s 0.25s;
+          transition: width 0.25s 0.25s;
   overflow: hidden;
 }
 
@@ -379,24 +372,26 @@ div > .google-visualization-tooltip, circle {
   position: absolute;
   top: 50%;
   left: 50%;
- -webkit-transform: translate(-50%, -50%);
-         transform: translate(-50%, -50%);
   display: block;
   width: 15px;
   height: 15px;
   background: #3366cc;
   border-radius: 50%;
+ -webkit-transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
   -webkit-transition: width 0.2s, height 0.2s, border-radius 0.2s;
-  -moz-transition: width 0.2s, height 0.2s, border-radius 0.2s;
   transition: width 0.2s, height 0.2s, border-radius 0.2s;
+  overflow: hidden;
 }
 
 .fakeout {
   position: absolute;
  -webkit-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
          transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 100px;
 }
 
 .fakeout:hover .tooltip:hover {
@@ -406,21 +401,16 @@ div > .google-visualization-tooltip, circle {
 }
 
 .tooltip strong {
-  display: block;
+  display: none;
   white-space: nowrap;
   position: relative;
   top: 15px;
   text-align: center;
   width: 100%;
   color: white;
-  opacity: 0;
-  -webkit-transition: opacity 0.1s;
-  -moz-transition: opacity 0.1s;
 }
 
 
 .tooltip:hover > strong {
-  opacity: 1;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
+  display: block;
 }

@@ -8,6 +8,8 @@ StudyBlocks.Collections.Cards = Backbone.Collection.extend({
     this.deck = options.deck;
   },
 
+  comparator: "id",
+  
   toJSON: function () {
     var targetCards = [];
     _.each(this.models, function (card) {

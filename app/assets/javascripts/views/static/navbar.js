@@ -76,6 +76,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     event.preventDefault();
     var data = { user: { username: "Guest", password: "password" }};
     var thisView = this;
+    StudyBlocks.modal.bumper();
     $.ajax({
       url: "/api/session",
       type: "POST",

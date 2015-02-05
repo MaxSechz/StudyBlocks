@@ -12,6 +12,15 @@
   padding: 0;
 }
 
+.card-show.bumper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .card {
   position: relative;
   font-size: 12px;
@@ -52,10 +61,6 @@ strong {
   display: block;
 }
 
-.card img {
-  /*max-height: 150px*/
-}
-
 .card:hover {
   border-color: #acffac;
 }
@@ -66,8 +71,6 @@ strong {
   padding: 0;
   display: inline-block;
   -webkit-transition: font-size 0.5s 0.25s, max-height 0.5s 0.25s, padding 0.5s 0.25s;
-  -moz-transition: font-size 0.5s 0.25s, max-height 0.5s 0.25s, padding 0.5s 0.25s;
-  -ms-transition: font-size 0.5s 0.25s, max-height 0.5s 0.25s, padding 0.5s 0.25s;
   transition: font-size 0.5s 0.25s, max-height 0.5s 0.25s, padding 0.5s 0.25s;
 }
 

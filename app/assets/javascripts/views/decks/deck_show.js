@@ -19,7 +19,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
     if (this.model.done) {
       this.render();
     } else {
-    this.listenTo(this.collection, "sync add", this.render);
+      this.listenTo(this.collection, "sync", this.render);
     }
   },
 
