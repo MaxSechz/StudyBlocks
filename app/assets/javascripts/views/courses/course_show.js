@@ -1,6 +1,6 @@
 StudyBlocks.Views.CourseShow = Backbone.CollectionView.extend({
   tagName: "section",
-  tagClass: "course",
+  className: "course",
   template: JST["courses/show"],
   subModelViewName: "DeckTile",
   selector: ".decks",

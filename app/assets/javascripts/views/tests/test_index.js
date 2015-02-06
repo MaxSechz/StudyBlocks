@@ -1,6 +1,6 @@
 StudyBlocks.Views.TestIndex = Backbone.View.extend({
   tagName: 'main',
-  className: 'performance',
+  className: 'performance notready',
   template: JST['tests/index'],
   toolTemplate: JST['tests/tooltip'],
   renderThis: {

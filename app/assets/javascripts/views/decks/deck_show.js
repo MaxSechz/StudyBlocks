@@ -1,6 +1,6 @@
 StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   tagName: "main",
-  className: "deck",
+  className: "deck notready",
   template: JST["decks/show"],
   events: {
     "click .new": "newCard",
@@ -34,7 +34,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
       model: emptyCard,
       submit: true
     });
-    StudyBlocks.modal.set(formView, "form");
+    StudyBlocks.modal.set(formView.render(), "form");
   },
 
   deleteDeck: function (event) {
@@ -49,7 +49,7 @@ StudyBlocks.Views.DeckShow = Backbone.CollectionView.extend({
   importCards: function (event) {
     event.preventDefault();
     var importView = new StudyBlocks.Views.ImportForm({ model: this.model });
-    StudyBlocks.modal.set(importView, "form");
+    StudyBlocks.modal.set(importView.render(), "form");
   },
 
   adjust: function (thing) {

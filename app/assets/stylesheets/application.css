@@ -90,6 +90,16 @@ button:hover {
     margin-top: 5px;
 }
 
+.notready {
+  opacity: 0 !important;
+  -webkit-transition: opacity 0.5s;
+          transition: opacity 0.5s;
+}
+
+.ready {
+  opacity: 1 !important;
+}
+
 .home {
   position: fixed;
   right: 0;

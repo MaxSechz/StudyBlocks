@@ -34,7 +34,7 @@ Backbone.CollectionView = Backbone.CompositeView.extend({
       return;
     }
     var subView = this.subModelView({ model: subModel });
-    this.addSubview(this.selector, subView);
+    this.addSubview(this.selector, subView.render());
     return subModel.id || subModel.cid;
   },
 });

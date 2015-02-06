@@ -26,7 +26,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
 
   home: function () {
     var homeView = new StudyBlocks.Views.Home();
-    this._swapView(homeView);
+    this._swapView(homeView.render());
   },
 
   sessionRoute: function () {
@@ -48,6 +48,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckShow: function (id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(id);
     var showView = new StudyBlocks.Views.DeckShow({
       model: targetDeck,
@@ -57,6 +58,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckStudy: function (id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(id);
     var studyView = new StudyBlocks.Views.DeckStudy({
       model: targetDeck,
@@ -66,15 +68,17 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   deckReview: function (id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(id);
-    var studyView = new StudyBlocks.Views.DeckReview({
+    var reviewView = new StudyBlocks.Views.DeckReview({
       model: targetDeck,
       collection: targetDeck.cards()
     });
-    this._modalify(studyView);
+    this._modalify(reviewView);
   },
 
   deckTest: function (id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(id);
     var emptyTest = new StudyBlocks.Models.Test({}, { deck: targetDeck });
     var testView = new StudyBlocks.Views.DeckTest({
@@ -85,6 +89,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   testIndex: function (id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(id);
     var deckTests = new StudyBlocks.Collections.Tests({}, { deck: targetDeck });
     deckTests.fetch();
@@ -96,6 +101,7 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   testShow: function (deck_id, test_id) {
+    StudyBlocks.bump();
     var targetDeck = this.decks.getOrFetch(deck_id);
     var targetTest = new StudyBlocks.Models.Test(
       {id: test_id },
@@ -120,15 +126,15 @@ StudyBlocks.Routers.Router = Backbone.Router.extend({
   },
 
   _swapView: function (view) {
-    StudyBlocks.modal.remove();
+    StudyBlocks.modal.erase();
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.$el);
     view.onDom && view[view.onDom]();
   },
 
   _modalify: function (view) {
-    StudyBlocks.modal.remove();
+    StudyBlocks.modal.erase();
     StudyBlocks.modal.set(view, "active");
   }
 

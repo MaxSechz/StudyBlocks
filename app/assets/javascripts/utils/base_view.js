@@ -22,6 +22,8 @@ Backbone.View = Backbone.View.extend({
     } else if (this.postRender) {
       this[this.postRender]();
     }
+    this.$el.hasClass("notready") && this.$el.addClass("ready");
+    this.$el.hasClass("ready") && StudyBlocks.debump();
   },
 
   preTasks: function () {

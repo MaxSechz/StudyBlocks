@@ -1,7 +1,10 @@
 StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
+  tagName: "div",
+  className: "modal",
+  template: JST["static/modal"],
   events: {
-    "click": "remove",
-    "click .cancel": "remove"
+    "click": "erase",
+    "click .cancel": "erase"
   },
 
   set: function (view, newClass) {
@@ -13,7 +16,7 @@ StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
     this.$el.removeClass("active").removeClass("form");
   },
 
-  remove: function (event) {
+  erase: function (event) {
     if ( event && ($( event.target ).hasClass("modal") || $(event.target).hasClass("cancel") )) {
       event.preventDefault();
       this.clear();
@@ -31,7 +34,7 @@ StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
     var bumperView = new StudyBlocks.Views.CardShow({
       model: bumperCard,
     });
-    bumperView.$el.addClass("bumper");
+    bumperView.render().$el.addClass("bumper");
     var $spinner = $("<i class=\"fa fa-cog fa-spin fa-4x\"></i>");
     this.set(bumperView, "form");
     bumperView.$(".front").append("<br>").append($spinner);
@@ -39,6 +42,7 @@ StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
     for (var i = 0; i < 3; i++) {
       bumperView.$(".right-face").append("<br>").append("<i class=\"fa fa-cog fa-spin fa-4x\"></i>").append("<br>");
     }
+    return this;
   },
 
   clear: function () {

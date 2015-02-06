@@ -1,6 +1,6 @@
 StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
   tagName: "main",
-  className: "deck-test",
+  className: "deck-test notready",
   template: JST['tests/new'],
   events: {
     'click .submit': 'submitTest'
@@ -14,7 +14,11 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
 
   initialize: function () {
     this.deck = this.model.deck();
-    this.listenTo(this.deck, "sync", this.render);
+    if (this.deck.done) {
+      this.render();
+    } else {
+      this.listenTo(this.deck, "sync", this.render);
+    }
   },
 
   setupChoices: function () {

@@ -1,6 +1,6 @@
 StudyBlocks.Views.DeckReview = Backbone.CollectionView.extend({
   tagName: "main",
-  className: "deck-review",
+  className: "deck-review notready",
   template: JST['decks/review'],
   selector: '.cards-list',
   subModelViewName: 'CardReview',

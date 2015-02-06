@@ -35,7 +35,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     var courseNew = new StudyBlocks.Views.CourseNew({
       collection: courses
     });
-    this._modalify(courseNew);
+    this._modalify(courseNew.render());
   },
 
   login: function () {
@@ -43,7 +43,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     var loginView = new StudyBlocks.Views.UserLogin({
       model: user
     });
-    this._modalify(loginView);
+    this._modalify(loginView.render());
   },
 
   register: function () {
@@ -51,7 +51,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     var registerView = new StudyBlocks.Views.UserNew({
       model: user
     });
-    this._modalify(registerView);
+    this._modalify(registerView.render());
   },
 
   account: function () {
@@ -60,7 +60,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
       model: StudyBlocks.currentUser,
       collection: schools
     });
-    this._modalify(accountView);
+    this._modalify(accountView.render());
   },
 
   courseIndex: function () {
@@ -69,14 +69,14 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
     var courseIndex = new StudyBlocks.Views.CourseIndex({
       collection: courses
     });
-    this._modalify(courseIndex);
+    this._modalify(courseIndex.render());
   },
 
   loginGuest: function () {
     event.preventDefault();
     var data = { user: { username: "Guest", password: "password" }};
     var thisView = this;
-    StudyBlocks.modal.bumper();
+    StudyBlocks.bump();
     $.ajax({
       url: "/api/session",
       type: "POST",
@@ -86,6 +86,7 @@ StudyBlocks.Views.NavBar = Backbone.View.extend({
         StudyBlocks.modal.clear();
         StudyBlocks.navbar.render();
         Backbone.history.navigate('decks', { trigger: true });
+        StudyBlocks.debump();
       }
     });
   },

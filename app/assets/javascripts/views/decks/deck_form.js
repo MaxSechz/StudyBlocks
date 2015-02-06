@@ -52,6 +52,6 @@ StudyBlocks.Views.DeckForm = Backbone.CollectionView.extend({
       submit: false
     });
     this.$el.addClass("inactive");
-    this.addSubview(this.selector, cardFormView);
+    this.addSubview(this.selector, cardFormView.render());
   },
 });

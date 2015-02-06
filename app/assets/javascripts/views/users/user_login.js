@@ -11,18 +11,22 @@ StudyBlocks.Views.UserLogin = Backbone.View.extend({
     event.preventDefault();
     var data = { user: this.$el.serializeJSON() };
     var thisView = this;
+    StudyBlocks.bump();
     $.ajax({
       url: "/api/session",
       type: "POST",
       data: data,
       success: function (response) {
         StudyBlocks.currentUser.set(response);
-        StudyBlocks.modal.remove();
+        StudyBlocks.modal.erase();
         StudyBlocks.navbar.render();
         Backbone.history.navigate('decks', { trigger: true });
       },
       error: function (response) {
         thisView.displayErrors(response.responseJSON);
+      },
+      complete: function () {
+        StudyBlocks.debump();
       }
     });
   },

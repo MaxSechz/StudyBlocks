@@ -16,6 +16,8 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
           this.done = true;
         }.bind(this)
       });
+    } else {
+      this.done = true;
     }
 
     return this._cards;

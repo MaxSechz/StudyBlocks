@@ -1,6 +1,6 @@
 StudyBlocks.Views.DeckStudy = Backbone.CollectionView.extend({
   tagName: "main",
-  className: "deck-study",
+  className: "deck-study notready",
   template: JST['decks/study'],
   selector: '.cards-list',
   subModelViewName: 'CardStudy',
@@ -8,6 +8,10 @@ StudyBlocks.Views.DeckStudy = Backbone.CollectionView.extend({
     deck: 'model'
   },
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    if (this.model.done) {
+      this.render();
+    } else {
+      this.listenTo(this.collection, "sync", this.render);
+    }
   }
 });
