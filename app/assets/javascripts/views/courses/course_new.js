@@ -43,7 +43,10 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var thisView = this;
     registration.save({}, {
       success: function (model) {
-        Backbone.history.navigate("courses/" + model.get("course_id"), { trigger: true })
+        Backbone.history.navigate("courses/" + model.get("course_id"), { trigger: true });
+      },
+      error: function (model, response) {
+        thisView.displayErrors(response.responseJSON);
       }
     });
   },
@@ -56,7 +59,7 @@ StudyBlocks.Views.CourseNew = Backbone.CollectionView.extend({
     var thisView = this;
     course.save({}, {
       success: function (model) {
-        Backbone.history.navigate("courses/" + model.id, { trigger: true })
+        Backbone.history.navigate("courses/" + model.id, { trigger: true });
       },
       error: function (model, response) {
         thisView.displayErrors(response.responseJSON);

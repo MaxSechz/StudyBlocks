@@ -1,7 +1,7 @@
 module Api
   class RegistrationsController < ApplicationController
     before_action :require_logged_in
-    
+
     def show
       @registration = Registration.find_by(
                       course_id: params[:id],
@@ -15,7 +15,7 @@ module Api
       if @registration.save
         render json: @registration
       else
-        render json: @registration.errors.messages
+        render json: @registration.errors.messages, status: 422
       end
     end
 
