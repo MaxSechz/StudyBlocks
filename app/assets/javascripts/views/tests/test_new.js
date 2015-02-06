@@ -50,11 +50,11 @@ StudyBlocks.Views.DeckTest = Backbone.CollectionView.extend({
       responses.push(response);
     };
     var data = { test: { responses_attributes: responses }};
-    var thisDeck = this.deck;
+    var previousTests = this.deck.tests();
     this.model.set(data);
     this.model.save({}, {
       success: function (model, response) {
-        thisDeck.tests().add(model);
+        previousTests.add(model);
         Backbone.history.navigate(thisDeck.linkUrl('tests'), { trigger: true });
       },
       error: function (model, response) {
