@@ -4,6 +4,8 @@ StudyBlocks.Collections.Tests = Backbone.Collection.extend({
     return this.deck.url() + "/tests";
   },
 
+  comparator: "created_at",
+  
   initialize: function (attrs, options) {
     this.deck = options.deck;
   },
