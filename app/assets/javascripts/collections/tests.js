@@ -5,7 +5,7 @@ StudyBlocks.Collections.Tests = Backbone.Collection.extend({
   },
 
   comparator: "created_at",
-  
+
   initialize: function (attrs, options) {
     this.deck = options.deck;
   },

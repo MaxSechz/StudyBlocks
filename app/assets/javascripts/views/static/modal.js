@@ -39,7 +39,7 @@ StudyBlocks.Views.Modal = Backbone.CompositeView.extend({
     this.set(bumperView, "form");
     bumperView.$(".front").append("<br>").append($spinner);
     bumperView.$(".score").empty();
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 2; i++) {
       bumperView.$(".right-face").append("<br>").append("<i class=\"fa fa-cog fa-spin fa-4x\"></i>").append("<br>");
     }
     return this;

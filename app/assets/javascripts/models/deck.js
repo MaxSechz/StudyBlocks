@@ -50,8 +50,11 @@ StudyBlocks.Models.Deck = Backbone.Model.extend({
   tests: function () {
     if (!this._tests) {
       this._tests = new StudyBlocks.Collections.Tests([], { deck: this });
-    } else if (!this.isNew() && this._tests.isEmpty()) {
-      this._tests.fetch();
+      this._tests.fetch({
+        success: function () {
+          this.hasTests = true;
+        }.bind(this)
+      });
     }
 
     return this._tests;

@@ -10,7 +10,11 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
   postRender: "draw",
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    if (this.model.hasTests) {
+      this.render();
+    } else {
+      this.listenTo(this.collection, "sync", this.render);
+    }
   },
 
   prep: function () {
@@ -40,7 +44,8 @@ StudyBlocks.Views.TestIndex = Backbone.View.extend({
         legend: { position: 'none' },
         pointSize: 15,
         tooltip: {isHtml: true, trigger: 'hover'},
-        height: 700
+        height: 700,
+        width: window.innerWidth
       };
       this.options.vAxis.maxValue = 100;
       this.options.vAxis.gridlines.count = -1;
