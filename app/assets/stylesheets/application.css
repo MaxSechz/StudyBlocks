@@ -387,16 +387,17 @@ div > .google-visualization-tooltip, circle {
   height: 15px;
   background: #3366cc;
   border-radius: 50%;
- -webkit-transform: translate(-50%, -50%);
-         -ms-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: width 0.2s, height 0.2s, border-radius 0.2s;
   transition: width 0.2s, height 0.2s, border-radius 0.2s;
-  overflow: hidden;
 }
 
 .fakeout {
   position: absolute;
+  left: -19px;
+  top: 21px;
  -webkit-transform: translate(-50%, -50%);
      -ms-transform: translate(-50%, -50%);
          transform: translate(-50%, -50%);
@@ -408,6 +409,7 @@ div > .google-visualization-tooltip, circle {
   width: 110px;
   height: 60px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .tooltip strong {
